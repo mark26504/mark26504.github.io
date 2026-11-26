@@ -1,0 +1,13 @@
+@media (min-width: 48rem) {
+  :root {
+    --page-gutter: 2rem;
+    --page-spacing: 3rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --page-gutter: 3rem;
+    --page-spacing: 4rem;
+  }
+}

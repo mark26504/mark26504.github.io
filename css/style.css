@@ -1,0 +1,135 @@
+:root {
+  color-scheme: dark;
+  --color-background: #0B0F1C;
+  --color-surface: #131B2B;
+  --color-accent: #58B9EB;
+  --color-border: #293548;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-success: #4ADE80;
+
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  --content-max-width: 72rem;
+  --page-gutter: 1rem;
+  --page-spacing: 2rem;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+img,
+video {
+  block-size: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Base styles */
+body {
+  min-block-size: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-mono);
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 0.2em;
+}
+
+/* Layout */
+.container {
+  max-inline-size: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+main {
+  padding-block: var(--page-spacing);
+}
+
+.page-role {
+  margin-block-start: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+/* Keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0.25rem;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 1rem;
+  inset-inline-start: var(--page-gutter);
+  transform: translateY(calc(-100% - 2rem));
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-surface);
+}
+
+.skip-link:focus {
+  transform: none;
+}
