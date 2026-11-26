@@ -24,6 +24,10 @@ Use Space Grotesk for headings, Inter for body text, and JetBrains Mono for tech
 
 Keep the visual style clean and engineering-inspired, with dark navy surfaces, sky blue accents, and a subtle grid. The hero’s conceptual SVG uses staggered particles to illustrate connections from the client to the ASP.NET Core API and from the API to SQL Server and Redis. Keep Docker and CI/CD visually separate as deployment infrastructure. Keep animations minimal and omit heavy 3D effects and a personal photo in the hero.
 
+## Global container
+
+Use the shared `.container` for the navbar and portfolio content. The inner content is capped at `1600px` and centered, with `20px` horizontal padding by default, `32px` from `48rem`, and `48px` from `80rem`. Add future portfolio sections within the existing main container to share those edges. Keep paragraph widths and SVG aspect ratios independent of the container width.
+
 ## File responsibilities
 
 | Path | Responsibility |
@@ -31,7 +35,7 @@ Keep the visual style clean and engineering-inspired, with dark navy surfaces, s
 | `index.html` | Document metadata, page landmarks, and portfolio content |
 | `credits.html` | Artwork sources, copyrights, licenses, and trademark notices |
 | `css/style.css` | Design tokens, reset, typography, and base and component styles |
-| `css/responsive.css` | Mobile-first overrides at `48rem`, `64rem`, and `80rem` |
+| `css/responsive.css` | Mobile-first overrides, including section layouts at `48rem`, `64rem`, and `80rem` |
 | `js/main.js` | Deferred entry point for navigation and decorative motion controls |
 | `assets/images/` | Images used by the portfolio |
 | `assets/icons/` | Local SVGs and [bundled MIT license texts](assets/icons/credits.txt) |
@@ -52,6 +56,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Keep particle paths aligned with the SVG runtime connectors. The motion control pauses the particles, API glow, and availability pulse together. Pause each effect when its element leaves the viewport, and pause all continuous effects while the document is hidden or reduced motion is enabled.
 - Keep the Core Technologies grid at two columns on narrow screens, four from `48rem`, and eight from `80rem`. Keep the SVGs local and cite each source and license in [Credits & Licenses](credits.html). Use licensed category symbols where brand artwork lacks verified permission. Preserve the full accessible names for shortened labels.
 - Use a generic cache symbol and the plain Redis label in Core Technologies. Keep the Redis artwork, attribution, and trademark notice on the credits page. Keep the temporary Credits & Licenses link below Core Technologies until Phase 10. Add a small Credits & Licenses link to the footer in that phase and remove the temporary link.
+- Keep About at `#about` below Core Technologies. Use a stacked layout below `64rem` and place the highlights to the right at wider widths. Keep the 36-endpoint figure scoped to the Library Management API.
 
 ## Development roadmap
 
@@ -59,7 +64,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 2. Navbar and Hero Section — complete
 3. Animated Backend Architecture Diagram — complete
 4. Core Technologies — complete
-5. About Me
+5. About Me — complete
 6. Featured Projects
 7. Technical Skills
 8. Education and Certifications

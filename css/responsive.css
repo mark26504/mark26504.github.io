@@ -1,3 +1,10 @@
+@media (width < 20rem) {
+  .about-details,
+  .about-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (width < 48rem) {
   .site-header:has(.menu-toggle[hidden]) {
     position: static;
@@ -37,7 +44,7 @@
 
 @media (min-width: 48rem) {
   :root {
-    --page-gutter: 2rem;
+    --page-gutter: 32px;
     --page-spacing: 3rem;
     --header-height: 5rem;
   }
@@ -88,16 +95,27 @@
 
 @media (min-width: 64rem) {
   :root {
-    --page-gutter: 3rem;
     --page-spacing: 4rem;
   }
 
   .hero {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   }
+
+  .about {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
 }
 
 @media (min-width: 80rem) {
+  :root {
+    --page-gutter: 48px;
+  }
+
+  .architecture {
+    max-inline-size: 38rem;
+  }
+
   .technology-list {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
