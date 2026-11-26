@@ -77,3 +77,65 @@ if (sectionLinks.length > 1) {
   window.addEventListener("scroll", updateCurrentSection, { passive: true });
   window.addEventListener("resize", updateCurrentSection);
 }
+
+function initDecorativeMotion() {
+  const motionToggle = document.querySelector(".motion-toggle");
+  const motionElements = [
+    document.querySelector(".architecture-diagram"),
+    document.querySelector(".availability"),
+  ];
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const visibleElements = new Set();
+  let isPaused = false;
+
+  function syncMotion() {
+    const canAnimate = !isPaused && !reducedMotion.matches && !document.hidden;
+    for (const element of motionElements) {
+      element.toggleAttribute("data-motion-running", canAnimate && visibleElements.has(element));
+    }
+  }
+
+  function updateMotionPreference() {
+    let label = isPaused ? "Resume decorative animations" : "Pause decorative animations";
+    if (reducedMotion.matches) {
+      label = "Decorative animations off for reduced motion";
+    }
+
+    motionToggle.toggleAttribute("data-paused", isPaused || reducedMotion.matches);
+    motionToggle.setAttribute("aria-label", label);
+    motionToggle.setAttribute("aria-disabled", String(reducedMotion.matches));
+    motionToggle.title = label;
+    syncMotion();
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    for (const { target, isIntersecting } of entries) {
+      if (isIntersecting) {
+        visibleElements.add(target);
+      } else {
+        visibleElements.delete(target);
+      }
+    }
+    syncMotion();
+  });
+
+  motionToggle.addEventListener("click", () => {
+    if (reducedMotion.matches) {
+      return;
+    }
+    isPaused = !isPaused;
+    updateMotionPreference();
+  });
+  reducedMotion.addEventListener("change", updateMotionPreference);
+  document.addEventListener("visibilitychange", syncMotion);
+
+  updateMotionPreference();
+  motionToggle.hidden = false;
+  for (const element of motionElements) {
+    observer.observe(element);
+  }
+}
+
+if ("IntersectionObserver" in window) {
+  initDecorativeMotion();
+}

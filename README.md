@@ -13,6 +13,8 @@ Open `index.html` in a browser. The site uses HTML, CSS, vanilla JavaScript, and
 
 ## Project status
 
-Phases 1 and 2 are complete. The site has a sticky navbar with Home, a GitHub shortcut, an accessible mobile menu, and a hero with a static conceptual diagram of the backend stack. About, Projects, Skills, Contact, and the CV controls are marked as coming soon.
+Phases 1 through 3 are complete. The site has a sticky navbar with Home, a GitHub shortcut, an accessible mobile menu, and a hero with an animated diagram of the backend stack. About, Projects, Skills, Contact, and the CV controls are marked as coming soon.
 
-Phase 3 adds animation to the diagram. The site is intended for GitHub Pages. See [AGENTS.md](AGENTS.md) for development conventions and the remaining roadmap.
+Blue particles illustrate the runtime connections. The diagram keeps Docker and CI/CD separate under deployment. The button next to the diagram pauses or resumes decorative motion, including the availability pulse. Animations also pause offscreen and in hidden tabs, and the diagram stays readable with reduced motion or JavaScript disabled.
+
+The site is intended for GitHub Pages. See [AGENTS.md](AGENTS.md) for development conventions and the remaining roadmap.

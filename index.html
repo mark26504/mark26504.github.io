@@ -96,47 +96,69 @@
 
         <figure class="architecture">
           <figcaption>Conceptual backend stack</figcaption>
+          <button class="motion-toggle" type="button" aria-label="Pause decorative animations" title="Pause decorative animations" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path class="motion-icon-pause" d="M9 5v14m6-14v14" />
+              <path class="motion-icon-play" d="m9 5 11 7-11 7Z" />
+            </svg>
+          </button>
           <svg class="architecture-diagram" viewBox="0 0 448 392" role="img" aria-labelledby="diagram-title diagram-description">
             <title id="diagram-title">Backend runtime and deployment infrastructure</title>
-            <desc id="diagram-description">A client calls an ASP.NET Core API that depends on SQL Server and Redis. Docker and CI/CD are shown separately as deployment infrastructure.</desc>
+            <desc id="diagram-description">A client calls an ASP.NET Core API that depends on SQL Server and Redis. Moving dots illustrate these connections. Docker and CI/CD are shown separately as deployment infrastructure.</desc>
 
             <path class="diagram-connector" d="M224 62v44m0 60v28m-119 29v-29h238v29" />
             <circle class="diagram-junction" cx="224" cy="84" r="4" />
             <circle class="diagram-junction" cx="224" cy="194" r="3" />
-
-            <rect class="diagram-node" x="128" y="6" width="192" height="56" rx="12" />
-            <g class="diagram-icon" transform="translate(173 22)">
-              <rect x="1" y="2" width="22" height="15" rx="2" />
-              <path d="M12 17v5M7 22h10" />
+            <g aria-hidden="true">
+              <circle class="diagram-particle diagram-particle-client" r="2.8" />
+              <circle class="diagram-particle diagram-particle-sql" r="2.8" />
+              <circle class="diagram-particle diagram-particle-redis" r="2.8" />
             </g>
-            <text class="diagram-text" x="208" y="35">Client</text>
 
-            <rect class="diagram-node diagram-node-api" x="104" y="106" width="240" height="60" rx="12" />
-            <g class="diagram-icon" transform="translate(123 124)">
-              <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18" />
+            <g class="diagram-item">
+              <rect class="diagram-node" x="128" y="6" width="192" height="56" rx="12" />
+              <g class="diagram-icon" transform="translate(173 22)">
+                <rect x="1" y="2" width="22" height="15" rx="2" />
+                <path d="M12 17v5M7 22h10" />
+              </g>
+              <text class="diagram-text" x="208" y="35">Client</text>
             </g>
-            <text class="diagram-text" x="159" y="137">ASP.NET Core API</text>
 
-            <rect class="diagram-node" x="8" y="223" width="194" height="58" rx="12" />
-            <g class="diagram-icon" transform="translate(33 240)">
-              <ellipse cx="12" cy="5" rx="8" ry="3" />
-              <path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" />
+            <g class="diagram-item">
+              <rect class="diagram-api-glow" x="104" y="106" width="240" height="60" rx="12" aria-hidden="true" />
+              <rect class="diagram-node diagram-node-api" x="104" y="106" width="240" height="60" rx="12" />
+              <g class="diagram-icon" transform="translate(123 124)">
+                <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18" />
+              </g>
+              <text class="diagram-text" x="159" y="137">ASP.NET Core API</text>
             </g>
-            <text class="diagram-text" x="67" y="253">SQL Server</text>
 
-            <rect class="diagram-node" x="246" y="223" width="194" height="58" rx="12" />
-            <g class="diagram-icon" transform="translate(297 240)">
-              <path d="m12 2 10 5-10 5L2 7Zm-10 10 10 5 10-5M2 17l10 5 10-5" />
+            <g class="diagram-item">
+              <rect class="diagram-node" x="8" y="223" width="194" height="58" rx="12" />
+              <g class="diagram-icon" transform="translate(33 240)">
+                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                <path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" />
+              </g>
+              <text class="diagram-text" x="67" y="253">SQL Server</text>
             </g>
-            <text class="diagram-text" x="331" y="253">Redis</text>
+
+            <g class="diagram-item">
+              <rect class="diagram-node" x="246" y="223" width="194" height="58" rx="12" />
+              <g class="diagram-icon" transform="translate(297 240)">
+                <path d="m12 2 10 5-10 5L2 7Zm-10 10 10 5 10-5M2 17l10 5 10-5" />
+              </g>
+              <text class="diagram-text" x="331" y="253">Redis</text>
+            </g>
 
             <path class="diagram-divider" d="M8 315h145m142 0h145" />
             <text class="diagram-label" x="224" y="316" text-anchor="middle">DEPLOYMENT</text>
-            <rect class="diagram-node diagram-node-deploy" x="108" y="335" width="232" height="52" rx="12" />
-            <g class="diagram-icon" transform="translate(134 349)">
-              <path d="m12 2 9 5v10l-9 5-9-5V7Zm-9 5 9 5 9-5m-9 5v10" />
+            <g class="diagram-item">
+              <rect class="diagram-node diagram-node-deploy" x="108" y="335" width="232" height="52" rx="12" />
+              <g class="diagram-icon" transform="translate(134 349)">
+                <path d="m12 2 9 5v10l-9 5-9-5V7Zm-9 5 9 5 9-5m-9 5v10" />
+              </g>
+              <text class="diagram-text" x="172" y="362">Docker / CI/CD</text>
             </g>
-            <text class="diagram-text" x="172" y="362">Docker / CI/CD</text>
           </svg>
         </figure>
       </section>

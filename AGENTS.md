@@ -22,7 +22,7 @@
 
 Use Space Grotesk for headings, Inter for body text, and JetBrains Mono for technical elements. The page loads the fonts through Google Fonts and defines system fallbacks in CSS.
 
-Keep the visual style clean and engineering-inspired, with dark navy surfaces, sky blue accents, and a subtle grid. The hero’s conceptual SVG connects the client to the ASP.NET Core API and shows SQL Server and Redis as API dependencies. Keep Docker and CI/CD visually separate as deployment infrastructure. Add lightweight diagram motion in Phase 3 while preserving the static view. Keep animations minimal and omit heavy 3D effects and a personal photo in the hero.
+Keep the visual style clean and engineering-inspired, with dark navy surfaces, sky blue accents, and a subtle grid. The hero’s conceptual SVG uses staggered particles to illustrate connections from the client to the ASP.NET Core API and from the API to SQL Server and Redis. Keep Docker and CI/CD visually separate as deployment infrastructure. Keep animations minimal and omit heavy 3D effects and a personal photo in the hero.
 
 ## File responsibilities
 
@@ -31,7 +31,7 @@ Keep the visual style clean and engineering-inspired, with dark navy surfaces, s
 | `index.html` | Document metadata, page landmarks, and portfolio content |
 | `css/style.css` | Design tokens, reset, typography, and base and component styles |
 | `css/responsive.css` | Mobile-first overrides at `48rem` and `64rem` |
-| `js/main.js` | Deferred entry point for client-side behavior, including the mobile navigation disclosure |
+| `js/main.js` | Deferred entry point for navigation and decorative motion controls |
 | `assets/images/` | Images used by the portfolio |
 | `assets/icons/` | SVG icons |
 | `assets/cv/` | Approved public CV files |
@@ -48,12 +48,13 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Put enabled section links in page order and give each a matching section ID. Active navigation follows those links as their sections reach the sticky header.
 - Give meaningful images and diagrams accessible text. Keep text readable at narrow widths and when zoomed. Use text or another cue alongside color for status and meaning.
 - Use `prefers-reduced-motion` when adding motion. Keep the base experience static and functional, and opt into nonessential animation when the visitor allows it.
+- Keep particle paths aligned with the SVG runtime connectors. The motion control pauses the particles, API glow, and availability pulse together. Pause each effect when its element leaves the viewport, and pause all continuous effects while the document is hidden or reduced motion is enabled.
 
 ## Development roadmap
 
 1. Project Setup — complete
 2. Navbar and Hero Section — complete
-3. Animated Backend Architecture Diagram
+3. Animated Backend Architecture Diagram — complete
 4. Core Technologies
 5. About Me
 6. Featured Projects

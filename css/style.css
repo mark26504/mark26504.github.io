@@ -319,6 +319,7 @@ main {
 }
 
 .availability {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -441,6 +442,7 @@ main {
 
 /* Backend stack illustration */
 .architecture {
+  position: relative;
   inline-size: 100%;
   max-inline-size: 31rem;
   justify-self: center;
@@ -457,6 +459,37 @@ main {
 .architecture-diagram {
   inline-size: 100%;
   block-size: auto;
+}
+
+.motion-toggle:not([hidden]) {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 1.75rem;
+  inset-inline-end: 0.25rem;
+  display: grid;
+  place-items: center;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background-color: var(--color-background);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.motion-toggle:not([aria-disabled="true"]):hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.motion-toggle[aria-disabled="true"] {
+  cursor: default;
+}
+
+.motion-toggle:not([data-paused]) .motion-icon-play,
+.motion-toggle[data-paused] .motion-icon-pause {
+  display: none;
 }
 
 .diagram-node {
@@ -490,6 +523,40 @@ main {
   fill: var(--color-accent);
 }
 
+.diagram-particle,
+.diagram-api-glow {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.diagram-particle {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 2px var(--color-accent));
+}
+
+.diagram-particle-client {
+  --flow-path: path("M224 62V106");
+  --flow-duration: 4.8s;
+}
+
+.diagram-particle-sql {
+  --flow-path: path("M224 166V194H105V223");
+  --flow-delay: 0.85s;
+}
+
+.diagram-particle-redis {
+  --flow-path: path("M224 166V194H343V223");
+  --flow-delay: 1.55s;
+}
+
+.diagram-api-glow {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 4;
+  filter: blur(4px);
+}
+
 .diagram-divider {
   stroke: var(--color-border);
 }
@@ -512,11 +579,100 @@ main {
   letter-spacing: 0.12em;
 }
 
+@media (hover: hover) {
+  .diagram-item:hover > .diagram-node {
+    stroke: color-mix(in srgb, var(--color-accent) 82%, var(--color-text-primary));
+    filter: drop-shadow(0 0 5px color-mix(in srgb, var(--color-accent) 35%, transparent));
+  }
+}
+
+@keyframes diagram-data-flow {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+
+  8%,
+  40% {
+    opacity: 0.9;
+  }
+
+  52%,
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes diagram-api-breathe {
+  0%,
+  100% { opacity: 0.14; }
+
+  50% { opacity: 0.48; }
+}
+
+@keyframes availability-pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.45;
+  }
+
+  62%,
+  100% {
+    transform: translateY(-50%) scale(2.15);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  [data-motion-running] {
+    --motion-play-state: running;
+  }
+
+  .availability::after {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    visibility: hidden;
+    pointer-events: none;
+    animation: availability-pulse 4s ease-out infinite var(--motion-play-state, paused);
+    content: "";
+  }
+
+  .availability[data-motion-running]::after,
+  .architecture-diagram[data-motion-running] .diagram-api-glow {
+    visibility: visible;
+  }
+
+  .diagram-api-glow {
+    animation: diagram-api-breathe 6s ease-in-out infinite var(--motion-play-state, paused);
+  }
+
+  @supports (offset-path: path("M0 0H1") view-box) {
+    .diagram-particle {
+      offset-path: var(--flow-path) view-box;
+      offset-rotate: 0deg;
+      animation: diagram-data-flow var(--flow-duration, 6.8s) linear var(--flow-delay, 0s) infinite var(--motion-play-state, paused);
+    }
+
+    .architecture-diagram[data-motion-running] .diagram-particle {
+      visibility: visible;
+    }
+  }
+
+  .diagram-node {
+    transition: stroke 180ms ease, filter 180ms ease;
+  }
+
   .menu-toggle,
   .nav-list a[href],
   .nav-github,
   .button,
+  .motion-toggle,
   .social-links a {
     transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
   }
