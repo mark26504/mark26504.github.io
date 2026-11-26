@@ -22,7 +22,7 @@
 
 Use Space Grotesk for headings, Inter for body text, and JetBrains Mono for technical elements. The page loads the fonts through Google Fonts and defines system fallbacks in CSS.
 
-Keep the visual style clean and engineering-inspired, with dark navy surfaces, sky blue accents, and a subtle grid. Plan a lightweight animated SVG backend architecture diagram that remains readable when static. Keep animations minimal and omit heavy 3D effects and a personal photo in the hero.
+Keep the visual style clean and engineering-inspired, with dark navy surfaces, sky blue accents, and a subtle grid. The hero’s conceptual SVG connects the client to the ASP.NET Core API and shows SQL Server and Redis as API dependencies. Keep Docker and CI/CD visually separate as deployment infrastructure. Add lightweight diagram motion in Phase 3 while preserving the static view. Keep animations minimal and omit heavy 3D effects and a personal photo in the hero.
 
 ## File responsibilities
 
@@ -31,7 +31,7 @@ Keep the visual style clean and engineering-inspired, with dark navy surfaces, s
 | `index.html` | Document metadata, page landmarks, and portfolio content |
 | `css/style.css` | Design tokens, reset, typography, and base and component styles |
 | `css/responsive.css` | Mobile-first overrides at `48rem` and `64rem` |
-| `js/main.js` | Deferred entry point for client-side behavior |
+| `js/main.js` | Deferred entry point for client-side behavior, including the mobile navigation disclosure |
 | `assets/images/` | Images used by the portfolio |
 | `assets/icons/` | SVG icons |
 | `assets/cv/` | Approved public CV files |
@@ -42,14 +42,17 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 
 - Indent HTML, CSS, and JavaScript with two spaces. Use lowercase kebab-case for file names, CSS classes, and HTML IDs. Use `camelCase` for JavaScript names.
 - Reuse design tokens and shared layout styles. Keep selectors simple and use the responsive styles for breakpoint overrides.
+- Keep the mobile navigation breakpoint in `js/main.js` aligned with the `48rem` rule in `css/responsive.css`. The hero switches to two columns at `64rem`.
 - Use native elements for landmarks, links, and controls. Maintain a logical heading order and keyboard tab order. Keep the skip link and visible focus indicators.
+- Keep navigation destinations and calls to action visibly pending until their content is ready. Replace the placeholders with working links when the corresponding sections or approved CV are available.
+- Put enabled section links in page order and give each a matching section ID. Active navigation follows those links as their sections reach the sticky header.
 - Give meaningful images and diagrams accessible text. Keep text readable at narrow widths and when zoomed. Use text or another cue alongside color for status and meaning.
 - Use `prefers-reduced-motion` when adding motion. Keep the base experience static and functional, and opt into nonessential animation when the visitor allows it.
 
 ## Development roadmap
 
-1. Project Setup
-2. Navbar and Hero Section
+1. Project Setup — complete
+2. Navbar and Hero Section — complete
 3. Animated Backend Architecture Diagram
 4. Core Technologies
 5. About Me

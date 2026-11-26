@@ -13,4 +13,6 @@ Open `index.html` in a browser. The site uses HTML, CSS, vanilla JavaScript, and
 
 ## Project status
 
-Phase 1 sets up the file structure, base styles, and accessibility foundations. The site is intended for GitHub Pages. See [AGENTS.md](AGENTS.md) for development conventions and the remaining roadmap.
+Phases 1 and 2 are complete. The site has a sticky navbar with Home, a GitHub shortcut, an accessible mobile menu, and a hero with a static conceptual diagram of the backend stack. About, Projects, Skills, Contact, and the CV controls are marked as coming soon.
+
+Phase 3 adds animation to the diagram. The site is intended for GitHub Pages. See [AGENTS.md](AGENTS.md) for development conventions and the remaining roadmap.
