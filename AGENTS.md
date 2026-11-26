@@ -29,11 +29,12 @@ Keep the visual style clean and engineering-inspired, with dark navy surfaces, s
 | Path | Responsibility |
 | --- | --- |
 | `index.html` | Document metadata, page landmarks, and portfolio content |
+| `credits.html` | Artwork sources, copyrights, licenses, and trademark notices |
 | `css/style.css` | Design tokens, reset, typography, and base and component styles |
-| `css/responsive.css` | Mobile-first overrides at `48rem` and `64rem` |
+| `css/responsive.css` | Mobile-first overrides at `48rem`, `64rem`, and `80rem` |
 | `js/main.js` | Deferred entry point for navigation and decorative motion controls |
 | `assets/images/` | Images used by the portfolio |
-| `assets/icons/` | SVG icons |
+| `assets/icons/` | Local SVGs and [bundled MIT license texts](assets/icons/credits.txt) |
 | `assets/cv/` | Approved public CV files |
 
 Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when the directory contains a tracked asset.
@@ -49,13 +50,15 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Give meaningful images and diagrams accessible text. Keep text readable at narrow widths and when zoomed. Use text or another cue alongside color for status and meaning.
 - Use `prefers-reduced-motion` when adding motion. Keep the base experience static and functional, and opt into nonessential animation when the visitor allows it.
 - Keep particle paths aligned with the SVG runtime connectors. The motion control pauses the particles, API glow, and availability pulse together. Pause each effect when its element leaves the viewport, and pause all continuous effects while the document is hidden or reduced motion is enabled.
+- Keep the Core Technologies grid at two columns on narrow screens, four from `48rem`, and eight from `80rem`. Keep the SVGs local and cite each source and license in [Credits & Licenses](credits.html). Use licensed category symbols where brand artwork lacks verified permission. Preserve the full accessible names for shortened labels.
+- Use a generic cache symbol and the plain Redis label in Core Technologies. Keep the Redis artwork, attribution, and trademark notice on the credits page. Keep the temporary Credits & Licenses link below Core Technologies until Phase 10. Add a small Credits & Licenses link to the footer in that phase and remove the temporary link.
 
 ## Development roadmap
 
 1. Project Setup — complete
 2. Navbar and Hero Section — complete
 3. Animated Backend Architecture Diagram — complete
-4. Core Technologies
+4. Core Technologies — complete
 5. About Me
 6. Featured Projects
 7. Technical Skills
