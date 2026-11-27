@@ -29,7 +29,7 @@
               <ul class="nav-list">
                 <li><a href="#home" aria-current="location">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a role="link" aria-disabled="true" aria-describedby="nav-status">Projects</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a role="link" aria-disabled="true" aria-describedby="nav-status">Skills</a></li>
                 <li><a role="link" aria-disabled="true" aria-describedby="nav-status">Contact</a></li>
               </ul>
@@ -64,15 +64,15 @@
           <p class="hero-description">Building secure, maintainable APIs and reliable backend systems.</p>
 
           <div class="hero-actions">
-            <button class="button button-primary" type="button" aria-describedby="action-status" disabled>
+            <a class="button button-primary" href="#projects">
               View Projects
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M6 18 18 6M8 6h10v10" />
               </svg>
-            </button>
+            </a>
             <button class="button button-secondary" type="button" aria-describedby="action-status" disabled>Download CV</button>
           </div>
-          <p class="action-status" id="action-status">Projects and CV coming soon</p>
+          <p class="action-status" id="action-status">CV coming soon</p>
 
           <ul class="social-links" aria-label="Social profiles">
             <li>
@@ -290,6 +290,164 @@
             <span class="about-stat-label">Cloud-Deployed API</span>
           </li>
         </ul>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title" tabindex="-1">
+        <header class="projects-header">
+          <p class="projects-label">02 / PROJECTS</p>
+          <h2 id="projects-title">Selected work<span>.</span></h2>
+          <p class="projects-intro">Explore my projects, architecture, and technical implementations.</p>
+          <div class="project-controls" hidden>
+            <button class="project-arrow" type="button" data-project-step="-1" aria-label="Previous project" aria-controls="project-track" aria-disabled="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6" /></svg>
+            </button>
+            <button class="project-arrow" type="button" data-project-step="1" aria-label="Next project" aria-controls="project-track">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+            </button>
+          </div>
+        </header>
+
+        <ul class="project-track" id="project-track" role="list" aria-label="Project cards" tabindex="0">
+          <li class="project-slide">
+            <article class="project-card" aria-labelledby="library-management-title">
+              <div class="project-cover">
+                <img src="./assets/images/projects/library-management.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Illustrated Library Management API cover with books, a shield, and a stylized Swagger interface.">
+              </div>
+              <div class="project-card-body">
+                <div class="project-meta">
+                  <p class="project-category">Independent Backend Project</p>
+                  <span class="project-deployment">Deployed API</span>
+                </div>
+                <h3 id="library-management-title">Library Management API</h3>
+                <p class="project-description">A secure RESTful API for managing library resources and borrowing workflows, with Docker-based development and automated CI/CD deployment.</p>
+                <ul class="project-tags" role="list" aria-label="Technologies">
+                  <li>ASP.NET Core</li>
+                  <li>SQL Server</li>
+                  <li>Docker</li>
+                  <li>CI/CD</li>
+                </ul>
+                <div class="project-actions">
+                  <button class="button button-secondary project-explore" type="button" disabled>
+                    Explore Project
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+                    <span class="project-action-status">Soon</span>
+                  </button>
+                  <a href="https://github.com/mark26504/LibraryManagementAPI" aria-label="Library Management API on GitHub">
+                    <img src="./assets/icons/github-invertocat-white.svg" width="98" height="96" alt="">
+                    GitHub
+                  </a>
+                  <a href="https://library-management-api.runasp.net/swagger" aria-label="Library Management API Swagger documentation">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M13 5h6v6m0-6-9 9m0-9H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4" />
+                    </svg>
+                    Swagger
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="project-slide">
+            <article class="project-card" aria-labelledby="eatopia-title">
+              <div class="project-cover">
+                <img src="./assets/images/projects/eatopia.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Eatopia promotional poster with a leaf emblem, produce artwork, and callouts for nutrition plans and community features.">
+              </div>
+              <div class="project-card-body">
+                <div class="project-meta">
+                  <p class="project-category">Graduation Team Project</p>
+                </div>
+                <h3 id="eatopia-title">Eatopia API</h3>
+                <p class="project-description">A healthcare and nutrition platform backend developed collaboratively within a three-developer backend team.</p>
+                <ul class="project-tags" role="list" aria-label="Technologies">
+                  <li>ASP.NET Core</li>
+                  <li>Clean Architecture</li>
+                  <li>EF Core</li>
+                  <li>SQL Server</li>
+                </ul>
+                <div class="project-actions">
+                  <button class="button button-secondary project-explore" type="button" disabled>
+                    Explore Project
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+                    <span class="project-action-status">Soon</span>
+                  </button>
+                  <a href="https://github.com/mark26504/Eatopia-Backend" aria-label="Eatopia API on GitHub">
+                    <img src="./assets/icons/github-invertocat-white.svg" width="98" height="96" alt="">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="project-slide">
+            <article class="project-card" aria-labelledby="ecommerce-title">
+              <div class="project-cover">
+                <img src="./assets/images/projects/ecommerce.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Illustrated E-Commerce API cover with a shopping cart, packages, and a stylized Swagger interface.">
+              </div>
+              <div class="project-card-body">
+                <div class="project-meta">
+                  <p class="project-category">Backend REST API</p>
+                </div>
+                <h3 id="ecommerce-title">E-Commerce API</h3>
+                <p class="project-description">An e-commerce backend featuring product management, Redis-backed baskets, order processing, and Stripe payment integration.</p>
+                <ul class="project-tags" role="list" aria-label="Technologies">
+                  <li>ASP.NET Core</li>
+                  <li>Redis</li>
+                  <li>Stripe</li>
+                  <li>Clean Architecture</li>
+                </ul>
+                <div class="project-actions">
+                  <button class="button button-secondary project-explore" type="button" disabled>
+                    Explore Project
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+                    <span class="project-action-status">Soon</span>
+                  </button>
+                  <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API" aria-label="E-Commerce API on GitHub">
+                    <img src="./assets/icons/github-invertocat-white.svg" width="98" height="96" alt="">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="project-slide">
+            <article class="project-card" aria-labelledby="gym-management-title">
+              <div class="project-cover">
+                <img src="./assets/images/projects/gym-management.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Gym Management System promotional cover with a stylized gym dashboard, weights, and a three-tier architecture diagram.">
+              </div>
+              <div class="project-card-body">
+                <div class="project-meta">
+                  <p class="project-category">MVC Web Application</p>
+                </div>
+                <h3 id="gym-management-title">Gym Management System</h3>
+                <p class="project-description">A management system for gym members, trainers, training sessions, and subscriptions.</p>
+                <ul class="project-tags" role="list" aria-label="Technologies">
+                  <li>ASP.NET Core MVC</li>
+                  <li>EF Core</li>
+                  <li>SQL Server</li>
+                  <li>Layered Architecture</li>
+                </ul>
+                <div class="project-actions">
+                  <button class="button button-secondary project-explore" type="button" disabled>
+                    Explore Project
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+                    <span class="project-action-status">Soon</span>
+                  </button>
+                  <a href="https://github.com/mark26504/gym-management-system" aria-label="Gym Management System on GitHub">
+                    <img src="./assets/icons/github-invertocat-white.svg" width="98" height="96" alt="">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <div class="project-pagination" role="group" aria-label="Carousel positions" hidden></div>
+        <div class="projects-more">
+          <a href="https://github.com/mark26504">
+            More projects on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" /></svg>
+          </a>
+        </div>
       </section>
     </main>
   </body>

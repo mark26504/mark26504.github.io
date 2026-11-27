@@ -658,7 +658,8 @@ main {
   padding-block: clamp(3rem, 6.5vw, 6rem) clamp(1.5rem, 4vw, 3rem);
 }
 
-.about-label {
+.about-label,
+.projects-label {
   margin-block-end: 0.875rem;
   color: var(--color-accent);
   font-family: var(--font-mono);
@@ -667,7 +668,8 @@ main {
   letter-spacing: 0.12em;
 }
 
-.about h2 {
+.about h2,
+.projects h2 {
   max-inline-size: 18ch;
   font-size: clamp(2.25rem, 4vw, 3.5rem);
   line-height: 1.05;
@@ -675,16 +677,19 @@ main {
   text-wrap: balance;
 }
 
-.about:focus-visible {
+.about:focus-visible,
+.projects:focus-visible {
   outline: none;
 }
 
-.about:focus-visible h2 {
+.about:focus-visible h2,
+.projects:focus-visible h2 {
   outline: 2px solid var(--color-accent);
   outline-offset: 0.25rem;
 }
 
 .about h2 span,
+.projects h2 span,
 .about-stat-value {
   color: var(--color-accent);
 }
@@ -786,6 +791,298 @@ main {
   line-height: 1.45;
 }
 
+/* Featured projects */
+.projects {
+  padding-block: clamp(2rem, 5vw, 4.5rem) clamp(2rem, 5vw, 4rem);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.projects-header {
+  display: grid;
+  grid-template-areas:
+    "label controls"
+    "heading heading"
+    "intro intro";
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(2.75rem, auto) auto auto;
+  align-items: center;
+  gap: 0.625rem 1rem;
+  margin-block-end: clamp(1.25rem, 2.6vw, 2rem);
+}
+
+.projects-label {
+  grid-area: label;
+  margin-block-end: 0;
+}
+
+.projects h2 {
+  grid-area: heading;
+}
+
+.projects-intro {
+  grid-area: intro;
+  max-inline-size: 62ch;
+  color: var(--color-text-secondary);
+}
+
+.project-controls {
+  grid-area: controls;
+  align-self: end;
+}
+
+.project-controls:not([hidden]) {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-arrow {
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.project-arrow[aria-disabled="true"] {
+  color: var(--color-text-secondary);
+  opacity: 0.55;
+  cursor: default;
+}
+
+.project-arrow:not([aria-disabled="true"]):hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.project-track {
+  --project-visible: 1;
+  --project-gap: clamp(0.875rem, 2vw, 1.5rem);
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--project-visible) - 1) * var(--project-gap)) / var(--project-visible));
+  gap: var(--project-gap);
+  margin: 0;
+  padding: 0 0 0.625rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--color-border) transparent;
+  scrollbar-width: thin;
+  list-style: none;
+}
+
+.projects:has(.project-controls:not([hidden])) .project-track {
+  scrollbar-width: none;
+}
+
+.project-slide {
+  display: flex;
+  min-inline-size: 0;
+  scroll-snap-align: start;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  min-inline-size: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background-color: var(--color-surface);
+}
+
+.project-card:focus-within {
+  border-color: color-mix(in srgb, var(--color-accent) 60%, var(--color-border));
+}
+
+.project-cover {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0;
+  background-color: var(--color-background);
+}
+
+.project-cover img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.75rem;
+  padding: clamp(0.875rem, 1.6vw, 1.5rem);
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem 0.625rem;
+}
+
+.project-category,
+.project-deployment,
+.project-tags,
+.project-action-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.project-category {
+  color: var(--color-text-secondary);
+}
+
+.project-deployment {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--color-success);
+}
+
+.project-deployment::before {
+  inline-size: 0.375rem;
+  block-size: 0.375rem;
+  border-radius: 50%;
+  background-color: currentColor;
+  content: "";
+}
+
+.project-card h3 {
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  letter-spacing: -0.035em;
+}
+
+.project-description {
+  max-inline-size: 54ch;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  color: color-mix(in srgb, var(--color-accent) 55%, var(--color-text-primary));
+  list-style: none;
+}
+
+.project-tags li {
+  padding: 0.1875rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 24%, var(--color-border));
+  border-radius: 999px;
+  background-color: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface));
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem 0.75rem;
+  margin-block-start: auto;
+  padding-block-start: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.project-actions a,
+.projects-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-block-size: 2.75rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.projects-more a:hover {
+  text-decoration: underline;
+}
+
+.project-actions a:is(:hover, :focus-visible) {
+  color: color-mix(in srgb, var(--color-accent) 70%, var(--color-text-primary));
+  text-decoration: underline;
+}
+
+.project-actions a :is(img, svg) {
+  flex: none;
+  inline-size: 0.875rem;
+  block-size: auto;
+}
+
+.project-actions a:focus-visible {
+  outline-offset: 0;
+}
+
+.project-explore {
+  min-block-size: 2.75rem;
+  padding: 0.375rem 0.625rem;
+  color: var(--color-text-secondary);
+  text-align: start;
+}
+
+.project-explore svg {
+  flex: 0 0 auto;
+}
+
+.project-action-status {
+  padding-inline-start: 0.375rem;
+  border-inline-start: 1px solid var(--color-border);
+  font-weight: 400;
+}
+
+.project-pagination:not([hidden]) {
+  display: flex;
+  justify-content: center;
+}
+
+.project-dot:not([hidden]) {
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.project-dot::before {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 1rem;
+  content: "";
+}
+
+.project-dot:hover,
+.project-dot[aria-current="true"] {
+  color: var(--color-accent);
+}
+
+.project-dot[aria-current="true"]::before {
+  inline-size: 1.125rem;
+  background-color: currentColor;
+}
+
+.projects-more {
+  margin-block-start: 0.25rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
 /* Credits and licenses */
 .credits-back {
   display: inline-flex;
@@ -878,6 +1175,15 @@ main {
   .about-stat:hover {
     border-color: color-mix(in srgb, var(--color-accent) 60%, var(--color-border));
   }
+
+  .project-card:hover {
+    border-color: color-mix(in srgb, var(--color-accent) 60%, var(--color-border));
+  }
+
+  .project-tags li:hover {
+    border-color: color-mix(in srgb, var(--color-accent) 44%, var(--color-border));
+    background-color: color-mix(in srgb, var(--color-accent) 14%, var(--color-surface));
+  }
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -899,6 +1205,26 @@ main {
 
   .about-stat:hover {
     transform: translateY(-0.125rem);
+  }
+
+  .project-card {
+    transition: border-color 180ms ease;
+  }
+
+  .project-cover img {
+    transition: transform 240ms ease;
+  }
+
+  .project-card:hover .project-cover img {
+    transform: scale(1.015);
+  }
+
+  .project-tags li {
+    transition: background-color 160ms ease, border-color 160ms ease;
+  }
+
+  .project-actions a {
+    transition: color 160ms ease;
   }
 }
 
@@ -941,7 +1267,11 @@ main {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html:has(#about:target) {
+  html:has(#about:target, #projects:target) {
+    scroll-behavior: smooth;
+  }
+
+  .project-track {
     scroll-behavior: smooth;
   }
 
@@ -992,6 +1322,7 @@ main {
   .nav-list a[href],
   .nav-github,
   .button,
+  .project-arrow,
   .motion-toggle,
   .social-links a {
     transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;

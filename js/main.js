@@ -139,3 +139,109 @@ function initDecorativeMotion() {
 if ("IntersectionObserver" in window) {
   initDecorativeMotion();
 }
+
+function initProjectCarousel() {
+  const track = document.querySelector("#project-track");
+  const controls = document.querySelector(".project-controls");
+  const pagination = document.querySelector(".project-pagination");
+  const [previous, next] = controls.querySelectorAll("button");
+  const slides = Array.from(track.children);
+  let positions = [];
+  let activeIndex = 0;
+  let trackWidth;
+
+  const dots = slides.map((slide, index) => {
+    const title = slide.querySelector("h3").textContent;
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "project-dot";
+    dot.setAttribute("aria-label", `Show projects starting with ${title}`);
+    dot.setAttribute("aria-controls", track.id);
+    dot.addEventListener("click", () => goToPosition(index));
+    return dot;
+  });
+
+  function syncControls() {
+    previous.setAttribute("aria-disabled", String(activeIndex === 0));
+    next.setAttribute("aria-disabled", String(activeIndex === positions.length - 1));
+    dots.forEach((dot, index) => {
+      if (index === activeIndex) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function syncScroll() {
+    const { scrollLeft } = track;
+    const nearest = positions.reduce((index, position, candidate) =>
+      Math.abs(position - scrollLeft) < Math.abs(positions[index] - scrollLeft) ? candidate : index, 0);
+
+    if (nearest !== activeIndex) {
+      activeIndex = nearest;
+      syncControls();
+    }
+  }
+
+  function goToPosition(index) {
+    const targetIndex = Math.max(0, Math.min(index, positions.length - 1));
+    track.scrollTo({ left: positions[targetIndex] });
+  }
+
+  function measurePositions() {
+    if (trackWidth === track.clientWidth) {
+      return;
+    }
+    trackWidth = track.clientWidth;
+
+    const visibleCount = Number(getComputedStyle(track).getPropertyValue("--project-visible"));
+    const positionCount = slides.length - visibleCount + 1;
+    const maxScroll = track.scrollWidth - trackWidth;
+    const origin = slides[0].getBoundingClientRect().left;
+    positions = slides.slice(0, positionCount).map((slide) =>
+      Math.min(slide.getBoundingClientRect().left - origin, maxScroll));
+
+    activeIndex = Math.min(activeIndex, positions.length - 1);
+    track.scrollTo({ left: positions[activeIndex], behavior: "instant" });
+    dots.forEach((dot, index) => {
+      if (index >= positions.length && document.activeElement === dot) {
+        dots[activeIndex].focus({ preventScroll: true });
+      }
+      dot.hidden = index >= positions.length;
+    });
+    syncControls();
+  }
+
+  controls.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-project-step]");
+    if (button && button.getAttribute("aria-disabled") !== "true") {
+      goToPosition(activeIndex + Number(button.dataset.projectStep));
+    }
+  });
+
+  track.addEventListener("keydown", (event) => {
+    if (event.target !== track || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+      return;
+    }
+    const keyPositions = {
+      ArrowLeft: activeIndex - 1,
+      ArrowRight: activeIndex + 1,
+      Home: 0,
+      End: positions.length - 1,
+    };
+    if (Object.hasOwn(keyPositions, event.key)) {
+      event.preventDefault();
+      goToPosition(keyPositions[event.key]);
+    }
+  });
+
+  pagination.append(...dots);
+  measurePositions();
+  track.addEventListener("scroll", syncScroll, { passive: true });
+  new ResizeObserver(measurePositions).observe(track);
+  controls.hidden = false;
+  pagination.hidden = false;
+}
+
+initProjectCarousel();

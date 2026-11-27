@@ -91,6 +91,18 @@
   .technology-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  .projects-header {
+    grid-template-areas:
+      "label controls"
+      "heading controls"
+      "intro controls";
+    grid-template-rows: auto;
+  }
+
+  .project-track {
+    --project-visible: 2;
+  }
 }
 
 @media (min-width: 64rem) {
@@ -104,6 +116,10 @@
 
   .about {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  .project-track {
+    --project-visible: 3;
   }
 }
 

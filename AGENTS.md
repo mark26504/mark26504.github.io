@@ -57,6 +57,9 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Keep the Core Technologies grid at two columns on narrow screens, four from `48rem`, and eight from `80rem`. Keep the SVGs local and cite each source and license in [Credits & Licenses](credits.html). Use licensed category symbols where brand artwork lacks verified permission. Preserve the full accessible names for shortened labels.
 - Use a generic cache symbol and the plain Redis label in Core Technologies. Keep the Redis artwork, attribution, and trademark notice on the credits page. Keep the temporary Credits & Licenses link below Core Technologies until Phase 10. Add a small Credits & Licenses link to the footer in that phase and remove the temporary link.
 - Keep About at `#about` below Core Technologies. Use a stacked layout below `64rem` and place the highlights to the right at wider widths. Keep the 36-endpoint figure scoped to the Library Management API.
+- Keep Selected Work at `#projects` below About. Use native horizontal scrolling and scroll snapping, with one complete card on mobile, two from `48rem`, and three from `64rem`. Previous and next move by one card. Keep pagination in sync with the reachable positions. Leave the track usable without JavaScript and respect reduced motion.
+- Store project covers in `assets/images/projects/` as local 4:3 artwork with descriptive alt text and intrinsic dimensions. Verify claims and clearance for any embedded marks before publishing artwork. Use approved screenshots in case studies.
+- Keep Explore Project visibly disabled until the corresponding case study is ready. Once available, link both the card and its Explore Project action to the case study. The planned paths are `projects/library-management.html`, `projects/eatopia.html`, `projects/ecommerce.html`, and `projects/gym-management.html`. Keep the repository and Swagger links independently accessible.
 
 ## Development roadmap
 
@@ -65,7 +68,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 3. Animated Backend Architecture Diagram — complete
 4. Core Technologies — complete
 5. About Me — complete
-6. Featured Projects
+6. Featured Projects — Phase 6.1 carousel complete, case studies pending
 7. Technical Skills
 8. Education and Certifications
 9. GitHub Activity
