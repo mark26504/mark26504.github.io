@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 382" width="760" height="382" role="img" aria-labelledby="title desc">
+  <title id="title">Docker Compose local development</title>
+  <desc id="desc">On the Compose network the API connects to SQL Server 2022 and sends local email to Mailpit. The API mounts image and key volumes, while SQL Server mounts an external data volume.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="760" height="382" fill="#0b0f1c"/>
+  <text x="35" y="45" fill="#58b9eb" font-family="monospace" font-size="19" letter-spacing="1">DOCKER COMPOSE / LOCAL</text>
+  <rect x="35" y="66" width="690" height="294" rx="12" fill="#0e1624" stroke="#3d6b86" stroke-dasharray="5 6"/>
+  <text x="56" y="93" fill="#94a3b8" font-family="monospace" font-size="15">library-network (external)</text>
+  <g fill="none" stroke="#58b9eb" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M301 177v35H196v39"/>
+    <path d="M459 177v35h105v39"/>
+  </g>
+  <g fill="#131b2b" stroke="#3d6b86" stroke-width="1.4">
+    <rect x="222" y="105" width="316" height="72" rx="9"/>
+    <rect x="65" y="251" width="262" height="76" rx="9"/>
+    <rect x="433" y="251" width="262" height="76" rx="9"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, sans-serif">
+    <g fill="#f1f5f9" font-size="22" font-weight="600">
+      <text x="380" y="134">ASP.NET Core API</text>
+      <text x="196" y="281">SQL Server 2022</text>
+      <text x="564" y="281">Mailpit</text>
+    </g>
+    <g fill="#94a3b8" font-size="16">
+      <text x="380" y="158">Cover image and key volumes</text>
+      <text x="196" y="306">External SQL data volume</text>
+      <text x="564" y="306">Local email inbox</text>
+      <text x="242" y="204">EF Core</text>
+      <text x="510" y="204">SMTP</text>
+    </g>
+  </g>
+</svg>

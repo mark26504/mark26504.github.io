@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 586" width="760" height="586" role="img" aria-labelledby="title desc">
+  <title id="title">Library Management project references</title>
+  <desc id="desc">Arrows point from each source project to its direct dependency. The seven nodes share the LibraryManagement prefix.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="760" height="586" fill="#0b0f1c"/>
+  <rect width="760" height="586" fill="url(#grid)"/>
+  <path d="M34 76h692" stroke="#293548"/>
+  <text x="36" y="42" fill="#58b9eb" font-size="19" font-family="monospace" letter-spacing="1">COMPILE-TIME REFERENCES</text>
+  <text x="36" y="65" fill="#94a3b8" font-size="15" font-family="system-ui, sans-serif">Source project → direct dependency</text>
+  <g fill="none" stroke="#58b9eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M305 153v17H188v25"/>
+    <path d="M455 153v17h117v25"/>
+    <path d="M226 259v21l83 20"/>
+    <path d="M530 259v21l-80 20"/>
+    <path d="M109 259v153h-2v4"/>
+    <path d="M311 364v24H248v28"/>
+    <path d="M449 364v24h77v28"/>
+    <path d="M182 480v25"/>
+  </g>
+  <g fill="#131b2b" stroke="#3d6b86" stroke-width="1.4">
+    <rect x="250" y="89" width="260" height="64" rx="9"/>
+    <rect x="57" y="195" width="262" height="64" rx="9"/>
+    <rect x="441" y="195" width="262" height="64" rx="9"/>
+    <rect x="250" y="300" width="260" height="64" rx="9"/>
+    <rect x="46" y="416" width="272" height="64" rx="9"/>
+    <rect x="441" y="416" width="262" height="64" rx="9"/>
+    <rect x="46" y="505" width="272" height="59" rx="9"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, sans-serif">
+    <g fill="#f1f5f9" font-size="23" font-weight="600">
+      <text x="380" y="116">API</text><text x="188" y="222">Presentation</text>
+      <text x="572" y="222">Persistence</text><text x="380" y="327">Services</text>
+      <text x="182" y="443">Services.Abstraction</text><text x="572" y="443">Domain</text>
+      <text x="182" y="530">Shared</text>
+    </g>
+    <g fill="#94a3b8" font-size="16">
+      <text x="380" y="139">Host and composition</text><text x="188" y="246">HTTP controllers</text>
+      <text x="572" y="246">EF Core and integrations</text><text x="380" y="351">Application workflows</text>
+      <text x="182" y="466">Service and adapter contracts</text><text x="572" y="466">Entities and domain rules</text>
+      <text x="182" y="552">DTOs and results</text>
+    </g>
+  </g>
+</svg>

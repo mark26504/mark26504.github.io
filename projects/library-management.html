@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="How Mark Sameeh built, verified, and deployed a .NET 10 REST API for a library catalog and borrowing workflows.">
+    <title>Library Management API | Mark Sameeh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <script src="../js/projects.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#project-main">Skip to case study</a>
+    <header class="site-header">
+      <div class="container header-inner case-header">
+        <a class="brand" href="../index.html#home" aria-label="Mark Sameeh, home">MS.</a>
+        <nav class="case-header-links" aria-label="Project navigation">
+          <a href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" id="project-main" tabindex="-1">
+      <article class="case-study" aria-labelledby="case-title">
+        <header class="hero case-hero">
+          <div class="case-hero-copy">
+            <p class="projects-label">PROJECT / 01</p>
+            <h1 id="case-title">Library Management API<span>.</span></h1>
+            <div class="project-meta">
+              <p class="project-category">Independent Backend Project</p>
+              <span class="project-deployment">Deployed API</span>
+            </div>
+            <p class="case-lead">A secure RESTful API for managing library resources, users, and borrowing workflows, featuring authentication, business validation, containerization, and automated deployment.</p>
+            <div class="case-actions">
+              <a class="button button-primary" href="https://library-management-api.runasp.net/swagger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6m0-6-9 9m0-9H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4" /></svg> Live Swagger</a>
+              <a class="button button-secondary" href="https://github.com/mark26504/LibraryManagementAPI"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> Source Code</a>
+            </div>
+          </div>
+          <figure class="case-figure case-cover">
+            <a class="case-image" href="../assets/images/projects/library-management.webp" data-image-viewer aria-label="Enlarge Promotional project cover">
+              <img src="../assets/images/projects/library-management.webp" width="1448" height="1086" alt="Illustrated Library Management API cover featuring a book, a shield, technology labels, and a stylized Swagger interface." fetchpriority="high">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>Promotional project cover</figcaption>
+          </figure>
+        </header>
+
+        <ul class="about-stats case-stats" role="list" aria-label="Project highlights">
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 5l-4 14" /></svg>
+            <strong class="about-stat-value">36</strong>
+            <span class="about-stat-label">RESTful API Endpoints</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5" /></svg>
+            <strong class="about-stat-value">7</strong>
+            <span class="about-stat-label">Solution Projects</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM7 9l3 3-3 3m5 0h5" /></svg>
+            <strong class="about-stat-value">.NET 10</strong>
+            <span class="about-stat-label">Framework</span>
+          </li>
+        </ul>
+        <p class="case-count">The endpoint count includes 36 HTTP method and path pairs in the v1 OpenAPI document. It excludes the two infrastructure probes at <code>/health</code> and <code>/health/ready</code>.</p>
+
+        <nav class="case-toc" aria-label="In this case study">
+          <p class="case-label">In this case study</p>
+          <ul role="list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#patterns">Design patterns</a></li>
+            <li><a href="#api-documentation">API documentation</a></li>
+            <li><a href="#testing">Testing</a></li>
+            <li><a href="#containerization">Docker</a></li>
+            <li><a href="#delivery">CI/CD</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+          </ul>
+        </nav>
+
+        <section class="case-section" id="overview" aria-labelledby="overview-title">
+          <h2 id="overview-title">Project overview</h2>
+          <div class="case-grid">
+            <div>
+              <h3>From catalog to circulation</h3>
+              <p>The API gives a library one place to maintain its catalog and account records, track copies, and manage loans from checkout through return. Books are organized by category and can have multiple authors. Members can view their own borrowing history, while authorized staff can manage records and review overdue loans.</p>
+            </div>
+            <div>
+              <h3>My role</h3>
+              <p>I built the backend independently. I designed the API and SQL Server model, implemented authentication and borrowing rules, packaged the local environment with Docker Compose, and configured the automated IIS deployment and verification workflow.</p>
+            </div>
+          </div>
+          <div class="case-stack">
+            <h3>Technology stack</h3>
+            <div class="case-grid">
+              <div>
+                <h4 class="case-label">Application</h4>
+                <ul class="project-tags" role="list">
+                  <li>C#</li>
+                  <li>.NET 10</li>
+                  <li>ASP.NET Core Web API</li>
+                  <li>EF Core</li>
+                  <li>SQL Server</li>
+                  <li>ASP.NET Core Identity</li>
+                  <li>JWT</li>
+                  <li>AutoMapper</li>
+                  <li>Serilog</li>
+                  <li>MailKit</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="case-label">Development, documentation and delivery</h4>
+                <ul class="project-tags" role="list">
+                  <li>Docker</li>
+                  <li>Docker Compose</li>
+                  <li>Mailpit</li>
+                  <li>GitHub Actions</li>
+                  <li>Swagger / OpenAPI</li>
+                  <li>Postman</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="architecture" aria-labelledby="architecture-title">
+          <h2 id="architecture-title">System architecture</h2>
+          <p class="case-intro">The solution separates HTTP handling, application rules, persistence, and contracts into seven .NET projects. The arrows in the compile-time diagram point from each referencing project to the project it imports.</p>
+          <div class="case-architecture-media">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/architecture.svg" data-image-viewer aria-label="Enlarge Direct project references">
+                <img src="../assets/images/projects/library/architecture.svg" width="760" height="586" alt="API references Presentation and Persistence. Presentation references Services and Services.Abstraction. Persistence references Services. Services references Domain and Services.Abstraction. Services.Abstraction references Shared." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Direct project references</figcaption>
+            </figure>
+            <figure class="case-figure case-solution">
+              <a class="case-image" href="../assets/images/projects/library/solution-structure.webp" data-image-viewer aria-label="Enlarge Visual Studio Solution Structure">
+                <img src="../assets/images/projects/library/solution-structure.webp" width="607" height="867" alt="Visual Studio Solution Explorer with seven LibraryManagement projects under Core, Infrastructure, API, and Shared." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Visual Studio Solution Structure</figcaption>
+            </figure>
+          </div>
+          <div class="case-callout">
+            <h3>Runtime request flow</h3>
+            <p>An HTTP request passes through the API host and enters a Presentation controller. The controller calls an injected service, which uses repository interfaces where it needs data. Persistence implements those interfaces with EF Core and SQL Server. This runtime call direction can differ from the project references.</p>
+          </div>
+          <dl class="case-definitions">
+            <div><dt>LibraryManagement.API</dt><dd>Starts the application, configures middleware and Swagger, and wires the runtime dependencies.</dd></div>
+            <div><dt>LibraryManagement.Presentation</dt><dd>Defines the HTTP controllers, routes, permissions, and mappings from service results to responses.</dd></div>
+            <div><dt>LibraryManagement.Services</dt><dd>Implements workflows, maps application data with AutoMapper, and generates JWT access tokens.</dd></div>
+            <div><dt>LibraryManagement.Services.Abstraction</dt><dd>Exposes service contracts and interfaces for application dependencies such as identity, token storage, email, and files.</dd></div>
+            <div><dt>LibraryManagement.Domain</dt><dd>Contains library entities, borrowing rules, and repository and Unit of Work interfaces.</dd></div>
+            <div><dt>LibraryManagement.Persistence</dt><dd>Implements EF Core repositories, Identity storage, token storage, MailKit email, file storage, and migrations.</dd></div>
+            <div><dt>LibraryManagement.Shared</dt><dd>Holds DTOs, role and policy names, pagination models, and result types.</dd></div>
+          </dl>
+          <p class="case-evidence">Source <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/LibraryManagement.slnx">Solution and project files</a></p>
+        </section>
+
+        <section class="case-section" id="database" aria-labelledby="database-title">
+          <h2 id="database-title">Database design</h2>
+          <p class="case-intro">The schema shows 13 tables created by the initial migration and EF Core’s migration history table. The 12 connectors show foreign-key relationships at their maximum cardinality.</p>
+          <figure class="case-figure case-erd">
+            <a class="case-image" href="../assets/images/projects/library/library-database-diagram.svg" data-image-viewer aria-label="Enlarge Library database diagram">
+              <img src="../assets/images/projects/library/library-database-diagram.svg" width="1800" height="1260" alt="SQL Server entity relationship diagram showing ASP.NET Core Identity, refresh tokens, migration history, books, authors, categories, and borrowing records." loading="lazy" decoding="async">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>Library database diagram</figcaption>
+          </figure>
+          <div class="case-grid case-grid--after">
+            <div>
+              <h3>Identity and security</h3>
+              <p><code>AspNetUserRoles</code> joins users and roles using a composite key. Identity also stores claims, logins, and provider tokens. Each refresh token belongs to one user and records a hash, expiry, revocation time, and optional replacement hash.</p>
+            </div>
+            <div>
+              <h3>Catalog and circulation</h3>
+              <p>Each book belongs to one category. <code>BookAuthors</code> links books and authors with a composite key, and each borrowing record refers to one user and one book. The book row stores total and available copies, with a SQL Server <code>RowVersion</code> concurrency token.</p>
+            </div>
+          </div>
+          <p class="case-evidence">Source <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/Infrastructure/Presistence/Migrations/20260810222358_InitialCreate.cs">Initial EF Core migration</a></p>
+        </section>
+
+        <section class="case-section" id="features" aria-labelledby="features-title">
+          <h2 id="features-title">Key features</h2>
+          <ul class="case-features" role="list">
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h12v9H6zM9 11V7a3 3 0 0 1 6 0v4m-3 3v3" /></svg>
+              <h3>Authentication and session renewal</h3>
+              <p>JWT bearer access tokens protect requests. The API stores hashed refresh tokens and issues rotated tokens in a Secure, HttpOnly cookie.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2" /></svg>
+              <h3>Accounts and authorization</h3>
+              <p>ASP.NET Core Identity handles role-based permissions and account changes. Separate email-confirmation and password-reset flows use Identity tokens.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h6c2 0 3 1 3 3v12c0-2-1-3-3-3H3V5Zm18 0h-6c-2 0-3 1-3 3v12c0-2 1-3 3-3h6V5Z" /></svg>
+              <h3>Catalog management</h3>
+              <p>Manage books, authors and categories, associate multiple authors with a book, and upload cover images.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h15m-4-4 4 4-4 4m5 6H5m4-4-4 4 4 4" /></svg>
+              <h3>Borrowing and returns</h3>
+              <p>Validate copy availability and the active-loan limit before checkout. Track due dates, returns, and overdue records.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6c0 2-3.6 3-8 3S4 8 4 6s3.6-3 8-3 8 1 8 3ZM4 6v12c0 2 3.6 3 8 3s8-1 8-3V6M4 12c0 2 3.6 3 8 3s8-1 8-3" /></svg>
+              <h3>Inventory and concurrency</h3>
+              <p>Book updates and borrowing records are saved together. SQL Server <code>RowVersion</code> helps detect competing changes and report conflicts.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10a6 6 0 1 1-12 0 6 6 0 0 1 12 0Zm-2 4 6 6" /></svg>
+              <h3>Queries and pagination</h3>
+              <p>Book and borrowing queries support pagination, supported sort orders and filters. Book search covers title, ISBN, and author name.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6v5H4zM14 14h6v5h-6zM10 7.5h5a2 2 0 0 1 2 2V14" /></svg>
+              <h3>Versioned routes and rate limits</h3>
+              <p>The controllers use an <code>/api/v1</code> URL prefix. Fixed-window rate limits apply globally, with a tighter policy for authentication.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-6 4 12 3-6h4" /></svg>
+              <h3>Errors, logs and health</h3>
+              <p>Problem Details responses carry a trace ID on the implemented error paths. Serilog logs requests, and separate liveness and database-readiness checks support operations.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="case-section" id="patterns" aria-labelledby="patterns-title">
+          <h2 id="patterns-title">Architecture and design patterns</h2>
+          <dl class="case-definitions">
+            <div><dt>Onion-style architecture</dt><dd>Domain has no project references. The application services use contracts and entities, while the host and infrastructure handle HTTP, EF Core, identity, and external services. This keeps the business logic independent of HTTP and EF Core types.</dd></div>
+            <div><dt>Repository Pattern</dt><dd>Domain defines repository interfaces for books, authors, categories, and borrowings. Persistence implements EF Core queries, keeping data access and filtering out of the controllers.</dd></div>
+            <div><dt>Unit of Work</dt><dd><code>IUnitOfWork</code> gives services a common boundary for repository changes. The implementation commits through a single <code>ApplicationDbContext</code>, so checkout can save the record and inventory update together.</dd></div>
+            <div><dt>Result Pattern</dt><dd><code>Result</code> and <code>Result&lt;T&gt;</code> carry expected failures from services. The base controller maps those errors to HTTP statuses and Problem Details.</dd></div>
+            <div><dt>Dependency injection</dt><dd>The API calls the persistence and application registration methods at startup. Controllers receive services through constructor injection, and services receive repository, identity, email, and storage interfaces.</dd></div>
+            <div><dt>SOLID principles in practice</dt><dd>Dependency inversion is visible where borrowing depends on <code>IUnitOfWork</code>. Separating HTTP handling from borrowing rules and EF queries gives those responsibilities distinct places to change.</dd></div>
+          </dl>
+        </section>
+
+        <section class="case-section" id="api-documentation" aria-labelledby="api-title">
+          <h2 id="api-title">API documentation</h2>
+          <div class="case-split">
+            <div class="case-copy">
+              <p>Swagger groups the versioned API by Authentication, Authors, Books, Borrowing, Categories, and Users. The OpenAPI document describes routes, methods, parameters, request bodies, and response schemas where defined.</p>
+              <p>Swagger supports JWT bearer authorization. Refresh and revoke flows use the HttpOnly cookie, so the repository documents Postman with a cookie jar for those checks.</p>
+              <div class="case-actions"><a class="button button-primary" href="https://library-management-api.runasp.net/swagger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6m0-6-9 9m0-9H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4" /></svg> Live Swagger</a></div>
+              <p class="case-evidence">Source <a href="https://library-management-api.runasp.net/swagger/v1/swagger.json">Deployed OpenAPI document</a></p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/swagger.webp" data-image-viewer aria-label="Enlarge Swagger / OpenAPI Documentation">
+                <img src="../assets/images/projects/library/swagger.webp" width="1852" height="968" alt="Actual Swagger UI capture showing versioned authentication and author operations with their HTTP methods." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Swagger / OpenAPI Documentation</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" id="testing" aria-labelledby="testing-title">
+          <h2 id="testing-title">API testing and validation</h2>
+          <div class="case-split">
+            <div class="case-copy">
+              <p>The Postman capture shows a books request returning <code>200 OK</code> with <code>items: []</code>, <code>totalCount: 0</code>, page 1, a page size of 10, and no previous or next page.</p>
+              <p>The checked-in collection organizes health, authentication, users, catalog, borrowing, and cross-cutting requests. Its scripts capture values for later requests and check parts of the HTTP contract. The testing guide also describes manual checks for validation failures, authorization, borrowing limits, competing inventory updates, and error responses.</p>
+              <p>These checks exercise the API through HTTP with Postman or manual requests. The reviewed solution and CI workflow provide no evidence of a separate automated unit or integration test suite, a full regression run, or a coverage result.</p>
+              <p class="case-evidence">Source <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/Docs/TESTING.md">Postman and manual testing guide</a></p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/postman.webp" data-image-viewer aria-label="Enlarge Postman API Testing">
+                <img src="../assets/images/projects/library/postman.webp" width="1917" height="1020" alt="Postman showing the Library books request with a successful 200 response, an empty items array, and pagination metadata." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Postman API Testing</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" id="containerization" aria-labelledby="docker-title">
+          <h2 id="docker-title">Docker and containerization</h2>
+          <p class="case-intro">Docker Compose runs the API, SQL Server 2022, and Mailpit for local development. The public API is hosted separately on IIS.</p>
+          <div class="case-media-grid">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/docker-infrastructure.svg" data-image-viewer aria-label="Enlarge Local Docker infrastructure">
+                <img src="../assets/images/projects/library/docker-infrastructure.svg" width="760" height="382" alt="The local API, SQL Server 2022, and Mailpit share a Compose network. The API uses named volumes for cover images and Data Protection keys. SQL Server uses an external named data volume." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Local Docker infrastructure</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/docker.webp" data-image-viewer aria-label="Enlarge Docker Desktop — Local Development Environment">
+                <img src="../assets/images/projects/library/docker.webp" width="1917" height="1020" alt="Docker Desktop showing three running local services for the Library API, SQL Server 2022, and Mailpit." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Docker Desktop — Local Development Environment</figcaption>
+            </figure>
+          </div>
+          <div class="case-grid case-grid--after">
+            <div>
+              <h3>Build and startup</h3>
+              <p>A multi-stage Dockerfile restores and publishes in the .NET 10 SDK image, then copies the Release output to the ASP.NET runtime image and runs it as a non-root user. Compose connects the services over an external network and waits for SQL Server’s health check before starting the API.</p>
+            </div>
+            <div>
+              <h3>Storage and email</h3>
+              <p>Named volumes hold SQL Server data, uploaded covers, and Data Protection keys. The SQL Server volume is managed outside Compose. In development, MailKit sends to Mailpit so confirmation and password-reset emails can be inspected locally.</p>
+            </div>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/Dockerfile">Dockerfile</a> · <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/compose.yaml">Compose configuration</a></p>
+        </section>
+
+        <section class="case-section" id="delivery" aria-labelledby="delivery-title">
+          <h2 id="delivery-title">CI/CD and cloud deployment</h2>
+          <p class="case-intro">GitHub Actions restores and builds the .NET 10 solution in Release. The production deployment job runs on eligible <code>master</code> events after a successful build.</p>
+          <div class="case-media-grid">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/deployment-pipeline.svg" data-image-viewer aria-label="Enlarge Build, deployment, and verification pipeline">
+                <img src="../assets/images/projects/library/deployment-pipeline.svg" width="760" height="390" alt="Source triggers a GitHub Actions Release build. An eligible master build publishes the API and uses WebDeploy on Windows to deliver to MonsterASP.NET IIS. The workflow checks liveness, readiness, and Swagger over HTTPS." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Build, deployment, and verification pipeline</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/library/cicd.webp" data-image-viewer aria-label="Enlarge GitHub Actions — Automated Build and Deployment">
+                <img src="../assets/images/projects/library/cicd.webp" width="1863" height="972" alt="Successful GitHub Actions run on master showing Restore and Build followed by Deploy to MonsterASP.NET." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>GitHub Actions — Automated Build and Deployment</figcaption>
+            </figure>
+          </div>
+          <div class="case-grid case-grid--after">
+            <div>
+              <h3>Build and release controls</h3>
+              <p>Pushes to <code>master</code> and <code>feature/ci-cd</code>, pull requests targeting <code>master</code>, and manual dispatch can trigger the workflow. Pull requests skip deployment. The Windows job publishes a framework-dependent Release build and uploads it to IIS using WebDeploy.</p>
+            </div>
+            <div>
+              <h3>Hosting and verification</h3>
+              <p>The repository documents MonsterASP.NET IIS hosting with a separate SQL Server 2025 database. After deployment, the workflow expects HTTP 200 from liveness, database readiness, and Swagger over HTTPS. These status checks verify deployment availability.</p>
+            </div>
+          </div>
+          <div class="case-callout">
+            <h3>Public demo limits</h3>
+            <p>The documented free hosting plan has limited resources and no uptime guarantee. Hosted email delivery is unavailable, so use the local Mailpit workflow to validate email confirmation and password reset. The deployment probes cover availability rather than application regression scenarios.</p>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/.github/workflows/ci.yml">GitHub Actions workflow</a> · <a href="https://github.com/mark26504/LibraryManagementAPI/blob/079045485714d6249aabcdaae38a6a55e3c0eaba/README.md">Hosting notes</a></p>
+        </section>
+
+        <section class="case-section" id="challenges" aria-labelledby="challenges-title">
+          <h2 id="challenges-title">Technical challenges and solutions</h2>
+          <dl class="case-definitions">
+            <div><dt>Renewing sessions safely</dt><dd>A reusable refresh token would extend access if copied. The application stores a hash, checks expiry and account status, and issues a replacement while revoking the prior token. This limits reuse of a revoked token and keeps refresh values out of the response body.</dd></div>
+            <div><dt>Keeping inventory consistent</dt><dd>Two requests can see the same last copy before either saves. Checkout updates the book and adds the borrowing record through one save. SQL Server compares the existing <code>RowVersion</code> on book updates, and the service maps a conflicting write to HTTP 409 so the caller can retry against current inventory.</dd></div>
+            <div><dt>Predictable errors</dt><dd>Validation failures, business conflicts, rate limits, and unhandled exceptions can arise at different points in the request. Dedicated handlers shape them as Problem Details, and a trace ID gives callers a value to correlate with logs.</dd></div>
+            <div><dt>Repeatable local checks</dt><dd>Recreating a container can remove its writable state. Named volumes retain development data, uploaded covers, and key material. Mailpit makes it possible to inspect email flows without sending messages to an external inbox.</dd></div>
+            <div><dt>Confirming a deployment is usable</dt><dd>File transfer success alone says little about whether IIS can start the app or reach the database. The workflow checks liveness, readiness, and Swagger and fails verification when a probe does not return HTTP 200.</dd></div>
+          </dl>
+        </section>
+      </article>
+
+      <footer class="case-footer">
+        <nav aria-label="Case study links">
+          <a class="button button-secondary" href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to All Projects</a>
+          <div class="case-actions">
+            <a class="button button-secondary" href="https://github.com/mark26504/LibraryManagementAPI"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> Source Code</a>
+            <a class="button button-secondary" href="https://library-management-api.runasp.net/swagger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6m0-6-9 9m0-9H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4" /></svg> Live Swagger</a>
+          </div>
+        </nav>
+      </footer>
+    </main>
+
+    <dialog class="case-viewer" aria-labelledby="case-viewer-title" aria-describedby="case-viewer-instructions">
+      <header class="case-viewer-header">
+        <h2 id="case-viewer-title">Image viewer</h2>
+        <div class="case-viewer-actions" role="group" aria-label="Image viewing controls">
+          <button type="button" data-zoom-out aria-label="Zoom out"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /></svg></button>
+          <button type="button" data-zoom-reset aria-label="Reset zoom to fit">Fit</button>
+          <button type="button" data-zoom-in aria-label="Zoom in"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14" /></svg></button>
+          <button type="button" data-viewer-close aria-label="Close image viewer" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+        </div>
+      </header>
+      <p class="visually-hidden" id="case-viewer-instructions">When zoomed, use arrow keys, drag, or swipe in the image area to pan. Press Escape to close.</p>
+      <output class="case-viewer-status" aria-live="polite">Fit · 100%</output>
+      <div class="case-viewer-stage" tabindex="0" role="region" aria-label="Scrollable image area">
+        <div class="case-viewer-canvas"></div>
+      </div>
+    </dialog>
+  </body>
+</html>

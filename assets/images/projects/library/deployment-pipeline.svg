@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 390" width="760" height="390" role="img" aria-labelledby="title desc">
+  <title id="title">Library API delivery pipeline</title>
+  <desc id="desc">GitHub events start a .NET 10 Release build on Linux. After a qualifying master build, Windows publishes and WebDeploy sends the API to MonsterASP.NET IIS. Three HTTPS probes verify availability.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="760" height="390" fill="#0b0f1c"/>
+  <text x="36" y="45" fill="#58b9eb" font-family="monospace" font-size="19" letter-spacing="1">GITHUB ACTIONS / DELIVERY</text>
+  <path d="M36 62h688" stroke="#293548"/>
+  <g fill="none" stroke="#58b9eb" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M244 130h43"/><path d="M474 130h43"/>
+    <path d="M622 170v92"/>
+    <path d="M517 302h-43"/><path d="M287 302h-43"/>
+  </g>
+  <g fill="#131b2b" stroke="#3d6b86" stroke-width="1.4">
+    <rect x="36" y="90" width="208" height="80" rx="9"/>
+    <rect x="287" y="90" width="187" height="80" rx="9"/>
+    <rect x="517" y="90" width="207" height="80" rx="9"/>
+    <rect x="517" y="262" width="207" height="80" rx="9"/>
+    <rect x="287" y="262" width="187" height="80" rx="9"/>
+    <rect x="36" y="262" width="208" height="80" rx="9"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, sans-serif">
+    <g fill="#f1f5f9" font-size="21" font-weight="600">
+      <text x="140" y="122">Source code</text><text x="380" y="122">Release build</text>
+      <text x="620" y="122">Publish API</text><text x="620" y="294">WebDeploy</text>
+      <text x="380" y="294">IIS hosting</text><text x="140" y="294">Verify deployment</text>
+    </g>
+    <g fill="#94a3b8" font-size="16">
+      <text x="140" y="146">GitHub events</text><text x="380" y="146">.NET 10 · Linux runner</text>
+      <text x="620" y="146">Eligible master build</text><text x="620" y="318">Windows runner</text>
+      <text x="380" y="318">MonsterASP.NET</text><text x="140" y="318">Three HTTPS probes</text>
+    </g>
+  </g>
+</svg>

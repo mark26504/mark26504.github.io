@@ -33,10 +33,13 @@ Use the shared `.container` for the navbar and portfolio content. The inner cont
 | Path | Responsibility |
 | --- | --- |
 | `index.html` | Document metadata, page landmarks, and portfolio content |
+| `projects/` | Fully expanded, single-page technical case studies |
 | `credits.html` | Artwork sources, copyrights, licenses, and trademark notices |
 | `css/style.css` | Design tokens, reset, typography, and base and component styles |
 | `css/responsive.css` | Mobile-first overrides, including section layouts at `48rem`, `64rem`, and `80rem` |
+| `css/projects.css` | Shared case study layouts, figures, and image viewer styles |
 | `js/main.js` | Deferred entry point for navigation and decorative motion controls |
+| `js/projects.js` | Optional fullscreen image viewer, zoom controls, panning, and focus restoration |
 | `assets/images/` | Images used by the portfolio |
 | `assets/icons/` | Local SVGs and [bundled MIT license texts](assets/icons/credits.txt) |
 | `assets/cv/` | Approved public CV files |
@@ -59,7 +62,14 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Keep About at `#about` below Core Technologies. Use a stacked layout below `64rem` and place the highlights to the right at wider widths. Keep the 36-endpoint figure scoped to the Library Management API.
 - Keep Selected Work at `#projects` below About. Use native horizontal scrolling and scroll snapping, with one complete card on mobile, two from `48rem`, and three from `64rem`. Previous and next move by one card. Keep pagination in sync with the reachable positions. Leave the track usable without JavaScript and respect reduced motion.
 - Store project covers in `assets/images/projects/` as local 4:3 artwork with descriptive alt text and intrinsic dimensions. Verify claims and clearance for any embedded marks before publishing artwork. Use approved screenshots in case studies.
-- Keep Explore Project visibly disabled until the corresponding case study is ready. Once available, link both the card and its Explore Project action to the case study. The planned paths are `projects/library-management.html`, `projects/eatopia.html`, `projects/ecommerce.html`, and `projects/gym-management.html`. Keep the repository and Swagger links independently accessible.
+- The Library Management API cover, title, and Explore Project link open `projects/library-management.html`. Keep Explore Project disabled for Eatopia, E-Commerce, and Gym until their case studies exist. The remaining paths are `projects/eatopia.html`, `projects/ecommerce.html`, and `projects/gym-management.html`. Keep repository and Swagger links independently accessible.
+
+## Case studies
+
+- Keep the sticky project header to two links, MS. on the left and Back to Projects with a left arrow on the right.
+- Reuse the wide portfolio container, visible anchor navigation, shared technology pills, technical sections, and bottom navigation from the Library case study. Present every section, screenshot, and diagram in the normal page flow. Use the image viewer only to enlarge visible figures.
+- Keep screenshots and technical diagrams in the corresponding directory under `assets/images/projects/`. Reuse the homepage cover file. Preserve screenshot text and proportions, publish sanitized copies, and document redactions and asset sources. Use descriptive alt text, explicit dimensions, visible captions, and linked figures that open the media directly if JavaScript is disabled.
+- Verify implementation claims against project files, models, migrations, and deployment configuration. For the Library API, the `net10.0` solution contains seven projects and 36 v1 OpenAPI operations excluding two health probes. Distinguish compile-time references from runtime calls, local Docker from public IIS, and Postman checks from deployment verification and regression testing.
 
 ## Development roadmap
 
@@ -68,7 +78,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 3. Animated Backend Architecture Diagram — complete
 4. Core Technologies — complete
 5. About Me — complete
-6. Featured Projects — Phase 6.1 carousel complete, case studies pending
+6. Featured Projects — Phase 6.1 carousel and Phase 6.2 Library case study complete, three case studies pending
 7. Technical Skills
 8. Education and Certifications
 9. GitHub Activity

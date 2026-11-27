@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1260" viewBox="0 0 1800 1260" role="img" aria-labelledby="title desc"><title id="title">Library Management API database schema</title><desc id="desc">Fourteen tables, grouped into Identity and security and Library domain. One-to-many relationships shown by 1 and N. Based on SSMS screenshots.</desc>
+<rect x="0" y="0" width="1800" height="1260" rx="0" fill="#0d111d" stroke="none" stroke-width="1"/>
+<rect x="40" y="35" width="5" height="65" rx="2" fill="#58b9eb" stroke="none" stroke-width="1"/>
+<text x="62" y="55" fill="#58b9eb" font-size="14" font-weight="600" text-anchor="start" font-family="DejaVu Sans Mono, monospace">LIBRARY MANAGEMENT API  /  DATABASE DESIGN</text>
+<text x="62" y="98" fill="#f1f5f9" font-size="36" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">Relational database schema.</text>
+<text x="1740" y="57" fill="#a6b7cc" font-size="15" font-weight="500" text-anchor="end" font-family="DejaVu Sans Mono, monospace">SQL SERVER  /  EF CORE</text>
+<text x="1740" y="91" fill="#a6b7cc" font-size="17" font-weight="400" text-anchor="end" font-family="DejaVu Sans, sans-serif">14 tables  •  12 relationships</text>
+<path d="M40 121H1760" stroke="#293548"/>
+<rect x="40" y="145" width="1030" height="1030" rx="14" fill="#101725" stroke="#28384c" stroke-width="1"/>
+<rect x="1100" y="145" width="660" height="1030" rx="14" fill="#101725" stroke="#28384c" stroke-width="1"/>
+<text x="60" y="174" fill="#58b9eb" font-size="14" font-weight="600" text-anchor="start" font-family="DejaVu Sans Mono, monospace">01 / IDENTITY, SECURITY &amp; EF METADATA</text>
+<text x="1120" y="174" fill="#58b9eb" font-size="14" font-weight="600" text-anchor="start" font-family="DejaVu Sans Mono, monospace">02 / LIBRARY DOMAIN</text>
+<path d="M420 270 L350 270" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="420" cy="270" r="3" fill="#61b9e4"/>
+<circle cx="350" cy="270" r="3" fill="#61b9e4"/>
+<rect x="399" y="250" width="18" height="17" rx="4" fill="#101725"/>
+<text x="408" y="263" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="353" y="250" width="18" height="17" rx="4" fill="#101725"/>
+<text x="362" y="263" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M420 450 L350 450" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="420" cy="450" r="3" fill="#61b9e4"/>
+<circle cx="350" cy="450" r="3" fill="#61b9e4"/>
+<rect x="399" y="430" width="18" height="17" rx="4" fill="#101725"/>
+<text x="408" y="443" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="353" y="430" width="18" height="17" rx="4" fill="#101725"/>
+<text x="362" y="443" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M420 630 L350 630" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="420" cy="630" r="3" fill="#61b9e4"/>
+<circle cx="350" cy="630" r="3" fill="#61b9e4"/>
+<rect x="399" y="610" width="18" height="17" rx="4" fill="#101725"/>
+<text x="408" y="623" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="353" y="610" width="18" height="17" rx="4" fill="#101725"/>
+<text x="362" y="623" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M720 500 L775 500" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="720" cy="500" r="3" fill="#61b9e4"/>
+<circle cx="775" cy="500" r="3" fill="#61b9e4"/>
+<rect x="722" y="480" width="18" height="17" rx="4" fill="#101725"/>
+<text x="731" y="493" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="755" y="480" width="18" height="17" rx="4" fill="#101725"/>
+<text x="764" y="493" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M570 694 L570 820" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="570" cy="694" r="3" fill="#61b9e4"/>
+<circle cx="570" cy="820" r="3" fill="#61b9e4"/>
+<rect x="577" y="698" width="18" height="17" rx="4" fill="#101725"/>
+<text x="586" y="711" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="577" y="799" width="18" height="17" rx="4" fill="#101725"/>
+<text x="586" y="812" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M350 865 L420 865" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="350" cy="865" r="3" fill="#61b9e4"/>
+<circle cx="420" cy="865" r="3" fill="#61b9e4"/>
+<rect x="353" y="845" width="18" height="17" rx="4" fill="#101725"/>
+<text x="362" y="858" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="399" y="845" width="18" height="17" rx="4" fill="#101725"/>
+<text x="408" y="858" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M205 958 L205 1020" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="205" cy="958" r="3" fill="#61b9e4"/>
+<circle cx="205" cy="1020" r="3" fill="#61b9e4"/>
+<rect x="211" y="962" width="18" height="17" rx="4" fill="#101725"/>
+<text x="220" y="975" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="211" y="999" width="18" height="17" rx="4" fill="#101725"/>
+<text x="220" y="1012" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M570 220 L570 194 L1270 194 L1270 220" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="570" cy="220" r="3" fill="#61b9e4"/>
+<circle cx="1270" cy="220" r="3" fill="#61b9e4"/>
+<rect x="576" y="199" width="18" height="17" rx="4" fill="#101725"/>
+<text x="585" y="212" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="1277" y="199" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1286" y="212" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M1270 530 L1270 463" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="1270" cy="530" r="3" fill="#61b9e4"/>
+<circle cx="1270" cy="463" r="3" fill="#61b9e4"/>
+<rect x="1276" y="509" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1285" y="522" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="1276" y="467" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1285" y="480" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M1420 840 L1480 840" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="1420" cy="840" r="3" fill="#61b9e4"/>
+<circle cx="1480" cy="840" r="3" fill="#61b9e4"/>
+<rect x="1423" y="820" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1432" y="833" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="1459" y="820" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1468" y="833" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M1610 710 L1610 810" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="1610" cy="710" r="3" fill="#61b9e4"/>
+<circle cx="1610" cy="810" r="3" fill="#61b9e4"/>
+<rect x="1616" y="714" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1625" y="727" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="1616" y="789" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1625" y="802" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<path d="M1270 975 L1270 857" fill="none" stroke="#61b9e4" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="1270" cy="975" r="3" fill="#61b9e4"/>
+<circle cx="1270" cy="857" r="3" fill="#61b9e4"/>
+<rect x="1276" y="954" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1285" y="967" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1</text>
+<rect x="1276" y="861" width="18" height="17" rx="4" fill="#101725"/>
+<text x="1285" y="874" fill="#a5dcf8" font-size="12" font-weight="700" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">N</text>
+<rect x="420" y="220" width="300" height="474" rx="9" fill="#141e2d" stroke="#3b5973" stroke-width="1.2"/>
+<rect x="421" y="221" width="298" height="41" rx="0" fill="#1b3043" stroke="8" stroke-width="1"/>
+<rect x="421" y="252" width="298" height="10" rx="0" fill="#1b3043" stroke="none" stroke-width="1"/>
+<text x="433" y="247" fill="#58b9eb" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetUsers</text>
+<path d="M420 262h300" stroke="#34465b"/>
+<text x="432" y="280" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="484" y="280" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="484" y="301" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FirstName</text>
+<text x="484" y="322" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">LastName</text>
+<text x="484" y="343" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">IsActive</text>
+<text x="484" y="364" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CreatedAt</text>
+<text x="484" y="385" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UpdatedAt</text>
+<text x="484" y="406" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserName</text>
+<text x="484" y="427" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">NormalizedUserName</text>
+<text x="484" y="448" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Email</text>
+<text x="484" y="469" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">NormalizedEmail</text>
+<text x="484" y="490" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">EmailConfirmed</text>
+<text x="484" y="511" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PasswordHash</text>
+<text x="484" y="532" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">SecurityStamp</text>
+<text x="484" y="553" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ConcurrencyStamp</text>
+<text x="484" y="574" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PhoneNumber</text>
+<text x="484" y="595" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PhoneNumberConfirmed</text>
+<text x="484" y="616" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">TwoFactorEnabled</text>
+<text x="484" y="637" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">LockoutEnd</text>
+<text x="484" y="658" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">LockoutEnabled</text>
+<text x="484" y="679" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">AccessFailedCount</text>
+<rect x="60" y="220" width="290" height="138" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="61" y="221" width="288" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="61" y="252" width="288" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="73" y="247" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetUserClaims</text>
+<path d="M60 262h290" stroke="#34465b"/>
+<text x="72" y="280" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="280" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="72" y="301" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="124" y="301" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserId</text>
+<text x="124" y="322" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ClaimType</text>
+<text x="124" y="343" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ClaimValue</text>
+<rect x="60" y="400" width="290" height="138" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="61" y="401" width="288" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="61" y="432" width="288" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="73" y="427" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetUserTokens</text>
+<path d="M60 442h290" stroke="#34465b"/>
+<text x="72" y="460" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK/FK</text>
+<text x="124" y="460" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserId</text>
+<text x="72" y="481" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="481" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">LoginProvider</text>
+<text x="72" y="502" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="502" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Name</text>
+<text x="124" y="523" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Value</text>
+<rect x="60" y="580" width="290" height="138" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="61" y="581" width="288" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="61" y="612" width="288" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="73" y="607" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetUserLogins</text>
+<path d="M60 622h290" stroke="#34465b"/>
+<text x="72" y="640" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="640" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">LoginProvider</text>
+<text x="72" y="661" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="661" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ProviderKey</text>
+<text x="124" y="682" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ProviderDisplayName</text>
+<text x="72" y="703" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="124" y="703" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserId</text>
+<rect x="60" y="820" width="290" height="138" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="61" y="821" width="288" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="61" y="852" width="288" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="73" y="847" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetRoles</text>
+<path d="M60 862h290" stroke="#34465b"/>
+<text x="72" y="880" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="880" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="124" y="901" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Name</text>
+<text x="124" y="922" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">NormalizedName</text>
+<text x="124" y="943" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ConcurrencyStamp</text>
+<rect x="420" y="820" width="300" height="96" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="421" y="821" width="298" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="421" y="852" width="298" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="433" y="847" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetUserRoles</text>
+<path d="M420 862h300" stroke="#34465b"/>
+<text x="432" y="880" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK/FK</text>
+<text x="484" y="880" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserId</text>
+<text x="432" y="901" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK/FK</text>
+<text x="484" y="901" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">RoleId</text>
+<rect x="60" y="1020" width="290" height="138" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="61" y="1021" width="288" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="61" y="1052" width="288" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="73" y="1047" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">AspNetRoleClaims</text>
+<path d="M60 1062h290" stroke="#34465b"/>
+<text x="72" y="1080" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="124" y="1080" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="72" y="1101" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="124" y="1101" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">RoleId</text>
+<text x="124" y="1122" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ClaimType</text>
+<text x="124" y="1143" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ClaimValue</text>
+<rect x="775" y="450" width="275" height="201" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="776" y="451" width="273" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="776" y="482" width="273" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="788" y="477" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">RefreshTokens</text>
+<path d="M775 492h275" stroke="#34465b"/>
+<text x="787" y="510" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="839" y="510" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="839" y="531" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">TokenHash</text>
+<text x="839" y="552" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CreatedAt</text>
+<text x="839" y="573" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ExpiresAt</text>
+<text x="839" y="594" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">RevokedAt</text>
+<text x="839" y="615" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ReplacedByTokenHash</text>
+<text x="787" y="636" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="839" y="636" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserId</text>
+<rect x="775" y="1030" width="275" height="96" rx="9" fill="#141e2d" stroke="#34465b" stroke-width="1.2"/>
+<rect x="776" y="1031" width="273" height="41" rx="0" fill="#1b2738" stroke="8" stroke-width="1"/>
+<rect x="776" y="1062" width="273" height="10" rx="0" fill="#1b2738" stroke="none" stroke-width="1"/>
+<text x="788" y="1057" fill="#a7b9cf" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">__EFMigrationsHistory</text>
+<path d="M775 1072h275" stroke="#34465b"/>
+<text x="787" y="1090" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="839" y="1090" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">MigrationId</text>
+<text x="839" y="1111" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ProductVersion</text>
+<rect x="1120" y="220" width="300" height="243" rx="9" fill="#141e2d" stroke="#3b5973" stroke-width="1.2"/>
+<rect x="1121" y="221" width="298" height="41" rx="0" fill="#1b3043" stroke="8" stroke-width="1"/>
+<rect x="1121" y="252" width="298" height="10" rx="0" fill="#1b3043" stroke="none" stroke-width="1"/>
+<text x="1133" y="247" fill="#58b9eb" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">BorrowingRecords</text>
+<path d="M1120 262h300" stroke="#34465b"/>
+<text x="1132" y="280" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="1184" y="280" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="1184" y="301" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">BorrowedAt</text>
+<text x="1184" y="322" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">DueDate</text>
+<text x="1184" y="343" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ReturnedAt</text>
+<text x="1184" y="364" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Status</text>
+<text x="1184" y="385" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CreatedAt</text>
+<text x="1184" y="406" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UpdatedAt</text>
+<text x="1132" y="427" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="1184" y="427" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">BookId</text>
+<text x="1132" y="448" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="1184" y="448" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UserId</text>
+<rect x="1120" y="530" width="300" height="327" rx="9" fill="#141e2d" stroke="#3b5973" stroke-width="1.2"/>
+<rect x="1121" y="531" width="298" height="41" rx="0" fill="#1b3043" stroke="8" stroke-width="1"/>
+<rect x="1121" y="562" width="298" height="10" rx="0" fill="#1b3043" stroke="none" stroke-width="1"/>
+<text x="1133" y="557" fill="#58b9eb" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">Books</text>
+<path d="M1120 572h300" stroke="#34465b"/>
+<text x="1132" y="590" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="1184" y="590" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="1184" y="611" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Title</text>
+<text x="1184" y="632" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ISBN</text>
+<text x="1184" y="653" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Description</text>
+<text x="1184" y="674" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PublicationDate</text>
+<text x="1184" y="695" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">TotalCopies</text>
+<text x="1184" y="716" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">AvailableCopies</text>
+<text x="1184" y="737" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CoverImageUrl</text>
+<text x="1184" y="758" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">IsActive</text>
+<text x="1184" y="779" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CreatedAt</text>
+<text x="1184" y="800" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UpdatedAt</text>
+<text x="1184" y="821" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">RowVersion</text>
+<text x="1132" y="842" fill="#80c9ef" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="1184" y="842" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CategoryId</text>
+<rect x="1480" y="530" width="260" height="180" rx="9" fill="#141e2d" stroke="#3b5973" stroke-width="1.2"/>
+<rect x="1481" y="531" width="258" height="41" rx="0" fill="#1b3043" stroke="8" stroke-width="1"/>
+<rect x="1481" y="562" width="258" height="10" rx="0" fill="#1b3043" stroke="none" stroke-width="1"/>
+<text x="1493" y="557" fill="#58b9eb" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">Authors</text>
+<path d="M1480 572h260" stroke="#34465b"/>
+<text x="1492" y="590" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="1544" y="590" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="1544" y="611" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Name</text>
+<text x="1544" y="632" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Biography</text>
+<text x="1544" y="653" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">IsActive</text>
+<text x="1544" y="674" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CreatedAt</text>
+<text x="1544" y="695" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UpdatedAt</text>
+<rect x="1480" y="810" width="260" height="96" rx="9" fill="#141e2d" stroke="#3b5973" stroke-width="1.2"/>
+<rect x="1481" y="811" width="258" height="41" rx="0" fill="#1b3043" stroke="8" stroke-width="1"/>
+<rect x="1481" y="842" width="258" height="10" rx="0" fill="#1b3043" stroke="none" stroke-width="1"/>
+<text x="1493" y="837" fill="#58b9eb" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">BookAuthors</text>
+<path d="M1480 852h260" stroke="#34465b"/>
+<text x="1492" y="870" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK/FK</text>
+<text x="1544" y="870" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">BookId</text>
+<text x="1492" y="891" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK/FK</text>
+<text x="1544" y="891" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">AuthorId</text>
+<rect x="1120" y="975" width="300" height="180" rx="9" fill="#141e2d" stroke="#3b5973" stroke-width="1.2"/>
+<rect x="1121" y="976" width="298" height="41" rx="0" fill="#1b3043" stroke="8" stroke-width="1"/>
+<rect x="1121" y="1007" width="298" height="10" rx="0" fill="#1b3043" stroke="none" stroke-width="1"/>
+<text x="1133" y="1002" fill="#58b9eb" font-size="16" font-weight="700" text-anchor="start" font-family="DejaVu Sans, sans-serif">Categories</text>
+<path d="M1120 1017h300" stroke="#34465b"/>
+<text x="1132" y="1035" fill="#f4ca78" font-size="10.5" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="1184" y="1035" fill="#e1e9f4" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Id</text>
+<text x="1184" y="1056" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Name</text>
+<text x="1184" y="1077" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">Description</text>
+<text x="1184" y="1098" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">IsActive</text>
+<text x="1184" y="1119" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">CreatedAt</text>
+<text x="1184" y="1140" fill="#acbed0" font-size="14.5" font-weight="400" text-anchor="start" font-family="DejaVu Sans Mono, monospace">UpdatedAt</text>
+<path d="M40 1193H1760" stroke="#293548"/>
+<text x="42" y="1224" fill="#f4ca78" font-size="13" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">PK</text>
+<text x="73" y="1224" fill="#a6b7cc" font-size="14" font-weight="400" text-anchor="start" font-family="DejaVu Sans, sans-serif">Primary key</text>
+<text x="194" y="1224" fill="#80c9ef" font-size="13" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">FK</text>
+<text x="225" y="1224" fill="#a6b7cc" font-size="14" font-weight="400" text-anchor="start" font-family="DejaVu Sans, sans-serif">Foreign key</text>
+<text x="350" y="1224" fill="#a5dcf8" font-size="14" font-weight="700" text-anchor="start" font-family="DejaVu Sans Mono, monospace">1 — N</text>
+<text x="417" y="1224" fill="#a6b7cc" font-size="14" font-weight="400" text-anchor="start" font-family="DejaVu Sans, sans-serif">One-to-many (maximum cardinality)</text>
+<text x="1758" y="1224" fill="#a6b7cc" font-size="14" font-weight="400" text-anchor="end" font-family="DejaVu Sans, sans-serif">Reconstructed from SSMS  •  Column types and optionality not shown</text>
+</svg>
