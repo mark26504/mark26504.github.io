@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="494" viewBox="0 0 760 494" role="img" aria-labelledby="title desc">
+  <title id="title">Eatopia direct project references</title>
+  <desc id="desc">Eatopia.Api references Application and Infrastructure. Infrastructure references Application and Domain. Application references Domain.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <rect width="760" height="494" fill="#0b0f1c" />
+  <rect width="760" height="494" fill="url(#grid)" />
+  <path d="M34 79h692" stroke="#293548" />
+  <text x="36" y="41" fill="#58b9eb" font-size="19" font-family="monospace" letter-spacing="1">COMPILE-TIME REFERENCES</text>
+  <text x="36" y="65" fill="#94a3b8" font-size="15" font-family="system-ui, sans-serif">Arrow points from the referencing project to its dependency.</text>
+  <g fill="none" stroke="#58b9eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M310 177v22H183v31" />
+    <path d="M450 177v22h127v31" />
+    <path d="M438 268H322" />
+    <path d="M183 308v39h125v36" />
+    <path d="M577 308v39H452v36" />
+  </g>
+  <g fill="#131b2b" stroke="#3d6b86" stroke-width="1.4">
+    <rect x="240" y="99" width="280" height="78" rx="9" />
+    <rect x="44" y="230" width="278" height="78" rx="9" />
+    <rect x="438" y="230" width="278" height="78" rx="9" />
+    <rect x="240" y="383" width="280" height="78" rx="9" />
+  </g>
+  <g text-anchor="middle" font-family="system-ui, sans-serif">
+    <g fill="#f1f5f9" font-size="22" font-weight="600">
+      <text x="380" y="131">Eatopia.Api</text>
+      <text x="183" y="262">Eatopia.Application</text>
+      <text x="577" y="262">Eatopia.Infrastructure</text>
+      <text x="380" y="415">Eatopia.Domain</text>
+    </g>
+    <g fill="#94a3b8" font-size="16">
+      <text x="380" y="156">HTTP, SignalR, and composition</text>
+      <text x="183" y="287">DTOs and AI integration contract</text>
+      <text x="577" y="287">Services, EF Core, and adapters</text>
+      <text x="380" y="440">Entities and shared domain types</text>
+    </g>
+  </g>
+</svg>

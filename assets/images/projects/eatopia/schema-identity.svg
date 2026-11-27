@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1193" viewBox="0 0 960 1193" role="img" aria-labelledby="title desc">
+  <title id="title">Identity and security</title>
+  <desc id="desc">Identity and security. Tables and columns from migrations, repair SQL, and EF model. Solid arrows are migration foreign keys. Dashed arrows are EF mappings without a corresponding public DDL constraint.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0v30" fill="none" stroke="#293548" opacity=".36" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 7 4-7 4" fill="none" stroke="#58b9eb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #345570; stroke-width: 1.4; }
+    .row { font-size: 17px; fill: #f1f5f9; }
+    .key { font-size: 13px; font-weight: 700; }
+    .relation { font-size: 15px; fill: #58b9eb; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 1.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="960" height="1193" fill="#0b0f1c" />
+  <rect width="960" height="1193" fill="url(#grid)" />
+  <path d="M28 104H932" stroke="#293548" />
+  <text class="mono" x="28" y="32" fill="#58b9eb" font-size="17" letter-spacing="1.25">EATOPIA / SQL SERVER</text>
+  <text class="sans" x="28" y="69" fill="#f1f5f9" font-size="31" font-weight="700">Identity and security</text>
+  <text class="sans" x="28" y="93" fill="#94a3b8" font-size="15">4 tables · Columns and key references</text>
+  <g aria-label="Users">
+    <rect class="panel" x="28" y="126" width="904" height="601" rx="9" />
+    <path d="M29 168V135q0-8 8-8h886q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="43" y="154" fill="#58b9eb" font-weight="700" font-size="20">Users</text>
+    <path d="M480 179v537" stroke="#293548" />
+    <text class="mono row" x="77" y="189">Username</text>
+    <text class="mono row" x="77" y="215">BirthDate</text>
+    <text class="mono row" x="77" y="241">Location</text>
+    <text class="mono row" x="77" y="267">Phone</text>
+    <text class="mono row" x="77" y="293">ProfileImageUrl</text>
+    <text class="mono row" x="77" y="319">Age</text>
+    <text class="mono row" x="77" y="345">WeightKg</text>
+    <text class="mono row" x="77" y="371">HeightCm</text>
+    <text class="mono row" x="77" y="397">Gender</text>
+    <text class="mono row" x="77" y="423">ActivityLevel</text>
+    <text class="mono row" x="77" y="449">Goal</text>
+    <text class="mono row" x="77" y="475">Role</text>
+    <text class="mono row" x="77" y="501">IsBanned</text>
+    <text class="mono row" x="77" y="527">BannedAt</text>
+    <text class="mono row" x="77" y="553">BannedReason</text>
+    <text class="mono row" x="77" y="579">AuthProvider</text>
+    <text class="mono row" x="77" y="605">EmailConfirmed</text>
+    <text class="mono row" x="77" y="631">ExternalProviderId</text>
+    <text class="mono row" x="77" y="657">LastSeenAt</text>
+    <text class="mono row" x="77" y="683">EmailConfirmedAt</text>
+    <text class="mono row" x="77" y="709">EmailConfirmationTokenHash</text>
+    <text class="mono row" x="529" y="189">EmailConfirmationTokenExpiresAt</text>
+    <text class="mono row" x="529" y="215">LastEmailConfirmationSentAt</text>
+    <text class="mono row" x="529" y="241">FailedLoginAttemptCount</text>
+    <text class="mono row" x="529" y="267">LoginLockoutEndAt</text>
+    <text class="mono row" x="529" y="293">JwtTokenVersion</text>
+    <text class="mono row" x="529" y="319">NotificationsEnabled</text>
+    <text class="mono row" x="529" y="345">MessageNotificationsEnabled</text>
+    <text class="mono row" x="529" y="371">CommunityNotificationsEnabled</text>
+    <text class="mono row" x="529" y="397">EmailNotificationsEnabled</text>
+    <text class="mono row" x="529" y="423">ProfileVisibility</text>
+    <text class="mono row" x="529" y="449">PostsVisibility</text>
+    <text class="mono row" x="529" y="475">ShowOnlineStatus</text>
+    <text class="mono row" x="529" y="501">ShowLastSeen</text>
+    <text class="mono row" x="529" y="527">AllowMessageRequests</text>
+    <text class="mono row" x="529" y="553">AllowSearchByEmail</text>
+    <text class="mono key" x="495" y="579" fill="#f4ca78">PK</text>
+    <text class="mono row" x="529" y="579">Id</text>
+    <text class="mono row" x="529" y="605">Email</text>
+    <text class="mono row" x="529" y="631">PasswordHash</text>
+    <text class="mono row" x="529" y="657">Name</text>
+    <text class="mono row" x="529" y="683">CreatedAt</text>
+  </g>
+  <g aria-label="PasswordResetCodes">
+    <rect class="panel" x="28" y="749" width="442" height="289" rx="9" />
+    <path d="M29 791V758q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="43" y="777" fill="#58b9eb" font-weight="700" font-size="20">PasswordResetCodes</text>
+    <text class="mono key" x="43" y="812" fill="#f4ca78">PK</text>
+    <text class="mono row" x="77" y="812">Id</text>
+    <text class="mono key" x="43" y="838" fill="#58b9eb">EF</text>
+    <text class="mono row" x="77" y="838">UserId</text>
+    <path class="connector" d="M148 833H373" stroke-dasharray="4 4" />
+    <text class="mono relation" text-anchor="end" x="456" y="838">Users.Id</text>
+    <text class="mono row" x="77" y="864">CodeHash</text>
+    <text class="mono row" x="77" y="890">ExpiresAt</text>
+    <text class="mono row" x="77" y="916">UsedAt</text>
+    <text class="mono row" x="77" y="942">IsUsed</text>
+    <text class="mono row" x="77" y="968">AttemptCount</text>
+    <text class="mono row" x="77" y="994">LastAttemptAt</text>
+    <text class="mono row" x="77" y="1020">CreatedAt</text>
+  </g>
+  <g aria-label="RefreshTokens">
+    <rect class="panel" x="490" y="749" width="442" height="237" rx="9" />
+    <path d="M491 791V758q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="505" y="777" fill="#58b9eb" font-weight="700" font-size="20">RefreshTokens</text>
+    <text class="mono key" x="505" y="812" fill="#f4ca78">PK</text>
+    <text class="mono row" x="539" y="812">Id</text>
+    <text class="mono key" x="505" y="838" fill="#58b9eb">EF</text>
+    <text class="mono row" x="539" y="838">UserId</text>
+    <path class="connector" d="M610 833H835" stroke-dasharray="4 4" />
+    <text class="mono relation" text-anchor="end" x="918" y="838">Users.Id</text>
+    <text class="mono row" x="539" y="864">TokenHash</text>
+    <text class="mono row" x="539" y="890">ExpiresAt</text>
+    <text class="mono row" x="539" y="916">RevokedAt</text>
+    <text class="mono row" x="539" y="942">ReplacedByTokenHash</text>
+    <text class="mono row" x="539" y="968">CreatedAt</text>
+  </g>
+  <g aria-label="__EFMigrationsHistory">
+    <rect class="panel" x="490" y="1006" width="442" height="107" rx="9" />
+    <path d="M491 1048V1015q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="505" y="1034" fill="#58b9eb" font-weight="700" font-size="20">__EFMigrationsHistory</text>
+    <text class="mono key" x="505" y="1069" fill="#f4ca78">PK</text>
+    <text class="mono row" x="539" y="1069">MigrationId</text>
+    <text class="mono row" x="539" y="1095">ProductVersion</text>
+  </g>
+  <path d="M28 1142h904" stroke="#293548" />
+  <text class="mono" x="28" y="1171" font-size="15" fill="#f4ca78">PK  Primary key</text>
+  <text class="mono" x="240" y="1171" font-size="15" fill="#58b9eb">FK  Migration constraint</text>
+  <text class="mono" x="540" y="1171" font-size="15" fill="#58b9eb">EF  Model mapping only</text>
+</svg>

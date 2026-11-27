@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="628" viewBox="0 0 1140 628" role="img" aria-labelledby="title desc">
+  <title id="title">Eatopia database</title>
+  <desc id="desc">Complete module inventory with 28 application tables and the EF Core migrations history table. Module diagrams list columns and foreign-key evidence.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0v30" fill="none" stroke="#293548" opacity=".36" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 7 4-7 4" fill="none" stroke="#58b9eb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #345570; stroke-width: 1.4; }
+    .row { font-size: 17px; fill: #f1f5f9; }
+    .key { font-size: 13px; font-weight: 700; }
+    .relation { font-size: 15px; fill: #58b9eb; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 1.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="1140" height="628" fill="#0b0f1c" />
+  <rect width="1140" height="628" fill="url(#grid)" />
+  <path d="M28 104H1112" stroke="#293548" />
+  <text class="mono" x="28" y="32" fill="#58b9eb" font-size="17" letter-spacing="1.25">EATOPIA / RELATIONAL SCHEMA</text>
+  <text class="sans" x="28" y="69" fill="#f1f5f9" font-size="31" font-weight="700">Eatopia database</text>
+  <text class="sans" x="28" y="93" fill="#94a3b8" font-size="15">28 application tables + EF migration history · Seven modules</text>
+  <g>
+    <rect class="panel" x="28" y="127" width="352" height="173" rx="9" />
+    <text class="sans" x="43" y="159" fill="#58b9eb" font-size="20" font-weight="650">Identity and security</text>
+    <path d="M43 170h322" stroke="#293548" />
+    <text class="mono row" x="44" y="193">Users</text>
+    <text class="mono row" x="44" y="220">PasswordResetCodes</text>
+    <text class="mono row" x="44" y="247">RefreshTokens</text>
+    <text class="mono row" x="44" y="274">__EFMigrationsHistory</text>
+  </g>
+  <g>
+    <rect class="panel" x="394" y="127" width="352" height="200" rx="9" />
+    <text class="sans" x="409" y="159" fill="#58b9eb" font-size="20" font-weight="650">Nutrition and diet plans</text>
+    <path d="M409 170h322" stroke="#293548" />
+    <text class="mono row" x="410" y="193">DietPlans</text>
+    <text class="mono row" x="410" y="220">UserPlans</text>
+    <text class="mono row" x="410" y="247">DietPlanItems</text>
+    <text class="mono row" x="410" y="274">UserAllergies</text>
+    <text class="mono row" x="410" y="301">UserDislikedFoods</text>
+  </g>
+  <g>
+    <rect class="panel" x="760" y="127" width="352" height="173" rx="9" />
+    <text class="sans" x="775" y="159" fill="#58b9eb" font-size="20" font-weight="650">Recipes and meal tracking</text>
+    <path d="M775 170h322" stroke="#293548" />
+    <text class="mono row" x="776" y="193">Recipes</text>
+    <text class="mono row" x="776" y="220">RecipeSaved</text>
+    <text class="mono row" x="776" y="247">FoodItems</text>
+    <text class="mono row" x="776" y="274">MealLogs</text>
+  </g>
+  <g>
+    <rect class="panel" x="28" y="315" width="352" height="227" rx="9" />
+    <text class="sans" x="43" y="347" fill="#58b9eb" font-size="20" font-weight="650">Community and social interactions</text>
+    <path d="M43 358h322" stroke="#293548" />
+    <text class="mono row" x="44" y="381">CommunityPosts</text>
+    <text class="mono row" x="44" y="408">Comments</text>
+    <text class="mono row" x="44" y="435">PostLikes</text>
+    <text class="mono row" x="44" y="462">UserFollows</text>
+    <text class="mono row" x="44" y="489">UserBlocks</text>
+    <text class="mono row" x="44" y="516">HiddenPosts</text>
+  </g>
+  <g>
+    <rect class="panel" x="760" y="315" width="352" height="146" rx="9" />
+    <text class="sans" x="775" y="347" fill="#58b9eb" font-size="20" font-weight="650">Chat and messaging</text>
+    <path d="M775 358h322" stroke="#293548" />
+    <text class="mono row" x="776" y="381">ChatThreads</text>
+    <text class="mono row" x="776" y="408">ChatParticipants</text>
+    <text class="mono row" x="776" y="435">ChatMessages</text>
+  </g>
+  <g>
+    <rect class="panel" x="394" y="342" width="352" height="200" rx="9" />
+    <text class="sans" x="409" y="374" fill="#58b9eb" font-size="20" font-weight="650">Medication and water tracking</text>
+    <path d="M409 385h322" stroke="#293548" />
+    <text class="mono row" x="410" y="408">Medications</text>
+    <text class="mono row" x="410" y="435">MedicationSchedules</text>
+    <text class="mono row" x="410" y="462">WaterGoals</text>
+    <text class="mono row" x="410" y="489">WaterLogs</text>
+    <text class="mono row" x="410" y="516">WaterReminders</text>
+  </g>
+  <g>
+    <rect class="panel" x="760" y="476" width="352" height="119" rx="9" />
+    <text class="sans" x="775" y="508" fill="#58b9eb" font-size="20" font-weight="650">Notifications and moderation</text>
+    <path d="M775 519h322" stroke="#293548" />
+    <text class="mono row" x="776" y="542">Notifications</text>
+    <text class="mono row" x="776" y="569">ContentReports</text>
+  </g>
+</svg>

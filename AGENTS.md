@@ -41,6 +41,7 @@ Use the shared `.container` for the navbar and portfolio content. The inner cont
 | `js/main.js` | Deferred entry point for navigation and decorative motion controls |
 | `js/projects.js` | Optional fullscreen image viewer, zoom controls, panning, and focus restoration |
 | `assets/images/` | Images used by the portfolio |
+| `assets/videos/` | Approved public video cuts used by case studies |
 | `assets/icons/` | Local SVGs and [bundled MIT license texts](assets/icons/credits.txt) |
 | `assets/cv/` | Approved public CV files |
 
@@ -62,14 +63,18 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Keep About at `#about` below Core Technologies. Use a stacked layout below `64rem` and place the highlights to the right at wider widths. Keep the 36-endpoint figure scoped to the Library Management API.
 - Keep Selected Work at `#projects` below About. Use native horizontal scrolling and scroll snapping, with one complete card on mobile, two from `48rem`, and three from `64rem`. Previous and next move by one card. Keep pagination in sync with the reachable positions. Leave the track usable without JavaScript and respect reduced motion.
 - Store project covers in `assets/images/projects/` as local 4:3 artwork with descriptive alt text and intrinsic dimensions. Verify claims and clearance for any embedded marks before publishing artwork. Use approved screenshots in case studies.
-- The Library Management API cover, title, and Explore Project link open `projects/library-management.html`. Keep Explore Project disabled for Eatopia, E-Commerce, and Gym until their case studies exist. The remaining paths are `projects/eatopia.html`, `projects/ecommerce.html`, and `projects/gym-management.html`. Keep repository and Swagger links independently accessible.
+- The Library Management API cover, title, and Explore Project link open `projects/library-management.html`. Eatopia's Explore Project link opens `projects/eatopia.html`. Keep Explore Project disabled for E-Commerce and Gym until their case studies exist at `projects/ecommerce.html` and `projects/gym-management.html`. Keep repository and Swagger links independently accessible.
 
 ## Case studies
 
 - Keep the sticky project header to two links, MS. on the left and Back to Projects with a left arrow on the right.
 - Reuse the wide portfolio container, visible anchor navigation, shared technology pills, technical sections, and bottom navigation from the Library case study. Present every section, screenshot, and diagram in the normal page flow. Use the image viewer only to enlarge visible figures.
+- Use `.case-main` and `.case-hero` for case study pages. The hero sets the entire top inset in `css/projects.css`, about 24–32px on mobile and 32–48px on desktop. Keep the stack below `64rem` and top-align the copy and cover when side by side.
 - Keep screenshots and technical diagrams in the corresponding directory under `assets/images/projects/`. Reuse the homepage cover file. Preserve screenshot text and proportions, publish sanitized copies, and document redactions and asset sources. Use descriptive alt text, explicit dimensions, visible captions, and linked figures that open the media directly if JavaScript is disabled.
+- Crop only blank space from Solution Explorer captures. Retain the complete header, toolbar, solution and project names, and a small bottom margin. Keep the native image proportions and update the HTML dimensions to match the cropped file.
+- Publish full-length demo exports with sensitive details permanently masked in the video. Preserve the source timing, crop, and audio. Keep originals excluded from Git and link public exports through the native video player with controls, `preload="metadata"`, and no autoplay.
 - Verify implementation claims against project files, models, migrations, and deployment configuration. For the Library API, the `net10.0` solution contains seven projects and 36 v1 OpenAPI operations excluding two health probes. Distinguish compile-time references from runtime calls, local Docker from public IIS, and Postman checks from deployment verification and regression testing.
+- Eatopia targets `net8.0`. Count its v1 operations by HTTP method and route template, excluding unversioned aliases and the SignalR hub. Keep team contributions collaborative. Show database diagrams with migration-backed constraints distinguished from EF model mappings. Keep private source recordings and raw SQL Server reference images out of published assets.
 
 ## Development roadmap
 
@@ -78,7 +83,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 3. Animated Backend Architecture Diagram — complete
 4. Core Technologies — complete
 5. About Me — complete
-6. Featured Projects — Phase 6.1 carousel and Phase 6.2 Library case study complete, three case studies pending
+6. Featured Projects — Phase 6.1 carousel, Phase 6.2 Library case study, and Phase 6.3 Eatopia case study complete
 7. Technical Skills
 8. Education and Certifications
 9. GitHub Activity

@@ -8,3 +8,6 @@ Desktop.ini
 /.vscode/
 *.swp
 *.swo
+
+# Original demo contains account and developer-tools screens
+/assets/videos/eatopia/eatopia-demo.mp4

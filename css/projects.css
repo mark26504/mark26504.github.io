@@ -44,9 +44,14 @@
   flex: none;
 }
 
+.case-main {
+  padding-block-start: 0;
+}
+
 .case-hero {
+  align-items: start;
   gap: clamp(1.75rem, 4.5vw, 4.5rem);
-  padding-block: clamp(2rem, 5vw, 5rem);
+  padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 5rem);
   background: radial-gradient(ellipse at 79% 41%, color-mix(in srgb, var(--color-accent) 9%, transparent), transparent 58%);
 }
 
@@ -263,9 +268,12 @@
 }
 
 .case-image img {
-  inline-size: 100%;
   block-size: auto;
   border-radius: inherit;
+}
+
+.case-figure:not(.case-solution) .case-image img {
+  inline-size: 100%;
 }
 
 .case-enlarge {
@@ -294,6 +302,31 @@
 
 .case-solution {
   max-inline-size: 25rem;
+}
+
+.case-solution .case-image {
+  inline-size: fit-content;
+  max-inline-size: 100%;
+}
+
+.case-video video {
+  inline-size: 100%;
+  block-size: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background-color: var(--color-background);
+  object-fit: contain;
+}
+
+.case-video figcaption {
+  padding-inline-end: 0;
+}
+
+.case-schema-grid {
+  display: grid;
+  align-items: start;
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  margin-block-start: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .case-viewer {
@@ -418,6 +451,10 @@ html:has(.case-viewer[open]) {
 @media (min-width: 64rem) {
   .case-hero {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+
+  .case-schema-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

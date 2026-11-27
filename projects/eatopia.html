@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eatopia API case study for a collaborative graduation project in nutrition, health tracking, AI integration, and community features.">
+    <title>Eatopia API | Mark Sameeh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <script src="../js/projects.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#project-main">Skip to case study</a>
+    <header class="site-header">
+      <div class="container header-inner case-header">
+        <a class="brand" href="../index.html#home" aria-label="Mark Sameeh, home">MS.</a>
+        <nav class="case-header-links" aria-label="Project navigation">
+          <a href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container case-main" id="project-main" tabindex="-1">
+      <article class="case-study" aria-labelledby="case-title">
+        <header class="hero case-hero">
+          <div class="case-hero-copy">
+            <p class="projects-label">PROJECT / 02</p>
+            <h1 id="case-title">Eatopia API<span>.</span></h1>
+            <p class="project-category">Graduation Team Project</p>
+            <p class="case-lead">A backend for a nutrition and wellness platform that combines meal and diet planning, medication and hydration tracking, and a community with real-time messaging.</p>
+            <div class="case-actions">
+              <a class="button button-primary" href="#demo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 11 7-11 7V5Z" /></svg> Watch Demo</a>
+              <a class="button button-secondary" href="https://github.com/mark26504/Eatopia-Backend"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> Source Code</a>
+            </div>
+          </div>
+          <figure class="case-figure case-cover">
+            <a class="case-image" href="../assets/images/projects/eatopia.webp" data-image-viewer aria-label="Enlarge Promotional project cover">
+              <img src="../assets/images/projects/eatopia.webp" width="1448" height="1086" alt="Eatopia promotional poster with a leaf emblem, produce artwork, and callouts for nutrition plans, authentication, and community features." fetchpriority="high">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>Promotional project cover</figcaption>
+          </figure>
+        </header>
+
+        <ul class="about-stats case-stats" role="list" aria-label="Project highlights">
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5" /></svg>
+            <strong class="about-stat-value">4</strong>
+            <span class="about-stat-label">Solution Projects</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2" /></svg>
+            <strong class="about-stat-value">3</strong>
+            <span class="about-stat-label">Backend Team Members</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6v5H4zM14 14h6v5h-6zM10 7.5h5a2 2 0 0 1 2 2V14" /></svg>
+            <strong class="about-stat-value">93</strong>
+            <span class="about-stat-label">Versioned API Operations</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM7 9l3 3-3 3m5 0h5" /></svg>
+            <strong class="about-stat-value">.NET 8</strong>
+            <span class="about-stat-label">Framework</span>
+          </li>
+        </ul>
+        <p class="case-count">The count includes unique HTTP method and route-template pairs under <code>/api/v1</code> in the controller source. Unversioned routes, duplicate aliases, and the SignalR hub are excluded.</p>
+
+        <nav class="case-toc" aria-label="In this case study">
+          <p class="case-label">In this case study</p>
+          <ul role="list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#patterns">Design patterns</a></li>
+            <li><a href="#api-documentation">API documentation</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+          </ul>
+        </nav>
+
+        <section class="case-section" id="overview" aria-labelledby="overview-title">
+          <h2 id="overview-title">Project overview</h2>
+          <div class="case-grid">
+            <div>
+              <h3>Nutrition, reminders, and community</h3>
+              <p>Eatopia brings together recipe discovery, meal logging, diet plans, water intake, and medication schedules. Community feeds and chat give members ways to share posts and communicate within the same application.</p>
+            </div>
+            <div>
+              <h3>Team contribution</h3>
+              <p>I worked as one of three backend developers on this graduation project. We developed the API collaboratively and shared responsibility across modules. This case study describes our team's backend and the integrated application.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="technology" aria-labelledby="technology-title">
+          <h2 id="technology-title">Technology stack</h2>
+          <div class="case-grid">
+            <div>
+              <h3>API and persistence</h3>
+              <ul class="project-tags" role="list">
+                <li>C#</li>
+                <li>.NET 8</li>
+                <li>ASP.NET Core Web API</li>
+                <li>EF Core 8</li>
+                <li>SQL Server</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Authentication and integrations</h3>
+              <ul class="project-tags" role="list">
+                <li>JWT</li>
+                <li>BCrypt</li>
+                <li>SignalR</li>
+                <li>Python integration</li>
+                <li>Serilog</li>
+                <li>Swagger / OpenAPI</li>
+              </ul>
+            </div>
+          </div>
+          <p class="case-evidence">Source <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Api/Eatopia.Api.csproj">API project and target framework</a></p>
+        </section>
+
+        <section class="case-section" id="demo" aria-labelledby="demo-title">
+          <h2 id="demo-title">Project demo</h2>
+          <p class="case-intro">The graduation team's integrated application demonstrates meal scanning and nutrition results, hydration reminders, and a weekly diet plan. The recording shows the frontend and AI integration as part of the team project.</p>
+          <figure class="case-figure case-video">
+            <video controls playsinline preload="metadata" width="1920" height="954" style="aspect-ratio: 1920 / 954" poster="../assets/images/projects/eatopia.webp" aria-label="Eatopia graduation team demo">
+              <source src="../assets/videos/eatopia/eatopia-demo-public.mp4" type="video/mp4">
+              <a href="../assets/videos/eatopia/eatopia-demo-public.mp4">Open the Eatopia demo video</a>.
+            </video>
+            <figcaption>Graduation team project demonstration</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" id="architecture" aria-labelledby="architecture-title">
+          <h2 id="architecture-title">System architecture</h2>
+          <p class="case-intro">Four projects separate the HTTP host, application contracts, domain model, and infrastructure. Arrows in the diagram point from each project to its direct compile-time dependency.</p>
+          <div class="case-architecture-media">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/architecture.svg" data-image-viewer aria-label="Enlarge Direct project references">
+                <img src="../assets/images/projects/eatopia/architecture.svg" width="760" height="494" alt="Eatopia.Api references Application and Infrastructure. Infrastructure references Application and Domain. Application references Domain." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Direct project references</figcaption>
+            </figure>
+            <figure class="case-figure case-solution">
+              <a class="case-image" href="../assets/images/projects/eatopia/solution-explorer.png" data-image-viewer aria-label="Enlarge Visual Studio Solution Explorer">
+                <img src="../assets/images/projects/eatopia/solution-explorer.png" width="357" height="296" alt="Solution Explorer showing the four Eatopia projects Api, Application, Domain, and Infrastructure." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Visual Studio Solution Explorer</figcaption>
+            </figure>
+          </div>
+          <div class="case-callout">
+            <h3>Runtime request flow</h3>
+            <p>ASP.NET Core routes requests to controllers and hosts the SignalR chat hub. Controllers use injected services for workflows such as meal logging and chat. Infrastructure services access SQL Server through <code>EatopiaDbContext</code>, and code that needs AI integration calls <code>IFoodAiClient</code>.</p>
+          </div>
+          <dl class="case-definitions">
+            <div><dt>Eatopia.Api</dt><dd>Defines controllers, the SignalR hub, request middleware, Swagger configuration, and dependency registration.</dd></div>
+            <div><dt>Eatopia.Application</dt><dd>Contains DTOs, shared application helpers, and the food AI client interface.</dd></div>
+            <div><dt>Eatopia.Domain</dt><dd>Contains entities, the shared base entity, and role constants. It has no project references.</dd></div>
+            <div><dt>Eatopia.Infrastructure</dt><dd>Implements services, SQL Server persistence, migrations, schema compatibility work, and external adapters for AI and email.</dd></div>
+          </dl>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/Eatopia.sln">Solution file</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Api/Program.cs">API composition root</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/Eatopia.Infrastructure.csproj">Infrastructure project references</a></p>
+        </section>
+
+        <section class="case-section" id="database" aria-labelledby="database-title">
+          <h2 id="database-title">Database design</h2>
+          <p class="case-intro">The SQL Server overview covers 28 application tables plus EF Core's migration history table. The module diagrams show the column names, primary keys, and relationship evidence from the migrations, schema repair SQL, and current EF model.</p>
+          <figure class="case-figure">
+            <a class="case-image" href="../assets/images/projects/eatopia/schema-overview.svg" data-image-viewer aria-label="Enlarge Eatopia schema overview">
+              <img src="../assets/images/projects/eatopia/schema-overview.svg" width="1140" height="628" alt="All 29 Eatopia and EF metadata tables grouped into seven modules. The diagrams below show columns and key references." loading="lazy" decoding="async">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>Eatopia schema overview</figcaption>
+          </figure>
+          <div class="case-callout">
+            <h3>How to read the relationships</h3>
+            <p><strong>PK</strong> marks a primary key. A solid <strong>FK</strong> arrow points to a target column declared by a checked-in migration. A dashed <strong>EF</strong> arrow shows a model relationship with no matching constraint in the checked-in DDL. For example, the migration constrains <code>Notifications.UserId</code>, and the EF model separately maps <code>ActorUserId</code>. <code>ChatThreads.RequestedByUserId</code> is shown as a scalar column.</p>
+          </div>
+          <div class="case-schema-grid">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-identity.svg" data-image-viewer aria-label="Enlarge Identity and security">
+                <img src="../assets/images/projects/eatopia/schema-identity.svg" width="960" height="1193" alt="Identity and security schema. Tables: Users, PasswordResetCodes, RefreshTokens, __EFMigrationsHistory. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Identity and security</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-nutrition.svg" data-image-viewer aria-label="Enlarge Nutrition and diet plans">
+                <img src="../assets/images/projects/eatopia/schema-nutrition.svg" width="960" height="775" alt="Nutrition and diet plans schema. Tables: DietPlans, UserPlans, DietPlanItems, UserAllergies, UserDislikedFoods. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Nutrition and diet plans</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-meals.svg" data-image-viewer aria-label="Enlarge Recipes and meal tracking">
+                <img src="../assets/images/projects/eatopia/schema-meals.svg" width="960" height="882" alt="Recipes and meal tracking schema. Tables: Recipes, RecipeSaved, FoodItems, MealLogs. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Recipes and meal tracking</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-community.svg" data-image-viewer aria-label="Enlarge Community and social interactions">
+                <img src="../assets/images/projects/eatopia/schema-community.svg" width="960" height="827" alt="Community and social interactions schema. Tables: CommunityPosts, Comments, PostLikes, UserFollows, UserBlocks, HiddenPosts. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Community and social interactions</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-chat.svg" data-image-viewer aria-label="Enlarge Chat and messaging">
+                <img src="../assets/images/projects/eatopia/schema-chat.svg" width="960" height="830" alt="Chat and messaging schema. Tables: ChatThreads, ChatParticipants, ChatMessages. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Chat and messaging</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-tracking.svg" data-image-viewer aria-label="Enlarge Medication and water tracking">
+                <img src="../assets/images/projects/eatopia/schema-tracking.svg" width="960" height="931" alt="Medication and water tracking schema. Tables: Medications, MedicationSchedules, WaterGoals, WaterLogs, WaterReminders. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Medication and water tracking</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/schema-notifications.svg" data-image-viewer aria-label="Enlarge Notifications and moderation">
+                <img src="../assets/images/projects/eatopia/schema-notifications.svg" width="960" height="651" alt="Notifications and moderation schema. Tables: Notifications, ContentReports. Each table lists its columns, primary key, and any migration or EF-only foreign-key references." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Notifications and moderation</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/Eatopia-Backend/tree/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/Migrations">EF Core migrations</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/Persistence/EatopiaDbContext.cs">EF Core mappings</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/Persistence/CommunityAuthSchemaRepair.cs">Community and auth schema repair</a></p>
+        </section>
+
+        <section class="case-section" id="features" aria-labelledby="features-title">
+          <h2 id="features-title">Key features</h2>
+          <ul class="case-features" role="list">
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h12v9H6zM9 11V7a3 3 0 0 1 6 0v4m-3 3v3" /></svg>
+              <h3>Authentication and authorization</h3>
+              <p>JWT bearer authentication protects account and application endpoints. The API supports activation, password reset, hashed refresh tokens, and role checks for elevated actions.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4v3m8-3v3M4 8h3m10 0h3M4 16h3m10 0h3M8 17v3m8-3v3M7 7h10v10H7zM10 12h4" /></svg>
+              <h3>AI integration</h3>
+              <p>The .NET backend calls a Python runner through <code>IFoodAiClient</code> for food-image analysis and AI-generated diet plans. The adapter passes typed JSON between the API and the runner.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-6 4 12 3-6h4" /></svg>
+              <h3>Nutrition plans and meal logs</h3>
+              <p>Users can assign a stored plan, retrieve the active plan, and maintain allergies and disliked foods. Meal logs store quantities and derive calories and macronutrients from food data.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h6c2 0 3 1 3 3v12c0-2-1-3-3-3H3V5Zm18 0h-6c-2 0-3 1-3 3v12c0-2 1-3 3-3h6V5Z" /></svg>
+              <h3>Recipes</h3>
+              <p>The catalog exposes searchable, paged recipes. Authenticated users can save recipes, and elevated roles can manage the catalog.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-6 4 12 3-6h4" /></svg>
+              <h3>Medication and water tracking</h3>
+              <p>Users can manage medication schedules, mark doses taken, configure water goals and reminders, and log water intake.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2" /></svg>
+              <h3>Community interactions</h3>
+              <p>Profiles, posts, comments, likes, follows, and blocks support the community. Feed and profile queries account for user privacy settings.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v12h-9l-5 4v-4H4zM8 10h8m-8 3h5" /></svg>
+              <h3>Chat and messaging</h3>
+              <p>The chat service persists conversations and messages. SignalR delivers real-time message and typing events to authorized participants.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16c2-1 2-3 2-7a4 4 0 0 1 8 0c0 4 0 6 2 7H6Zm4 3a2 2 0 0 0 4 0" /></svg>
+              <h3>Notifications and moderation</h3>
+              <p>A hosted worker checks due reminders when enabled. Users can manage notification preferences, and authorized staff can review reports and moderate content or accounts.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="case-section" id="patterns" aria-labelledby="patterns-title">
+          <h2 id="patterns-title">Architecture and design patterns</h2>
+          <dl class="case-definitions">
+            <div><dt>Layered architecture</dt><dd>The code uses a Clean Architecture-style project structure. Domain stands on its own, Application references Domain, and the API composes Application and Infrastructure. Some controllers call concrete infrastructure services or the DbContext directly.</dd></div>
+            <div><dt>Data access</dt><dd>The inspected application services use EF Core through <code>EatopiaDbContext</code>. Although the README lists a Repository Pattern, the reviewed implementation paths use direct EF queries.</dd></div>
+            <div><dt>Dependency injection</dt><dd>The API registers scoped services and the DbContext centrally. It supplies <code>PythonAiClient</code> through the <code>IFoodAiClient</code> interface.</dd></div>
+            <div><dt>Separation of concerns</dt><dd>DTOs describe request and response data, chat and reminder services handle workflow rules, and adapters handle Python execution and email delivery.</dd></div>
+          </dl>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/Services/MealService.cs">Meal service data access</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Application/Interfaces/IFoodAiClient.cs">AI client interface</a></p>
+        </section>
+
+        <section class="case-section" id="api-documentation" aria-labelledby="api-title">
+          <h2 id="api-title">API documentation</h2>
+          <div class="case-split">
+            <div class="case-copy">
+              <p>Swagger is enabled for development. The API groups routes by accounts, nutrition, recipes, health tracking, community, chat, notifications, and administration. The capture shows admin operations under both <code>/api/v1/admin</code> and the unversioned <code>/api/admin</code> alias.</p>
+              <p>Authorization is set on controllers and actions. Recipe browsing is public, saving a recipe requires authentication, and recipe changes and administrative actions use elevated-role checks.</p>
+              <p class="case-evidence">Sources <a href="https://github.com/mark26504/Eatopia-Backend/tree/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Api/Controllers">Controllers</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Api/Program.cs">Swagger and authentication setup</a></p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/eatopia/swagger.png" data-image-viewer aria-label="Enlarge Swagger / OpenAPI capture">
+                <img src="../assets/images/projects/eatopia/swagger.png" width="1832" height="967" alt="Swagger UI showing protected admin operations under paired unversioned and v1 routes." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Swagger / OpenAPI capture</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" id="challenges" aria-labelledby="challenges-title">
+          <h2 id="challenges-title">Technical challenges and solutions</h2>
+          <dl class="case-definitions">
+            <div><dt>Connecting the API to Python</dt><dd>The backend isolates the subprocess behind <code>IFoodAiClient</code> and bounds execution with timeouts. Controllers and meal services consume structured results from that adapter.</dd></div>
+            <div><dt>Keeping nutrition calculations consistent</dt><dd>Meal logging normalizes nutrient data per 100 grams, then calculates and stores calories, protein, fat, and carbs using the logged portion size.</dd></div>
+            <div><dt>Applying account changes to active sessions</dt><dd>JWT validation reads the user's current account record and token version. Logging out all devices increments the version, so earlier access tokens can be rejected.</dd></div>
+            <div><dt>Checking chat membership</dt><dd>The SignalR hub checks thread membership before joining a conversation group. The service checks participation and message ownership in its read and update workflows.</dd></div>
+            <div><dt>Handling due reminders</dt><dd>A background worker checks due water and medication reminders, looks up an existing notification for each reminder, and can retry email delivery when the notification exists and email is still pending.</dd></div>
+            <div><dt>Maintaining older local schemas</dt><dd>Migration history and the current model differ. The repository includes conditional schema repair SQL that adds missing objects and fields in development when older databases need them.</dd></div>
+          </dl>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/AI/PythonAiClient.cs">Python adapter</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Api/Hubs/ChatHub.cs">Chat hub</a> · <a href="https://github.com/mark26504/Eatopia-Backend/blob/287feebd2dd370370a43f0dacc67d031442139fb/src/Eatopia.Infrastructure/Services/ReminderNotificationBackgroundService.cs">Reminder worker</a></p>
+        </section>
+      </article>
+
+      <footer class="case-footer">
+        <nav aria-label="Case study links">
+          <a class="button button-secondary" href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+          <div class="case-actions">
+            <a class="button button-secondary" href="https://github.com/mark26504/Eatopia-Backend"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> View Source Code</a>
+          </div>
+        </nav>
+      </footer>
+    </main>
+
+    <dialog class="case-viewer" aria-labelledby="case-viewer-title" aria-describedby="case-viewer-instructions">
+      <header class="case-viewer-header">
+        <h2 id="case-viewer-title">Image viewer</h2>
+        <div class="case-viewer-actions" role="group" aria-label="Image viewing controls">
+          <button type="button" data-zoom-out aria-label="Zoom out"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /></svg></button>
+          <button type="button" data-zoom-reset aria-label="Reset zoom to fit">Fit</button>
+          <button type="button" data-zoom-in aria-label="Zoom in"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14" /></svg></button>
+          <button type="button" data-viewer-close aria-label="Close image viewer" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+        </div>
+      </header>
+      <p class="visually-hidden" id="case-viewer-instructions">When zoomed, use arrow keys, drag, or swipe in the image area to pan. Press Escape to close.</p>
+      <output class="case-viewer-status" aria-live="polite">Fit · 100%</output>
+      <div class="case-viewer-stage" tabindex="0" role="region" aria-label="Scrollable image area">
+        <div class="case-viewer-canvas"></div>
+      </div>
+    </dialog>
+  </body>
+</html>

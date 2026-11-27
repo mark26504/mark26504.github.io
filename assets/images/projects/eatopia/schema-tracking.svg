@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="931" viewBox="0 0 960 931" role="img" aria-labelledby="title desc">
+  <title id="title">Medication and water tracking</title>
+  <desc id="desc">Medication and water tracking. Tables and columns from migrations, repair SQL, and EF model. Solid arrows are migration foreign keys. Dashed arrows are EF mappings without a corresponding public DDL constraint.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0v30" fill="none" stroke="#293548" opacity=".36" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 7 4-7 4" fill="none" stroke="#58b9eb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #345570; stroke-width: 1.4; }
+    .row { font-size: 17px; fill: #f1f5f9; }
+    .key { font-size: 13px; font-weight: 700; }
+    .relation { font-size: 15px; fill: #58b9eb; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 1.5; marker-end: url(#arrow); }
+  </style>
+  <rect width="960" height="931" fill="#0b0f1c" />
+  <rect width="960" height="931" fill="url(#grid)" />
+  <path d="M28 104H932" stroke="#293548" />
+  <text class="mono" x="28" y="32" fill="#58b9eb" font-size="17" letter-spacing="1.25">EATOPIA / SQL SERVER</text>
+  <text class="sans" x="28" y="69" fill="#f1f5f9" font-size="31" font-weight="700">Medication and water tracking</text>
+  <text class="sans" x="28" y="93" fill="#94a3b8" font-size="15">5 tables · Columns and key references</text>
+  <g aria-label="Medications">
+    <rect class="panel" x="28" y="126" width="442" height="289" rx="9" />
+    <path d="M29 168V135q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="43" y="154" fill="#58b9eb" font-weight="700" font-size="20">Medications</text>
+    <text class="mono key" x="43" y="189" fill="#f4ca78">PK</text>
+    <text class="mono row" x="77" y="189">Id</text>
+    <text class="mono key" x="43" y="215" fill="#58b9eb">FK</text>
+    <text class="mono row" x="77" y="215">UserId</text>
+    <path class="connector" d="M148 210H373" />
+    <text class="mono relation" text-anchor="end" x="456" y="215">Users.Id</text>
+    <text class="mono row" x="77" y="241">Name</text>
+    <text class="mono row" x="77" y="267">DosageText</text>
+    <text class="mono row" x="77" y="293">BeforeAfterMeal</text>
+    <text class="mono row" x="77" y="319">TimesPerDay</text>
+    <text class="mono row" x="77" y="345">StartDate</text>
+    <text class="mono row" x="77" y="371">EndDate</text>
+    <text class="mono row" x="77" y="397">CreatedAt</text>
+  </g>
+  <g aria-label="MedicationSchedules">
+    <rect class="panel" x="490" y="126" width="442" height="237" rx="9" />
+    <path d="M491 168V135q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="505" y="154" fill="#58b9eb" font-weight="700" font-size="20">MedicationSchedules</text>
+    <text class="mono key" x="505" y="189" fill="#f4ca78">PK</text>
+    <text class="mono row" x="539" y="189">Id</text>
+    <text class="mono key" x="505" y="215" fill="#58b9eb">FK</text>
+    <text class="mono row" x="539" y="215">MedicationId</text>
+    <path class="connector" d="M671 210H780" />
+    <text class="mono relation" text-anchor="end" x="918" y="215">Medications.Id</text>
+    <text class="mono row" x="539" y="241">ScheduledDate</text>
+    <text class="mono row" x="539" y="267">TimeOfDay</text>
+    <text class="mono row" x="539" y="293">IsTaken</text>
+    <text class="mono row" x="539" y="319">TakenAt</text>
+    <text class="mono row" x="539" y="345">CreatedAt</text>
+  </g>
+  <g aria-label="WaterGoals">
+    <rect class="panel" x="490" y="383" width="442" height="185" rx="9" />
+    <path d="M491 425V392q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="505" y="411" fill="#58b9eb" font-weight="700" font-size="20">WaterGoals</text>
+    <text class="mono key" x="505" y="446" fill="#f4ca78">PK</text>
+    <text class="mono row" x="539" y="446">Id</text>
+    <text class="mono key" x="505" y="472" fill="#58b9eb">FK</text>
+    <text class="mono row" x="539" y="472">UserId</text>
+    <path class="connector" d="M610 467H835" />
+    <text class="mono relation" text-anchor="end" x="918" y="472">Users.Id</text>
+    <text class="mono row" x="539" y="498">DailyTargetMl</text>
+    <text class="mono row" x="539" y="524">RemindEveryMinutes</text>
+    <text class="mono row" x="539" y="550">CreatedAt</text>
+  </g>
+  <g aria-label="WaterLogs">
+    <rect class="panel" x="28" y="435" width="442" height="185" rx="9" />
+    <path d="M29 477V444q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="43" y="463" fill="#58b9eb" font-weight="700" font-size="20">WaterLogs</text>
+    <text class="mono key" x="43" y="498" fill="#f4ca78">PK</text>
+    <text class="mono row" x="77" y="498">Id</text>
+    <text class="mono key" x="43" y="524" fill="#58b9eb">FK</text>
+    <text class="mono row" x="77" y="524">UserId</text>
+    <path class="connector" d="M148 519H373" />
+    <text class="mono relation" text-anchor="end" x="456" y="524">Users.Id</text>
+    <text class="mono row" x="77" y="550">AmountMl</text>
+    <text class="mono row" x="77" y="576">LoggedAt</text>
+    <text class="mono row" x="77" y="602">CreatedAt</text>
+  </g>
+  <g aria-label="WaterReminders">
+    <rect class="panel" x="490" y="588" width="442" height="263" rx="9" />
+    <path d="M491 630V597q0-8 8-8h424q8 0 8 8v33z" fill="#1b3043" />
+    <text class="mono" x="505" y="616" fill="#58b9eb" font-weight="700" font-size="20">WaterReminders</text>
+    <text class="mono key" x="505" y="651" fill="#f4ca78">PK</text>
+    <text class="mono row" x="539" y="651">Id</text>
+    <text class="mono key" x="505" y="677" fill="#58b9eb">FK</text>
+    <text class="mono row" x="539" y="677">UserId</text>
+    <path class="connector" d="M610 672H835" />
+    <text class="mono relation" text-anchor="end" x="918" y="677">Users.Id</text>
+    <text class="mono row" x="539" y="703">ReminderDate</text>
+    <text class="mono row" x="539" y="729">TimeOfDay</text>
+    <text class="mono row" x="539" y="755">AmountMl</text>
+    <text class="mono row" x="539" y="781">IsCompleted</text>
+    <text class="mono row" x="539" y="807">CompletedAt</text>
+    <text class="mono row" x="539" y="833">CreatedAt</text>
+  </g>
+  <path d="M28 880h904" stroke="#293548" />
+  <text class="mono" x="28" y="909" font-size="15" fill="#f4ca78">PK  Primary key</text>
+  <text class="mono" x="240" y="909" font-size="15" fill="#58b9eb">FK  Migration constraint</text>
+  <text class="mono" x="540" y="909" font-size="15" fill="#58b9eb">EF  Model mapping only</text>
+</svg>
