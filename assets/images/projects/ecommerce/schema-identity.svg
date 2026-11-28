@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="818" viewBox="0 0 1150 818" role="img" aria-labelledby="title desc">
+  <title id="title">ECommerceIdentity SQL Server schema</title>
+  <desc id="desc">Users is the parent of Addresses, AspNetUserClaims, AspNetUserLogins, AspNetUserTokens, and UserRoles. Roles is the parent of AspNetRoleClaims and UserRoles. Each user may have one address. UserRoles, AspNetUserLogins, and AspNetUserTokens use composite keys.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #3d6b86; stroke-width: 1.4; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 2; stroke-linejoin: round; marker-end: url(#arrow); }
+    .key { font-size: 12px; font-weight: 700; }
+    .field { fill: #f1f5f9; font-size: 16px; }
+  </style>
+  <rect width="1150" height="818" fill="#0b0f1c" />
+  <rect width="1150" height="818" fill="url(#grid)" />
+  <path d="M30 87H1120" stroke="#293548" />
+  <text class="mono" x="30" y="39" fill="#58b9eb" font-size="19" letter-spacing="1.2">ECOMMERCEIDENTITY / IDENTITY SCHEMA</text>
+  <text class="sans" x="30" y="69" fill="#94a3b8" font-size="16">9 tables · FK arrows point to the referenced table · UQ marks the unique address reference</text>
+  <path class="connector" d="M315 232h69v-19h30" />
+  <path class="connector" d="M315 456h69v-97h30" />
+  <path class="connector" d="M315 691h99" />
+  <path class="connector" d="M812 168H700" />
+  <path class="connector" d="M812 352h-57V308h-55" />
+  <path class="connector" d="M812 565h-57v-79h-55" />
+  <path class="connector" d="M812 589h-45v102h-67" />
+  <g class="mono" aria-label="AspNetUserLogins">
+    <rect class="panel" x="28" y="115" width="287" height="133" rx="9" />
+    <path d="M29 153V124q0-8 8-8h269q8 0 8 8v29z" fill="#1b3043" />
+    <text x="42" y="140" fill="#58b9eb" font-size="19" font-weight="700">AspNetUserLogins</text>
+    <text class="key" x="42" y="172" fill="#f4ca78">PK</text>
+    <text class="field" x="95" y="172">LoginProvider</text>
+    <text class="key" x="42" y="193" fill="#f4ca78">PK</text>
+    <text class="field" x="95" y="193">ProviderKey</text>
+    <text class="field" x="95" y="214">ProviderDisplayName</text>
+    <text class="key" x="42" y="235" fill="#58b9eb">FK</text>
+    <text class="field" x="95" y="235">UserId</text>
+  </g>
+  <g class="mono" aria-label="Addresses">
+    <rect class="panel" x="28" y="277" width="287" height="196" rx="9" />
+    <path d="M29 315V286q0-8 8-8h269q8 0 8 8v29z" fill="#1b3043" />
+    <text x="42" y="302" fill="#58b9eb" font-size="19" font-weight="700">Addresses</text>
+    <text class="key" x="42" y="334" fill="#f4ca78">PK</text>
+    <text class="field" x="95" y="334">Id</text>
+    <text class="field" x="95" y="355">City</text>
+    <text class="field" x="95" y="376">Street</text>
+    <text class="field" x="95" y="397">Country</text>
+    <text class="field" x="95" y="418">FirstName</text>
+    <text class="field" x="95" y="439">LastName</text>
+    <text class="key" x="42" y="460" fill="#58b9eb">FK UQ</text>
+    <text class="field" x="95" y="460">UserId</text>
+  </g>
+  <g class="mono" aria-label="AspNetRoleClaims">
+    <rect class="panel" x="28" y="613" width="287" height="133" rx="9" />
+    <path d="M29 651V622q0-8 8-8h269q8 0 8 8v29z" fill="#1b3043" />
+    <text x="42" y="638" fill="#58b9eb" font-size="19" font-weight="700">AspNetRoleClaims</text>
+    <text class="key" x="42" y="670" fill="#f4ca78">PK</text>
+    <text class="field" x="95" y="670">Id</text>
+    <text class="key" x="42" y="691" fill="#58b9eb">FK</text>
+    <text class="field" x="95" y="691">RoleId</text>
+    <text class="field" x="95" y="712">ClaimType</text>
+    <text class="field" x="95" y="733">ClaimValue</text>
+  </g>
+  <g class="mono" aria-label="Users">
+    <rect class="panel" x="414" y="115" width="286" height="385" rx="9" />
+    <path d="M415 153V124q0-8 8-8h268q8 0 8 8v29z" fill="#1b3043" />
+    <text x="428" y="140" fill="#58b9eb" font-size="19" font-weight="700">Users</text>
+    <text class="key" x="428" y="172" fill="#f4ca78">PK</text>
+    <text class="field" x="481" y="172">Id</text>
+    <text class="field" x="481" y="193">DisplayName</text>
+    <text class="field" x="481" y="214">UserName</text>
+    <text class="field" x="481" y="235">NormalizedUserName</text>
+    <text class="field" x="481" y="256">Email</text>
+    <text class="field" x="481" y="277">NormalizedEmail</text>
+    <text class="field" x="481" y="298">EmailConfirmed</text>
+    <text class="field" x="481" y="319">PasswordHash</text>
+    <text class="field" x="481" y="340">SecurityStamp</text>
+    <text class="field" x="481" y="361">ConcurrencyStamp</text>
+    <text class="field" x="481" y="382">PhoneNumber</text>
+    <text class="field" x="481" y="403">PhoneNumberConfirmed</text>
+    <text class="field" x="481" y="424">TwoFactorEnabled</text>
+    <text class="field" x="481" y="445">LockoutEnd</text>
+    <text class="field" x="481" y="466">LockoutEnabled</text>
+    <text class="field" x="481" y="487">AccessFailedCount</text>
+  </g>
+  <g class="mono" aria-label="Roles">
+    <rect class="panel" x="414" y="613" width="286" height="133" rx="9" />
+    <path d="M415 651V622q0-8 8-8h268q8 0 8 8v29z" fill="#1b3043" />
+    <text x="428" y="638" fill="#58b9eb" font-size="19" font-weight="700">Roles</text>
+    <text class="key" x="428" y="670" fill="#f4ca78">PK</text>
+    <text class="field" x="481" y="670">Id</text>
+    <text class="field" x="481" y="691">Name</text>
+    <text class="field" x="481" y="712">NormalizedName</text>
+    <text class="field" x="481" y="733">ConcurrencyStamp</text>
+  </g>
+  <g class="mono" aria-label="AspNetUserTokens">
+    <rect class="panel" x="812" y="115" width="310" height="133" rx="9" />
+    <path d="M813 153V124q0-8 8-8h292q8 0 8 8v29z" fill="#1b3043" />
+    <text x="826" y="140" fill="#58b9eb" font-size="19" font-weight="700">AspNetUserTokens</text>
+    <text class="key" x="826" y="172" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="879" y="172">UserId</text>
+    <text class="key" x="826" y="193" fill="#f4ca78">PK</text>
+    <text class="field" x="879" y="193">LoginProvider</text>
+    <text class="key" x="826" y="214" fill="#f4ca78">PK</text>
+    <text class="field" x="879" y="214">Name</text>
+    <text class="field" x="879" y="235">Value</text>
+  </g>
+  <g class="mono" aria-label="AspNetUserClaims">
+    <rect class="panel" x="812" y="278" width="310" height="133" rx="9" />
+    <path d="M813 316V287q0-8 8-8h292q8 0 8 8v29z" fill="#1b3043" />
+    <text x="826" y="303" fill="#58b9eb" font-size="19" font-weight="700">AspNetUserClaims</text>
+    <text class="key" x="826" y="335" fill="#f4ca78">PK</text>
+    <text class="field" x="879" y="335">Id</text>
+    <text class="key" x="826" y="356" fill="#58b9eb">FK</text>
+    <text class="field" x="879" y="356">UserId</text>
+    <text class="field" x="879" y="377">ClaimType</text>
+    <text class="field" x="879" y="398">ClaimValue</text>
+  </g>
+  <g class="mono" aria-label="UserRoles">
+    <rect class="panel" x="812" y="508" width="310" height="91" rx="9" />
+    <path d="M813 546V517q0-8 8-8h292q8 0 8 8v29z" fill="#1b3043" />
+    <text x="826" y="533" fill="#58b9eb" font-size="19" font-weight="700">UserRoles</text>
+    <text class="key" x="826" y="565" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="879" y="565">UserId</text>
+    <text class="key" x="826" y="586" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="879" y="586">RoleId</text>
+  </g>
+  <g class="mono" aria-label="__EFMigrationsHistory">
+    <rect class="panel" x="812" y="656" width="310" height="91" rx="9" />
+    <path d="M813 694V665q0-8 8-8h292q8 0 8 8v29z" fill="#1b3043" />
+    <text x="826" y="681" fill="#58b9eb" font-size="19" font-weight="700">__EFMigrationsHistory</text>
+    <text class="key" x="826" y="713" fill="#f4ca78">PK</text>
+    <text class="field" x="879" y="713">MigrationId</text>
+    <text class="field" x="879" y="734">ProductVersion</text>
+  </g>
+</svg>

@@ -446,6 +446,10 @@ html:has(.case-viewer[open]) {
   .case-split {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
   }
+
+  .case-split--centered {
+    align-items: center;
+  }
 }
 
 @media (min-width: 64rem) {

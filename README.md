@@ -9,11 +9,11 @@ Mark Sameeh is a Back-End .NET Developer and a Computer Science graduate (2026).
 
 ## Local preview
 
-Open `index.html` for the portfolio, `projects/library-management.html` or `projects/eatopia.html` for a case study, or `credits.html` for artwork credits. The site uses HTML, CSS, vanilla JavaScript, and SVG. It requires no package installation or build step.
+Open `index.html` for the portfolio, a page under `projects/` for a case study, or `credits.html` for artwork credits. Use port `5500` for a new local preview. The site uses HTML, CSS, vanilla JavaScript, and SVG and requires no package installation or build step.
 
 ## Project status
 
-Phases 1 through 5, the Phase 6.1 project carousel, and the Library Management API and Eatopia case studies in Phases 6.2 and 6.3 are complete. The site has a sticky navbar with Home, About, and Projects, a GitHub shortcut, an accessible mobile menu, a hero with an animated backend diagram, a Core Technologies section, and an About Me section. Skills, Contact, and the CV controls are marked as coming soon.
+Phases 1 through 5, the Phase 6.1 project carousel, and the Library Management API, Eatopia, and E-Commerce case studies through Phase 6.4 are complete. The site has a sticky navbar with Home, About, and Projects, a GitHub shortcut, an accessible mobile menu, an animated backend diagram, a Core Technologies section, and an About Me section. Skills, Contact, and the CV controls are marked as coming soon. Phase 6.5 covers the pending Gym Management System case study.
 
 Blue particles illustrate the runtime connections. The diagram keeps Docker and CI/CD separate under deployment. The button next to the diagram pauses or resumes decorative motion, including the availability pulse. Animations also pause offscreen and in hidden tabs, and the diagram stays readable with reduced motion or JavaScript disabled.
 
@@ -25,7 +25,7 @@ About Me presents the biography, personal information, and four highlights. The 
 
 Selected Work shows those four projects with local 4:3 WebP covers from the supplied promotional artwork. The carousel shows one complete card on mobile, two from `48rem`, and three from `64rem`. It supports arrows, pagination, keyboard navigation, and native horizontal scrolling with scroll snap. The track also works without JavaScript. The cards link to their GitHub repositories, and the Library Management API card also links to its deployed Swagger documentation.
 
-The Library card's cover, title, and Explore Project action open its [case study](projects/library-management.html). Eatopia's Explore Project action opens the [Eatopia case study](projects/eatopia.html). Explore Project remains disabled for the planned pages at `projects/ecommerce.html` and `projects/gym-management.html`.
+The Library card's cover, title, and Explore Project action open its [case study](projects/library-management.html). The same action opens the [Eatopia case study](projects/eatopia.html) and [E-Commerce case study](projects/ecommerce.html) from their cards. The Gym Management System action stays disabled until its page is ready.
 
 The Library and E-Commerce covers show illustrated Swagger screens. The Library cover uses an illustrative hostname, shows an “Admin” group, and labels borrowing returns `PUT`. The [deployed Swagger specification](https://library-management-api.runasp.net/swagger/v1/swagger.json) groups user administration under Users and lists `POST` for borrowing returns. The Gym cover shows sample dashboard counts.
 
@@ -48,5 +48,15 @@ The case study follows the Library layout and image viewer. Eatopia was a collab
 The diagrams in `assets/images/projects/eatopia/` show all 28 application tables plus EF migration history, with one overview and seven module diagrams. Solid connectors represent migration-defined foreign keys. Dashed connectors mark EF mappings with no matching constraint in the checked-in DDL. The current model and repair SQL name the chat type column `MessageType`, while the supplied SQL Server capture shows `MediaType`. The supplied Solution Explorer and Swagger PNGs are displayed directly. The raw database captures served as references.
 
 The public demo at `assets/videos/eatopia/eatopia-demo-public.mp4` preserves the full 2:12 recording, original frame size, playback speed, and audio track. The exported frames permanently mask local file details, account and profile information, sensitive form values, and identifying community and chat content. The original recording stays local and is ignored by Git. The native player uses `preload="metadata"` and starts on request.
+
+## E-Commerce API case study
+
+The [E-Commerce case study](projects/ecommerce.html) uses the shared case study layout, hero spacing, and image viewer. [The reviewed source at `027cc79`](https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/tree/027cc79ce74d59246910294b7868c3759038b15e) contains eight projects and 16 REST method and route pairs, excluding MVC actions. The Web API targets .NET 8 and the dashboard targets .NET 9. The two SQL Server schemas contain 14 application tables and two migration history tables. The page documents the direct references, generic repository and Unit of Work, specifications, service injection, DTO mapping, typed results, error middleware, and response caching.
+
+The eight supplied screenshots and five original SVGs are in `assets/images/projects/ecommerce/`. The Postman images mask workspace and account labels. The product screenshot’s bearer token remains masked, and its desktop taskbar was cropped. SQL Server reference captures stayed out of public assets. The diagrams separate compile-time references, SQL Server and Redis storage, and Stripe PaymentIntent creation from order persistence.
+
+Manual Postman evidence shows the authenticated product list and basket creation returning HTTP 200. Redis Insight shows the cached product response and saved basket with their remaining TTLs. The supplied local session ran Redis in Docker, recorded a successful PING, and loaded the dashboard login. Stripe was reviewed in source, and the session completed no payments. The product query code returns page index 1 regardless of the supplied index.
+
+The maintenance commit upgraded AutoMapper to 15.1.4 and removed the legacy MVC Core package while retaining the ASP.NET Core framework reference. The supplied session recorded a successful Release build and a transitive vulnerability audit with no known findings across eight projects at that time. Nullable-reference warnings remained.
 
 The site is intended for GitHub Pages. See [AGENTS.md](AGENTS.md) for development conventions and the remaining roadmap.

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="759" viewBox="0 0 1180 759" role="img" aria-labelledby="title desc">
+  <title id="title">ECommerce SQL Server store schema</title>
+  <desc id="desc">Products.BrandId and Products.TypeId reference ProductBrands and ProductTypes. Orders.DeliveryMethodId references DeliveryMethods. A nullable OrderItem.OrderId references Orders. Order shipping address and item product snapshot are embedded. Product_ProductId has no foreign key.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #3d6b86; stroke-width: 1.4; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 2; stroke-linejoin: round; marker-end: url(#arrow); }
+    .key { font-size: 12px; font-weight: 700; }
+    .field { fill: #f1f5f9; font-size: 16px; }
+  </style>
+  <rect width="1180" height="759" fill="#0b0f1c" />
+  <rect width="1180" height="759" fill="url(#grid)" />
+  <path d="M30 87H1150" stroke="#293548" />
+  <text class="mono" x="30" y="39" fill="#58b9eb" font-size="19" letter-spacing="1.2">ECOMMERCE / STORE SCHEMA</text>
+  <text class="sans" x="30" y="69" fill="#94a3b8" font-size="16">7 tables · FK arrows point to the referenced table · FK? is nullable</text>
+  <path class="connector" d="M411 342h-53V208h-45" />
+  <path class="connector" d="M696 693h26V143h-26" />
+  <path class="connector" d="M1077 313h34v177h-34" />
+  <path class="connector" d="M789 334h-41v298h41" />
+  <g class="mono" aria-label="DeliveryMethods">
+    <rect class="panel" x="28" y="155" width="285" height="154" rx="9" />
+    <path d="M29 193V164q0-8 8-8h267q8 0 8 8v29z" fill="#1b3043" />
+    <text x="42" y="180" fill="#58b9eb" font-size="19" font-weight="700">DeliveryMethods</text>
+    <text class="key" x="42" y="212" fill="#f4ca78">PK</text>
+    <text class="field" x="95" y="212">Id</text>
+    <text class="field" x="95" y="233">ShortName</text>
+    <text class="field" x="95" y="254">Description</text>
+    <text class="field" x="95" y="275">DeliveryTime</text>
+    <text class="field" x="95" y="296">Price</text>
+  </g>
+  <g class="mono" aria-label="__EFMigrationsHistory">
+    <rect class="panel" x="28" y="426" width="285" height="91" rx="9" />
+    <path d="M29 464V435q0-8 8-8h267q8 0 8 8v29z" fill="#1b3043" />
+    <text x="42" y="451" fill="#58b9eb" font-size="19" font-weight="700">__EFMigrationsHistory</text>
+    <text class="key" x="42" y="483" fill="#f4ca78">PK</text>
+    <text class="field" x="95" y="483">MigrationId</text>
+    <text class="field" x="95" y="504">ProductVersion</text>
+  </g>
+  <g class="mono" aria-label="Orders">
+    <rect class="panel" x="411" y="121" width="285" height="301" rx="9" />
+    <path d="M412 159V130q0-8 8-8h267q8 0 8 8v29z" fill="#1b3043" />
+    <text x="425" y="146" fill="#58b9eb" font-size="19" font-weight="700">Orders</text>
+    <text class="key" x="425" y="178" fill="#f4ca78">PK</text>
+    <text class="field" x="478" y="178">Id</text>
+    <text class="field" x="478" y="199">UserEmail</text>
+    <text class="field" x="478" y="220">OrderDate</text>
+    <text class="field" x="478" y="241">Address_FirstName</text>
+    <text class="field" x="478" y="262">Address_LastName</text>
+    <text class="field" x="478" y="283">Address_Street</text>
+    <text class="field" x="478" y="304">Address_City</text>
+    <text class="field" x="478" y="325">Address_Country</text>
+    <text class="key" x="425" y="346" fill="#58b9eb">FK</text>
+    <text class="field" x="478" y="346">DeliveryMethodId</text>
+    <text class="field" x="478" y="367">OrderStatus</text>
+    <text class="field" x="478" y="388">SubTotal</text>
+    <text class="field" x="478" y="409">PaymentIntentId</text>
+  </g>
+  <g class="mono" aria-label="OrderItem">
+    <rect class="panel" x="411" y="514" width="285" height="196" rx="9" />
+    <path d="M412 552V523q0-8 8-8h267q8 0 8 8v29z" fill="#1b3043" />
+    <text x="425" y="539" fill="#58b9eb" font-size="19" font-weight="700">OrderItem</text>
+    <text class="key" x="425" y="571" fill="#f4ca78">PK</text>
+    <text class="field" x="478" y="571">Id</text>
+    <text class="field" x="478" y="592">Price</text>
+    <text class="field" x="478" y="613">Quantity</text>
+    <text class="field" x="478" y="634">Product_ProductId</text>
+    <text class="field" x="478" y="655">Product_ProductName</text>
+    <text class="field" x="478" y="676">Product_PictureUrl</text>
+    <text class="key" x="425" y="697" fill="#58b9eb">FK?</text>
+    <text class="field" x="478" y="697">OrderId</text>
+  </g>
+  <g class="mono" aria-label="Products">
+    <rect class="panel" x="789" y="155" width="288" height="196" rx="9" />
+    <path d="M790 193V164q0-8 8-8h270q8 0 8 8v29z" fill="#1b3043" />
+    <text x="803" y="180" fill="#58b9eb" font-size="19" font-weight="700">Products</text>
+    <text class="key" x="803" y="212" fill="#f4ca78">PK</text>
+    <text class="field" x="856" y="212">Id</text>
+    <text class="field" x="856" y="233">Name</text>
+    <text class="field" x="856" y="254">Description</text>
+    <text class="field" x="856" y="275">PictureUrl</text>
+    <text class="field" x="856" y="296">Price</text>
+    <text class="key" x="803" y="317" fill="#58b9eb">FK</text>
+    <text class="field" x="856" y="317">BrandId</text>
+    <text class="key" x="803" y="338" fill="#58b9eb">FK</text>
+    <text class="field" x="856" y="338">TypeId</text>
+  </g>
+  <g class="mono" aria-label="ProductBrands">
+    <rect class="panel" x="789" y="437" width="288" height="91" rx="9" />
+    <path d="M790 475V446q0-8 8-8h270q8 0 8 8v29z" fill="#1b3043" />
+    <text x="803" y="462" fill="#58b9eb" font-size="19" font-weight="700">ProductBrands</text>
+    <text class="key" x="803" y="494" fill="#f4ca78">PK</text>
+    <text class="field" x="856" y="494">Id</text>
+    <text class="field" x="856" y="515">Name</text>
+  </g>
+  <g class="mono" aria-label="ProductTypes">
+    <rect class="panel" x="789" y="579" width="288" height="91" rx="9" />
+    <path d="M790 617V588q0-8 8-8h270q8 0 8 8v29z" fill="#1b3043" />
+    <text x="803" y="604" fill="#58b9eb" font-size="19" font-weight="700">ProductTypes</text>
+    <text class="key" x="803" y="636" fill="#f4ca78">PK</text>
+    <text class="field" x="856" y="636">Id</text>
+    <text class="field" x="856" y="657">Name</text>
+  </g>
+</svg>

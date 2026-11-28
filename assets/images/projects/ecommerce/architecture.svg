@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="729" viewBox="0 0 1000 729" role="img" aria-labelledby="title desc">
+  <title id="title">E-Commerce API direct project references</title>
+  <desc id="desc">Admin.Dashboard references ECommerce.Web. Web references Persistance and Presentation. Persistance references Services. Presentation references ServicesAbstarction. Services references Domain and ServicesAbstarction. ServicesAbstarction references Shared.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #3d6b86; stroke-width: 1.4; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 2; stroke-linejoin: round; marker-end: url(#arrow); }
+  </style>
+  <rect width="1000" height="729" fill="#0b0f1c" />
+  <rect width="1000" height="729" fill="url(#grid)" />
+  <path d="M30 87H970" stroke="#293548" />
+  <text class="mono" x="30" y="39" fill="#58b9eb" font-size="19" letter-spacing="1.2">COMPILE-TIME REFERENCES</text>
+  <text class="sans" x="30" y="69" fill="#94a3b8" font-size="16">Arrows point from each project to a direct ProjectReference dependency.</text>
+  <path class="connector" d="M500 177V210" />
+  <path class="connector" d="M500 278v20H242v28" />
+  <path class="connector" d="M500 278v20h258v28" />
+  <path class="connector" d="M242 394v40" />
+  <path class="connector" d="M758 394v134" />
+  <path class="connector" d="M242 502v65" />
+  <path class="connector" d="M410 463h112v99h68" />
+  <path class="connector" d="M758 596v40" />
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="332" y="109" width="336" height="68" rx="9" />
+    <text x="500" y="138" fill="#f1f5f9" font-size="20" font-weight="650">Admin.Dashboard</text>
+    <text x="500" y="160" fill="#94a3b8" font-size="15">UI · ASP.NET Core MVC</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="332" y="210" width="336" height="68" rx="9" />
+    <text x="500" y="239" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Web</text>
+    <text x="500" y="261" fill="#94a3b8" font-size="15">Presentation · Web API host</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="74" y="326" width="336" height="68" rx="9" />
+    <text x="242" y="355" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Persistance</text>
+    <text x="242" y="377" fill="#94a3b8" font-size="15">Infrastructure · EF Core and Redis adapters</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="590" y="326" width="336" height="68" rx="9" />
+    <text x="758" y="355" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Presentation</text>
+    <text x="758" y="377" fill="#94a3b8" font-size="15">Presentation · controllers and action filters</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="74" y="434" width="336" height="68" rx="9" />
+    <text x="242" y="463" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Services</text>
+    <text x="242" y="485" fill="#94a3b8" font-size="15">Application core · workflow implementations</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="74" y="567" width="336" height="68" rx="9" />
+    <text x="242" y="596" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Domain</text>
+    <text x="242" y="618" fill="#94a3b8" font-size="15">Application core · entities and contracts</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="590" y="528" width="336" height="68" rx="9" />
+    <text x="758" y="557" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.ServicesAbstarction</text>
+    <text x="758" y="579" fill="#94a3b8" font-size="15">Application core · service interfaces</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="590" y="636" width="336" height="68" rx="9" />
+    <text x="758" y="665" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Shared</text>
+    <text x="758" y="687" fill="#94a3b8" font-size="15">Shared · DTOs, query options and results</text>
+  </g>
+</svg>

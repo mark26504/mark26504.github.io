@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="E-Commerce API case study covering a product catalog, Redis baskets and response caching, Stripe PaymentIntents, and an ASP.NET Core MVC dashboard.">
+    <title>E-Commerce API | Mark Sameeh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <script src="../js/projects.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#project-main">Skip to case study</a>
+    <header class="site-header">
+      <div class="container header-inner case-header">
+        <a class="brand" href="../index.html#home" aria-label="Mark Sameeh, home">MS.</a>
+        <nav class="case-header-links" aria-label="Project navigation">
+          <a href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container case-main" id="project-main" tabindex="-1">
+      <article class="case-study" aria-labelledby="case-title">
+        <header class="hero case-hero">
+          <div class="case-hero-copy">
+            <p class="projects-label">PROJECT / 03</p>
+            <h1 id="case-title">E-Commerce API<span>.</span></h1>
+            <p class="project-category">Backend REST API</p>
+            <p class="case-lead">A layered e-commerce backend with a product catalog, Redis-powered baskets and response caching, order processing, Stripe PaymentIntents, and a separate administration dashboard.</p>
+            <div class="case-actions">
+              <a class="button button-secondary" href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> Source Code</a>
+            </div>
+          </div>
+          <figure class="case-figure case-cover">
+            <a class="case-image" href="../assets/images/projects/ecommerce.webp" data-image-viewer aria-label="Enlarge Promotional project cover">
+              <img src="../assets/images/projects/ecommerce.webp" width="1448" height="1086" alt="Illustrated E-Commerce API cover with a shopping cart, packages, and a stylized Swagger interface." fetchpriority="high">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>Promotional project cover</figcaption>
+          </figure>
+        </header>
+
+        <ul class="about-stats case-stats" role="list" aria-label="Project highlights">
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6v5H4zM14 14h6v5h-6zM10 7.5h5a2 2 0 0 1 2 2V14" /></svg>
+            <strong class="about-stat-value">16</strong>
+            <span class="about-stat-label">REST API Endpoints</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5" /></svg>
+            <strong class="about-stat-value">8</strong>
+            <span class="about-stat-label">Solution Projects</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6c0 1.7-3.6 3-8 3S4 7.7 4 6s3.6-3 8-3 8 1.3 8 3Zm0 0v12c0 1.7-3.6 3-8 3s-8-1.3-8-3V6m16 6c0 1.7-3.6 3-8 3s-8-1.3-8-3" /></svg>
+            <strong class="about-stat-value">2</strong>
+            <span class="about-stat-label">SQL Server Databases</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM7 9l3 3-3 3m5 0h5" /></svg>
+            <strong class="about-stat-value">.NET 8</strong>
+            <span class="about-stat-label">Web API Target</span>
+          </li>
+        </ul>
+        <p class="case-count">The endpoint count covers distinct HTTP method and route pairs in the Web API controllers. The separate MVC dashboard has its own actions.</p>
+
+        <nav class="case-toc" aria-label="In this case study">
+          <p class="case-label">In this case study</p>
+          <ul role="list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#storage">Storage</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#redis">Redis</a></li>
+            <li><a href="#payments">Stripe</a></li>
+            <li><a href="#patterns">Design patterns</a></li>
+            <li><a href="#admin">Admin dashboard</a></li>
+            <li><a href="#api-documentation">API documentation</a></li>
+            <li><a href="#testing">API testing</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+          </ul>
+        </nav>
+
+        <section class="case-section" id="overview" aria-labelledby="overview-title">
+          <h2 id="overview-title">Project overview</h2>
+          <div class="case-grid">
+            <div>
+              <h3>Catalog to order</h3>
+              <p>The API supports account registration and sign-in, product discovery, and basket management. Authenticated customers can prepare a card PaymentIntent and create or retrieve their orders. A delivery-method endpoint lists shipping options.</p>
+            </div>
+            <div>
+              <h3>Store operations</h3>
+              <p>The MVC application provides a separate interface for managing products, brands, and roles. The two hosts share data-access code. SQL Server holds durable catalog, order, and identity data, while the Web API uses Redis for expiring basket state and cached responses.</p>
+            </div>
+          </div>
+          <div class="case-stack">
+            <h3>Technology stack</h3>
+            <p class="case-intro"><code>ECommerce.Web</code> targets .NET 8. <code>Admin.Dashboard</code> targets .NET 9. The persistence project uses the EF Core 9 SQL Server provider.</p>
+            <div class="case-grid case-grid--after">
+              <div>
+                <h4 class="case-label">Hosts and persistence</h4>
+                <ul class="project-tags" role="list" aria-label="Hosts and persistence">
+                  <li>C#</li><li>ASP.NET Core Web API</li><li>ASP.NET Core MVC</li><li>ASP.NET Core Identity</li><li>EF Core</li><li>SQL Server</li><li>Redis</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="case-label">Integrations and tooling</h4>
+                <ul class="project-tags" role="list" aria-label="Integrations and tooling">
+                  <li>JWT</li><li>Stripe.net</li><li>AutoMapper</li><li>Swagger</li><li>Postman</li><li>Redis Insight</li><li>Docker for local Redis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Web/ECommerce.Web.csproj">Web API project</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/Admin.Dashboard/Admin.Dashboard.csproj">Dashboard project</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Persistance/ECommerce.Persistance.csproj">Persistence project</a></p>
+        </section>
+
+        <section class="case-section" id="architecture" aria-labelledby="architecture-title">
+          <h2 id="architecture-title">System architecture</h2>
+          <p class="case-intro">The layered solution separates controllers, business workflows, contracts, and storage adapters. The diagram follows direct project references and preserves the names used in the solution file.</p>
+          <div class="case-architecture-media">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/architecture.svg" data-image-viewer aria-label="Enlarge Solution project references">
+                <img src="../assets/images/projects/ecommerce/architecture.svg" width="1000" height="729" alt="Direct compile-time references among all eight projects, from the MVC dashboard and Web API host through the presentation, persistence, core, and shared projects." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Solution project references</figcaption>
+            </figure>
+            <figure class="case-figure case-solution">
+              <a class="case-image" href="../assets/images/projects/ecommerce/solution-explorer.png" data-image-viewer aria-label="Enlarge Visual Studio Solution Explorer">
+                <img src="../assets/images/projects/ecommerce/solution-explorer.png" width="498" height="527" alt="Visual Studio Solution Explorer listing eight projects in the ECommerce.Web.Solution and their layer folders." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Visual Studio Solution Explorer</figcaption>
+            </figure>
+          </div>
+          <div class="case-callout">
+            <h3>Runtime request flow</h3>
+            <p>The API host routes HTTP requests to <code>ECommerce.Presentation</code> controllers, which call injected service interfaces. Implementations use domain contracts backed by EF Core or Redis repositories. The MVC dashboard has its own controllers and views and accesses the registered repositories and Identity stores in-process.</p>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Web.Solution.sln">Solution file</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Web/Program.cs">API composition root</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/Admin.Dashboard/Program.cs">MVC composition root</a></p>
+        </section>
+
+        <section class="case-section" id="database" aria-labelledby="database-title">
+          <h2 id="database-title">Database design</h2>
+          <p class="case-intro">The migrations and supplied SQL Server references show 14 application tables and two <code>__EFMigrationsHistory</code> tables. Store and Identity each have their own EF Core context and migration history.</p>
+
+          <div class="case-stack">
+            <h3>Store database</h3>
+            <p class="case-intro">A brand and a type can each have many products, and a delivery method can serve many orders. An order can have many items. The migration makes <code>OrderItem.OrderId</code> nullable. <code>Orders</code> embeds the shipping address and stores an optional <code>PaymentIntentId</code>. <code>OrderItem</code> embeds a product snapshot whose <code>Product_ProductId</code> has no foreign key to the catalog.</p>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/schema-store.svg" data-image-viewer aria-label="Enlarge ECommerce store schema">
+                <img src="../assets/images/projects/ecommerce/schema-store.svg" width="1180" height="759" alt="Store database with seven tables, all columns and primary keys, and four foreign keys connecting products, orders, order items, and delivery methods." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>ECommerce store schema</figcaption>
+            </figure>
+          </div>
+
+          <div class="case-stack">
+            <h3>Identity database</h3>
+            <p class="case-intro"><code>UserRoles</code> links users and roles through a composite key. A unique <code>Addresses.UserId</code> allows at most one address per user. Claims, logins, and tokens belong to the associated Identity user or role. Orders store the user’s email as a scalar value, so there is no cross-database foreign key.</p>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/schema-identity.svg" data-image-viewer aria-label="Enlarge ECommerceIdentity schema">
+                <img src="../assets/images/projects/ecommerce/schema-identity.svg" width="1150" height="818" alt="Identity database with nine tables, including user and role records, addresses, claim tables, logins, tokens, the user-role join, and migration history." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>ECommerceIdentity schema</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/tree/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Persistance/Data/Migrations">Store migrations</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Persistance/IdentityData/Migrations/20251124172002_IdentityTablesCreate.cs">Identity migration</a></p>
+        </section>
+
+        <section class="case-section" id="storage" aria-labelledby="storage-title">
+          <h2 id="storage-title">Data storage architecture</h2>
+          <div class="case-split">
+            <div class="case-copy">
+              <p><code>StoreDbContext</code> stores products, orders, and delivery data in <code>ECommerce</code>. <code>StoreIdentityDbContext</code> handles user and role data in <code>ECommerceIdentity</code>.</p>
+              <p>The API’s Redis repositories share a connection. Each use stores expiring JSON strings, with basket state separate from the product-response cache. Orders are written to SQL Server.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/storage.svg" data-image-viewer aria-label="Enlarge Runtime storage connections">
+                <img src="../assets/images/projects/ecommerce/storage.svg" width="960" height="403" alt="The Web API and MVC dashboard use EF Core to reach both SQL Server databases. The Web API also connects to Redis for baskets and cached responses." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Runtime storage connections</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" id="features" aria-labelledby="features-title">
+          <h2 id="features-title">Core features</h2>
+          <ul class="case-features" role="list">
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-3.2 7-10V5l-7-3-7 3v7c0 6.8 7 10 7 10Zm-3-10 2 2 4-4" /></svg>
+              <h3>JWT authentication</h3>
+              <p>ASP.NET Core Identity handles registration and password checks. JWT bearer auth protects the product list, account lookup, order operations, and PaymentIntent endpoint.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8m-8 3h5m-5 3h7" /></svg>
+              <h3>Catalog queries</h3>
+              <p>Product specifications combine name search, brand and type filters, and name or price sorting. A separate count specification supplies pagination metadata.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16l-2 12H6L4 7Zm4 0 4-4 4 4m-7 4v4m6-4v4" /></svg>
+              <h3>Shopping baskets</h3>
+              <p>The API creates or replaces baskets, retrieves them by ID, and deletes them. Redis holds the serialized basket document with a seven-day default expiry.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Zm3 5h6m-6 4h6" /></svg>
+              <h3>Orders and item snapshots</h3>
+              <p>Orders use the authenticated email and retain quantities, unit prices, and product details at purchase time. Order queries scope results to the same email.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zm11 4h4l3 3v3h-7M8 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm9 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" /></svg>
+              <h3>Delivery methods</h3>
+              <p>The API lists delivery options. Order creation resolves the selected delivery method, and the payment service adds the basket’s delivery fee to the intent amount.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v13H3zM3 10h18m-14 5h4" /></svg>
+              <h3>Stripe integration</h3>
+              <p>The payment service reprices the basket from SQL Server, creates or updates a card PaymentIntent, and saves the returned reference on the basket.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v5H4zm0 7h16v5H4zm3-5h.01M7 15h.01" /></svg>
+              <h3>Redis response cache</h3>
+              <p>An action filter caches successful product-list responses as JSON. Requests with the same path and query values can reuse the cached result for five minutes.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18v16H3zm0 5h18m-13 4h3m3 0h3m-9 3h3" /></svg>
+              <h3>Administration dashboard</h3>
+              <p>A separate MVC host provides product and brand management, role maintenance, and role assignment for existing users.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="case-section" id="redis" aria-labelledby="redis-title">
+          <h2 id="redis-title">Redis integration</h2>
+          <div class="case-split case-split--centered">
+            <div class="case-copy">
+              <h3>Response cache</h3>
+              <p><code>RedisCacheAttribute</code> builds a key from the request path and appends query keys and values in key order. A hit returns the stored JSON as HTTP 200 before the controller action runs. On a miss, the action runs and <code>CacheServices</code> serializes a successful result. The filter sets a five-minute expiry.</p>
+              <p>The local capture followed an authenticated product-list request. Redis Insight shows <code>/api/Products</code> as a <code>STRING</code> with product and pagination JSON and <strong>251 seconds</strong> of TTL remaining.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/redis-response-cache.png" data-image-viewer aria-label="Enlarge Redis Insight · cached product response">
+                <img src="../assets/images/projects/ecommerce/redis-response-cache.png" width="1917" height="1020" alt="Redis Insight showing the /api/Products string key, cached product and pagination JSON, and a remaining TTL of 251 seconds." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Redis Insight · cached product response</figcaption>
+            </figure>
+          </div>
+          <div class="case-split case-split--centered case-grid--after">
+            <div class="case-copy">
+              <h3>Shopping basket storage</h3>
+              <p>Creating or updating a basket serializes the full document under its basket ID and sets a seven-day default expiry. Retrieval reads and deserializes that key, and deletion removes it. The repository handles temporary baskets, while SQL Server keeps orders.</p>
+              <p>The captured <code>portfolio-basket</code> <code>STRING</code> contains two Classic White T-Shirts at a unit price of 120. Redis Insight shows <strong>604,735 seconds</strong> remaining after the basket was created through the API.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/redis-shopping-basket.png" data-image-viewer aria-label="Enlarge Redis Insight · stored shopping basket">
+                <img src="../assets/images/projects/ecommerce/redis-shopping-basket.png" width="1917" height="1020" alt="Redis Insight showing portfolio-basket as a string with two Classic White T-Shirts at 120 per item and a TTL of 604735 seconds." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Redis Insight · stored shopping basket</figcaption>
+            </figure>
+          </div>
+          <div class="case-callout">
+            <h3>Local Redis in Docker</h3>
+            <p>The verification session ran Redis from <code>redis:7-alpine</code> in <code>ecommerce-redis</code>, bound to <code>127.0.0.1:6379</code>. <code>PING</code> returned <code>PONG</code>, and Redis Insight showed the keys, JSON values, and TTLs. Docker ran only the Redis service.</p>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Presentation/Attribuites/RedisCacheAttribute.cs">Cache action filter</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Services/CacheServices.cs">Cache service</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Persistance/Repositories/BasketRepository.cs">Basket repository</a></p>
+        </section>
+
+        <section class="case-section" id="payments" aria-labelledby="payments-title">
+          <h2 id="payments-title">Stripe payment integration</h2>
+          <p class="case-intro">The authenticated <code>POST /api/Payment/{basketId}</code> action reads the basket from Redis, refreshes product prices from the catalog, and adds the fee for the basket’s delivery method. It creates a USD card PaymentIntent or updates the amount on an existing intent, then writes the basket back to Redis.</p>
+          <figure class="case-figure">
+            <a class="case-image" href="../assets/images/projects/ecommerce/payment-flow.svg" data-image-viewer aria-label="Enlarge PaymentIntent and order creation paths">
+              <img src="../assets/images/projects/ecommerce/payment-flow.svg" width="1000" height="496" alt="Payment flow from Redis basket and SQL Server pricing to Stripe intent creation or update, then back to Redis. The separate order request stores the intent ID and item snapshots without recording payment confirmation." loading="lazy" decoding="async">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>PaymentIntent and order creation paths</figcaption>
+          </figure>
+          <div class="case-callout">
+            <h3>Intent creation and payment status</h3>
+            <p>Order creation requires an intent ID and associates it with the order. The status model includes pending, payment received, and payment failed states, but the reviewed API implements neither payment confirmation nor webhook-driven status changes. Stripe behavior is supported by source review. The local testing session did not complete a payment transaction.</p>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Services/PaymentService.cs">Payment service</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Services/OrderServices.cs">Order service</a></p>
+        </section>
+
+        <section class="case-section" id="patterns" aria-labelledby="patterns-title">
+          <h2 id="patterns-title">Design patterns and practices</h2>
+          <dl class="case-definitions">
+            <div><dt>Generic repository and Unit of Work</dt><dd><code>GenericRepository</code> provides typed EF Core operations. <code>UnitOfWork</code> gives the store repositories a shared context and saves changes together.</dd></div>
+            <div><dt>Specification Pattern</dt><dd>Product specifications combine criteria, includes, ordering, and paging. <code>SpecificationEvaluator</code> applies those rules to an EF query. The count specification reuses filters without applying paging.</dd></div>
+            <div><dt>Service layer and dependency injection</dt><dd>The hosts compose service implementations and persistence dependencies. API controllers consume service interfaces and delegate business operations.</dd></div>
+            <div><dt>DTO mapping and typed results</dt><dd>AutoMapper translates entities to DTOs. The base API controller turns typed service results into HTTP responses and problem details.</dd></div>
+            <div><dt>Central error handling</dt><dd>The Web API registers exception middleware for errors that escape controller and service result handling.</dd></div>
+            <div><dt>Response caching</dt><dd>The product-list action uses a Redis action filter, keeping cache lookup and response serialization outside the catalog service.</dd></div>
+          </dl>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Persistance/Repositories/UnitOfWork.cs">Unit of Work</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Persistance/SpecificationEvaluator.cs">Specification evaluator</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Presentation/Controllers/ApiBaseController.cs">API base controller</a></p>
+        </section>
+
+        <section class="case-section" id="admin" aria-labelledby="admin-title">
+          <h2 id="admin-title">Admin dashboard</h2>
+          <div class="case-split">
+            <div class="case-copy">
+              <p>The .NET 9 ASP.NET Core MVC host uses Identity sign-in and separate Razor views. Its controllers list, create, edit, and delete products, and list, create, and delete brands. The dashboard can list users, change their role assignments, and list, create, rename, or delete roles.</p>
+              <p>The local verification session loaded the dashboard login page. The supplied Brands capture shows the existing list and add/delete controls. The other dashboard operations were verified in the controller and view source.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/admin-dashboard-brands.png" data-image-viewer aria-label="Enlarge Admin Dashboard · product brands">
+                <img src="../assets/images/projects/ecommerce/admin-dashboard-brands.png" width="1280" height="611" alt="The MVC dashboard All Brands page with a brand list, an add button, delete controls, and navigation for roles, users, and products." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Admin Dashboard · product brands</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/tree/027cc79ce74d59246910294b7868c3759038b15e/Admin.Dashboard/Controllers">Dashboard controllers</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/tree/027cc79ce74d59246910294b7868c3759038b15e/Admin.Dashboard/Views">Dashboard views</a></p>
+        </section>
+
+        <section class="case-section" id="api-documentation" aria-labelledby="api-documentation-title">
+          <h2 id="api-documentation-title">API documentation</h2>
+          <p class="case-intro">The supplied development Swagger captures cover all five REST controller groups. The endpoint breakdown comes from the source and counts each HTTP method and route pair once.</p>
+          <dl class="case-definitions case-grid--after">
+            <div><dt>Authentication · 4</dt><dd>Register, sign in, check email existence, and retrieve the current user.</dd></div>
+            <div><dt>Basket · 3</dt><dd>Retrieve by ID, create or update, and delete.</dd></div>
+            <div><dt>Order · 4</dt><dd>Create, list the current user’s orders, find one order, and list delivery methods.</dd></div>
+            <div><dt>Payment · 1</dt><dd>Create or update a Stripe PaymentIntent for a basket.</dd></div>
+            <div><dt>Products · 4</dt><dd>List products, retrieve one product, list brands, and list types.</dd></div>
+          </dl>
+          <div class="case-media-grid case-grid--after">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/swagger-authentication-basket.png" data-image-viewer aria-label="Enlarge Swagger · authentication and basket">
+                <img src="../assets/images/projects/ecommerce/swagger-authentication-basket.png" width="1280" height="613" alt="Local Swagger UI listing four authentication endpoints and three basket endpoints." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Swagger · authentication and basket</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/ecommerce/swagger-orders-payment-products.png" data-image-viewer aria-label="Enlarge Swagger · orders, payment, and products">
+                <img src="../assets/images/projects/ecommerce/swagger-orders-payment-products.png" width="1280" height="572" alt="Local Swagger UI listing four order endpoints, one PaymentIntent endpoint, and four product endpoints." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Swagger · orders, payment, and products</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Source <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/tree/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Presentation/Controllers">Web API controllers</a></p>
+        </section>
+
+        <section class="case-section" id="testing" aria-labelledby="testing-title">
+          <h2 id="testing-title">Manual API testing</h2>
+          <div class="case-media-grid">
+            <div class="case-copy">
+              <h3>Authenticated product retrieval</h3>
+              <p>The local session reported HTTP 401 for the initial unauthenticated <code>GET /api/Products</code>. After signing in, Postman sent a bearer token and recorded <strong>200 OK</strong>, page 1, page size 10, and 13 matching products.</p>
+              <figure class="case-figure">
+                <a class="case-image" href="../assets/images/projects/ecommerce/postman-products.png" data-image-viewer aria-label="Enlarge Postman · authenticated product list">
+                  <img src="../assets/images/projects/ecommerce/postman-products.png" width="1920" height="1021" alt="Postman showing an authenticated GET /api/Products request, a masked bearer token, and HTTP 200 with pagination values of 1, 10, and 13." loading="lazy" decoding="async">
+                  <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+                </a>
+                <figcaption>Postman · authenticated product list</figcaption>
+              </figure>
+            </div>
+            <div class="case-copy">
+              <h3>Shopping basket creation</h3>
+              <p><code>POST /api/Basket</code> returned <strong>200 OK</strong> for <code>portfolio-basket</code> with two Classic White T-Shirts. The Redis Insight capture confirms the resulting stored state. Retrieval, update, and deletion capabilities were reviewed in source.</p>
+              <figure class="case-figure">
+                <a class="case-image" href="../assets/images/projects/ecommerce/postman-basket-create.png" data-image-viewer aria-label="Enlarge Postman · shopping basket creation">
+                  <img src="../assets/images/projects/ecommerce/postman-basket-create.png" width="1917" height="1025" alt="Postman showing a POST /api/Basket request with basket ID portfolio-basket and quantity 2, followed by a 200 OK basket response." loading="lazy" decoding="async">
+                  <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+                </a>
+                <figcaption>Postman · shopping basket creation</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" id="challenges" aria-labelledby="challenges-title">
+          <h2 id="challenges-title">Technical challenges and maintenance</h2>
+          <dl class="case-definitions">
+            <div><dt>Keeping order details stable</dt><dd>The order service reloads current products when placing an order and stores name, image, unit price, and quantity on each item. Subsequent catalog edits do not change the stored item snapshots.</dd></div>
+            <div><dt>Reusing catalog filters</dt><dd>The product list and count specifications share filter criteria. The page-1 capture confirms pagination metadata, and the current page-index getter always returns 1.</dd></div>
+            <div><dt>Coordinating data with Stripe</dt><dd>The basket’s intent ID links the payment setup and order creation paths. The order service looks up a prior order with that ID before saving the replacement. Intent creation alone leaves settlement unverified.</dd></div>
+            <div><dt>Maintaining dependencies across hosts</dt><dd>The maintenance commit upgraded AutoMapper from 15.1.0 to 15.1.4 and removed the legacy <code>Microsoft.AspNetCore.Mvc.Core</code> 2.3.0 package, retaining the <code>Microsoft.AspNetCore.App</code> framework reference.</dd></div>
+          </dl>
+          <div class="case-callout">
+            <h3>Dependency audit and Release verification</h3>
+            <p>The recorded <code>dotnet list package --vulnerable --include-transitive</code> audit reported no known vulnerable packages across the eight projects from the sources available at the time. The maintenance removed the reported transitive findings involving <code>Microsoft.AspNetCore.WebUtilities</code> and <code>Newtonsoft.Json</code>. The Release build succeeded with nullable-reference warnings remaining, and both hosts started locally.</p>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/commit/027cc79ce74d59246910294b7868c3759038b15e">Dependency maintenance commit</a> · <a href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API/blob/027cc79ce74d59246910294b7868c3759038b15e/ECommerce.Shared/ProductQueryParms.cs">Product query parameters</a></p>
+        </section>
+      </article>
+
+      <footer class="case-footer">
+        <nav aria-label="Case study links">
+          <a class="button button-secondary" href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+          <div class="case-actions">
+            <a class="button button-secondary" href="https://github.com/mark26504/ECommerce-ASP.NET-Core-Web-API"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> View Source Code</a>
+          </div>
+        </nav>
+      </footer>
+    </main>
+
+    <dialog class="case-viewer" aria-labelledby="case-viewer-title" aria-describedby="case-viewer-instructions">
+      <header class="case-viewer-header">
+        <h2 id="case-viewer-title">Image viewer</h2>
+        <div class="case-viewer-actions" role="group" aria-label="Image viewing controls">
+          <button type="button" data-zoom-out aria-label="Zoom out"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /></svg></button>
+          <button type="button" data-zoom-reset aria-label="Reset zoom to fit">Fit</button>
+          <button type="button" data-zoom-in aria-label="Zoom in"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14" /></svg></button>
+          <button type="button" data-viewer-close aria-label="Close image viewer" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+        </div>
+      </header>
+      <p class="visually-hidden" id="case-viewer-instructions">When zoomed, use arrow keys, drag, or swipe in the image area to pan. Press Escape to close.</p>
+      <output class="case-viewer-status" aria-live="polite">Fit · 100%</output>
+      <div class="case-viewer-stage" tabindex="0" role="region" aria-label="Scrollable image area">
+        <div class="case-viewer-canvas"></div>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="403" viewBox="0 0 960 403" role="img" aria-labelledby="title desc">
+  <title id="title">E-Commerce runtime storage</title>
+  <desc id="desc">The Web API and admin dashboard both use EF Core with the Store and Identity SQL Server databases. The Web API also uses Redis for temporary baskets and product response caching.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #3d6b86; stroke-width: 1.4; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 2; stroke-linejoin: round; marker-end: url(#arrow); }
+  </style>
+  <rect width="960" height="403" fill="#0b0f1c" />
+  <rect width="960" height="403" fill="url(#grid)" />
+  <path d="M30 87H930" stroke="#293548" />
+  <text class="mono" x="30" y="39" fill="#58b9eb" font-size="19" letter-spacing="1.2">DATA STORAGE / RUNTIME</text>
+  <text class="sans" x="30" y="69" fill="#94a3b8" font-size="16">Two SQL Server databases for durable data. Redis for expiring state.</text>
+  <path class="connector" d="M301 179v19h126v38" />
+  <path class="connector" d="M659 179v19H499v38" />
+  <path class="connector" d="M258 179v21H141v91" />
+  <path class="connector" d="M436 259v32" />
+  <path class="connector" d="M481 259v13h255v19" />
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="143" y="111" width="316" height="68" rx="9" />
+    <text x="301" y="140" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce.Web</text>
+    <text x="301" y="162" fill="#94a3b8" font-size="15">ASP.NET Core Web API</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="501" y="111" width="316" height="68" rx="9" />
+    <text x="659" y="140" fill="#f1f5f9" font-size="20" font-weight="650">Admin.Dashboard</text>
+    <text x="659" y="162" fill="#94a3b8" font-size="15">ASP.NET Core MVC</text>
+  </g>
+  <rect class="panel" x="395" y="236" width="136" height="23" rx="5" />
+  <text class="mono" x="463" y="252" text-anchor="middle" fill="#f1f5f9" font-size="13">EF CORE</text>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="25" y="291" width="232" height="68" rx="9" />
+    <text x="141" y="320" fill="#f1f5f9" font-size="20" font-weight="650">Redis</text>
+    <text x="141" y="342" fill="#94a3b8" font-size="15">Baskets and JSON cache</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="311" y="291" width="250" height="68" rx="9" />
+    <text x="436" y="320" fill="#f1f5f9" font-size="20" font-weight="650">ECommerce</text>
+    <text x="436" y="342" fill="#94a3b8" font-size="15">SQL Server · catalog and orders</text>
+  </g>
+  <g class="sans" text-anchor="middle">
+    <rect class="panel" x="595" y="291" width="282" height="68" rx="9" />
+    <text x="736" y="320" fill="#f1f5f9" font-size="20" font-weight="650">ECommerceIdentity</text>
+    <text x="736" y="342" fill="#94a3b8" font-size="15">SQL Server · accounts and roles</text>
+  </g>
+</svg>
