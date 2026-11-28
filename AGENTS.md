@@ -62,6 +62,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Use a generic cache symbol and the plain Redis label in Core Technologies. Keep the Redis artwork, attribution, and trademark notice on the credits page. Keep the temporary Credits & Licenses link below Core Technologies until Phase 10. Add a small Credits & Licenses link to the footer in that phase and remove the temporary link.
 - Keep About at `#about` below Core Technologies. Use a stacked layout below `64rem` and place the highlights to the right at wider widths. Keep the 36-endpoint figure scoped to the Library Management API.
 - Keep Selected Work at `#projects` below About. Use native horizontal scrolling and scroll snapping, with one complete card on mobile, two from `48rem`, and three from `64rem`. Previous and next move by one card. Keep pagination in sync with the reachable positions. Leave the track usable without JavaScript and respect reduced motion.
+- Keep Technical Skills at `#skills` after Selected Work. Group verified skills into Backend Development, Databases & Caching, Architecture & Patterns, Security & Authentication, DevOps & Deployment, and Development Tools. Use inline category icons and informational technology tags with a divider below each category heading. Use one column by default and two from `48rem`. Let each row size to its content.
 - Store project covers in `assets/images/projects/` as local 4:3 artwork with descriptive alt text and intrinsic dimensions. Verify claims and clearance for any embedded marks before publishing artwork. Use approved screenshots in case studies.
 - The Library Management API cover, title, and Explore Project link open `projects/library-management.html`. The Explore Project actions for Eatopia, E-Commerce, and Gym open `projects/eatopia.html`, `projects/ecommerce.html`, and `projects/gym.html`. Keep repository and Swagger links independently accessible.
 
@@ -87,10 +88,12 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 4. Core Technologies — complete
 5. About Me — complete
 6. Featured Projects — Carousel and all four case study pages complete through Phase 6.5.
-7. Technical Skills
-8. Education and Certifications
-9. GitHub Activity
-10. Contact and Footer
+7. Technical Skills — complete
+8. Contact Section — next
+9. Education and Certifications
+10. Footer
 11. Responsive Design
 12. Accessibility, Performance and SEO
 13. GitHub Pages Deployment
+
+GitHub Activity remains pending.

@@ -13,7 +13,7 @@ Open `index.html` for the portfolio, a page under `projects/` for a case study, 
 
 ## Project status
 
-Phases 1 through 5, the Phase 6.1 project carousel, and all four case study pages through Phase 6.5 are implemented. The site has a sticky navbar with Home, About, and Projects, a GitHub shortcut, an accessible mobile menu, an animated backend diagram, a Core Technologies section, and an About Me section. Skills, Contact, and the CV controls are marked as coming soon.
+Phases 1 through 7 are complete, including the project carousel, all four case study pages, and Technical Skills. The sticky navbar links to Home, About, Projects, and Skills, with a GitHub shortcut and an accessible mobile menu. Contact and the CV controls are marked as coming soon. Phase 8 is the Contact section.
 
 Blue particles illustrate the runtime connections. The diagram keeps Docker and CI/CD separate under deployment. The button next to the diagram pauses or resumes decorative motion, including the availability pulse. Animations also pause offscreen and in hidden tabs, and the diagram stays readable with reduced motion or JavaScript disabled.
 
@@ -30,6 +30,10 @@ The Library card's cover, title, and Explore Project action open its [case study
 The Library and E-Commerce covers show illustrated Swagger screens. The Library cover uses an illustrative hostname, shows an “Admin” group, and labels borrowing returns `PUT`. The [deployed Swagger specification](https://library-management-api.runasp.net/swagger/v1/swagger.json) groups user administration under Users and lists `POST` for borrowing returns. The Gym cover shows sample dashboard counts.
 
 Publication clearance for the third-party marks embedded in the supplied covers is unverified. Review the applicable [Docker](https://www.docker.com/legal/trademark-guidelines/), [Microsoft](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks), [Redis](https://redis.io/legal/redis-trademark-policy/), [Stripe](https://stripe.com/legal/marks), and [Swagger](https://swagger.io/license/) terms before publishing the artwork.
+
+## Technical Skills
+
+[Technical Skills](index.html#skills) follows Selected Work. It groups skills into Backend Development, Databases & Caching, Architecture & Patterns, Security & Authentication, DevOps & Deployment, and Development Tools. Each card uses an inline icon and informational technology tags separated from the heading by a divider. The grid uses one column on mobile and two from `48rem`, with equal card heights within each row. The Skills link uses the shared sticky header offset and active section tracking.
 
 ## Library Management API case study
 

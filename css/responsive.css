@@ -103,6 +103,11 @@
   .project-track {
     --project-visible: 2;
   }
+
+  .skill-row {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+    column-gap: 1.25rem;
+  }
 }
 
 @media (min-width: 64rem) {
