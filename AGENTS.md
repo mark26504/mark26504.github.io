@@ -63,7 +63,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Keep About at `#about` below Core Technologies. Use a stacked layout below `64rem` and place the highlights to the right at wider widths. Keep the 36-endpoint figure scoped to the Library Management API.
 - Keep Selected Work at `#projects` below About. Use native horizontal scrolling and scroll snapping, with one complete card on mobile, two from `48rem`, and three from `64rem`. Previous and next move by one card. Keep pagination in sync with the reachable positions. Leave the track usable without JavaScript and respect reduced motion.
 - Store project covers in `assets/images/projects/` as local 4:3 artwork with descriptive alt text and intrinsic dimensions. Verify claims and clearance for any embedded marks before publishing artwork. Use approved screenshots in case studies.
-- The Library Management API cover, title, and Explore Project link open `projects/library-management.html`. Eatopia and E-Commerce open `projects/eatopia.html` and `projects/ecommerce.html` from Explore Project. Keep the Gym action disabled until `projects/gym-management.html` exists. Keep repository and Swagger links independently accessible.
+- The Library Management API cover, title, and Explore Project link open `projects/library-management.html`. The Explore Project actions for Eatopia, E-Commerce, and Gym open `projects/eatopia.html`, `projects/ecommerce.html`, and `projects/gym.html`. Keep repository and Swagger links independently accessible.
 
 ## Case studies
 
@@ -76,6 +76,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 - Verify implementation claims against project files, models, migrations, and deployment configuration. For the Library API, the `net10.0` solution contains seven projects and 36 v1 OpenAPI operations excluding two health probes. Distinguish compile-time references from runtime calls, local Docker from public IIS, and Postman checks from deployment verification and regression testing.
 - Eatopia targets `net8.0`. Count its v1 operations by HTTP method and route template, excluding unversioned aliases and the SignalR hub. Keep team contributions collaborative. Show database diagrams with migration-backed constraints distinguished from EF model mappings. Keep private source recordings and raw SQL Server reference images out of published assets.
 - The E-Commerce solution contains eight projects, 16 REST endpoints, and two SQL Server databases. The API targets .NET 8 and the MVC dashboard targets .NET 9. Use the direct project references, actual project spellings, and migration-defined keys in diagrams. Keep the supplied manual Postman and Redis evidence distinct from source-verified PaymentIntent behavior and the historical dependency maintenance audit.
+- The Gym MVC solution has three .NET 9 projects, two administrative roles, and one SQL Server database with seven gym tables, seven Identity tables, and EF migration history. Health fields share the Members table. The page uses five supplied screenshots and three SVG diagrams under `assets/images/projects/gym/`. Distinguish the earlier UI evidence from the supplied Release build, local startup, and dependency audit. Use the full approved Gym demo unchanged. The recording uses fictional test data and the sign-in screens mask password values.
 - Use an existing local preview if available. Prefer port `5500` when starting a new preview.
 
 ## Development roadmap
@@ -85,7 +86,7 @@ Keep a `.gitkeep` in each empty asset directory so Git tracks it. Remove it when
 3. Animated Backend Architecture Diagram — complete
 4. Core Technologies — complete
 5. About Me — complete
-6. Featured Projects — Phase 6.1 carousel, Phase 6.2 Library case study, Phase 6.3 Eatopia case study, and Phase 6.4 E-Commerce case study complete. Phase 6.5 Gym Management System is pending.
+6. Featured Projects — Carousel and all four case study pages complete through Phase 6.5.
 7. Technical Skills
 8. Education and Certifications
 9. GitHub Activity

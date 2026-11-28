@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="810" viewBox="0 0 1100 810" role="img" aria-labelledby="title desc">
+  <title id="title">Gym operations and migration history schema</title>
+  <desc id="desc">Gym operations use seven tables. Memberships link Members and Plans. MemberSessions link Members and Sessions. Sessions reference Trainers and Categories. Member health and address fields are stored in Members.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0v28" fill="none" stroke="#293548" opacity=".42" />
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#58b9eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </marker>
+  </defs>
+  <style>
+    .mono { font-family: "JetBrains Mono", Consolas, monospace; }
+    .sans { font-family: system-ui, sans-serif; }
+    .panel { fill: #131b2b; stroke: #3d6b86; stroke-width: 1.4; }
+    .connector { fill: none; stroke: #58b9eb; stroke-width: 2; stroke-linejoin: round; marker-end: url(#arrow); }
+    .runtime { stroke-dasharray: 6 5; }
+    .key { font-size: 12px; font-weight: 700; }
+    .field { fill: #f1f5f9; font-size: 16px; }
+  </style>
+  <rect width="1100" height="810" fill="#0b0f1c" />
+  <rect width="1100" height="810" fill="url(#grid)" />
+  <path d="M28 87H1072" stroke="#293548" />
+  <text class="mono" x="28" y="39" fill="#58b9eb" font-size="19" letter-spacing="1.2">GYM MANAGEMENT SYSTEM / OPERATIONS SCHEMA</text>
+  <text class="sans" x="28" y="69" fill="#94a3b8" font-size="16">7 gym tables + EF migration history · FK arrows point from many to one · Repeated PK flags form a composite key</text>
+  <path class="connector" d="M28 458H14V168h14" />
+  <path class="connector" d="M322 438h41V168h40" />
+  <path class="connector" d="M550 590V462" />
+  <path class="connector" d="M697 666h42V331h39" />
+  <path class="connector" d="M925 275V217" />
+  <path class="connector" d="M1072 451h13v133h-13" />
+  <g class="mono" aria-label="Plans">
+    <rect class="panel" x="28" y="112" width="294" height="170" rx="9" />
+    <path d="M29 148v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="42" y="137" fill="#58b9eb" font-size="19" font-weight="700">Plans</text>
+    <text class="key" x="42" y="168" fill="#f4ca78">PK</text>
+    <text class="field" x="96" y="168">Id</text>
+    <text class="field" x="96" y="188">Name</text>
+    <text class="field" x="96" y="208">Description</text>
+    <text class="field" x="96" y="228">DurationDays</text>
+    <text class="field" x="96" y="248">Price</text>
+    <text class="field" x="96" y="268">IsActive</text>
+  </g>
+  <g class="mono" aria-label="Memberships">
+    <rect class="panel" x="28" y="382" width="294" height="130" rx="9" />
+    <path d="M29 418v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="42" y="407" fill="#58b9eb" font-size="19" font-weight="700">Memberships</text>
+    <text class="key" x="42" y="438" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="96" y="438">MemberId</text>
+    <text class="key" x="42" y="458" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="96" y="458">PlanId</text>
+    <text class="field" x="96" y="478">EndDate</text>
+    <text class="field" x="96" y="498">StartDate</text>
+  </g>
+  <g class="mono" aria-label="__EFMigrationsHistory">
+    <rect class="panel" x="28" y="615" width="294" height="90" rx="9" />
+    <path d="M29 651v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="42" y="640" fill="#58b9eb" font-size="19" font-weight="700">__EFMigrationsHistory</text>
+    <text class="key" x="42" y="671" fill="#f4ca78">PK</text>
+    <text class="field" x="96" y="671">MigrationId</text>
+    <text class="field" x="96" y="691">ProductVersion</text>
+  </g>
+  <g class="mono" aria-label="Members">
+    <rect class="panel" x="403" y="112" width="294" height="350" rx="9" />
+    <path d="M404 148v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="417" y="137" fill="#58b9eb" font-size="19" font-weight="700">Members</text>
+    <text class="key" x="417" y="168" fill="#f4ca78">PK</text>
+    <text class="field" x="471" y="168">Id</text>
+    <text class="field" x="471" y="188">Photo</text>
+    <text class="field" x="471" y="208">Height</text>
+    <text class="field" x="471" y="228">Weight</text>
+    <text class="field" x="471" y="248">BloodType</text>
+    <text class="field" x="471" y="268">Note</text>
+    <text class="field" x="471" y="288">JoinDate</text>
+    <text class="field" x="471" y="308">Name</text>
+    <text class="field" x="471" y="328">Email</text>
+    <text class="field" x="471" y="348">Phone</text>
+    <text class="field" x="471" y="368">DateOfBirth</text>
+    <text class="field" x="471" y="388">Gender</text>
+    <text class="field" x="471" y="408">Address_BuildingNumber</text>
+    <text class="field" x="471" y="428">Street</text>
+    <text class="field" x="471" y="448">City</text>
+  </g>
+  <g class="mono" aria-label="MemberSessions">
+    <rect class="panel" x="403" y="590" width="294" height="130" rx="9" />
+    <path d="M404 626v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="417" y="615" fill="#58b9eb" font-size="19" font-weight="700">MemberSessions</text>
+    <text class="key" x="417" y="646" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="471" y="646">MemberId</text>
+    <text class="key" x="417" y="666" fill="#f4ca78">PK/FK</text>
+    <text class="field" x="471" y="666">SessionId</text>
+    <text class="field" x="471" y="686">IsAttended</text>
+    <text class="field" x="471" y="706">BookingDate</text>
+  </g>
+  <g class="mono" aria-label="Categories">
+    <rect class="panel" x="778" y="127" width="294" height="90" rx="9" />
+    <path d="M779 163v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="792" y="152" fill="#58b9eb" font-size="19" font-weight="700">Categories</text>
+    <text class="key" x="792" y="183" fill="#f4ca78">PK</text>
+    <text class="field" x="846" y="183">Id</text>
+    <text class="field" x="846" y="203">CategoryName</text>
+  </g>
+  <g class="mono" aria-label="Sessions">
+    <rect class="panel" x="778" y="275" width="294" height="190" rx="9" />
+    <path d="M779 311v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="792" y="300" fill="#58b9eb" font-size="19" font-weight="700">Sessions</text>
+    <text class="key" x="792" y="331" fill="#f4ca78">PK</text>
+    <text class="field" x="846" y="331">Id</text>
+    <text class="field" x="846" y="351">Description</text>
+    <text class="field" x="846" y="371">Capacity</text>
+    <text class="field" x="846" y="391">StartDate</text>
+    <text class="field" x="846" y="411">EndDate</text>
+    <text class="key" x="792" y="431" fill="#58b9eb">FK</text>
+    <text class="field" x="846" y="431">CategoryId</text>
+    <text class="key" x="792" y="451" fill="#58b9eb">FK</text>
+    <text class="field" x="846" y="451">TrainerId</text>
+  </g>
+  <g class="mono" aria-label="Trainers">
+    <rect class="panel" x="778" y="528" width="294" height="270" rx="9" />
+    <path d="M779 564v-27q0-8 8-8h276q8 0 8 8v27z" fill="#1b3043" />
+    <text x="792" y="553" fill="#58b9eb" font-size="19" font-weight="700">Trainers</text>
+    <text class="key" x="792" y="584" fill="#f4ca78">PK</text>
+    <text class="field" x="846" y="584">Id</text>
+    <text class="field" x="846" y="604">Specialties</text>
+    <text class="field" x="846" y="624">HireDate</text>
+    <text class="field" x="846" y="644">Name</text>
+    <text class="field" x="846" y="664">Email</text>
+    <text class="field" x="846" y="684">Phone</text>
+    <text class="field" x="846" y="704">DateOfBirth</text>
+    <text class="field" x="846" y="724">Gender</text>
+    <text class="field" x="846" y="744">Address_BuildingNumber</text>
+    <text class="field" x="846" y="764">Street</text>
+    <text class="field" x="846" y="784">City</text>
+  </g>
+</svg>

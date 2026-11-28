@@ -13,7 +13,7 @@ Open `index.html` for the portfolio, a page under `projects/` for a case study, 
 
 ## Project status
 
-Phases 1 through 5, the Phase 6.1 project carousel, and the Library Management API, Eatopia, and E-Commerce case studies through Phase 6.4 are complete. The site has a sticky navbar with Home, About, and Projects, a GitHub shortcut, an accessible mobile menu, an animated backend diagram, a Core Technologies section, and an About Me section. Skills, Contact, and the CV controls are marked as coming soon. Phase 6.5 covers the pending Gym Management System case study.
+Phases 1 through 5, the Phase 6.1 project carousel, and all four case study pages through Phase 6.5 are implemented. The site has a sticky navbar with Home, About, and Projects, a GitHub shortcut, an accessible mobile menu, an animated backend diagram, a Core Technologies section, and an About Me section. Skills, Contact, and the CV controls are marked as coming soon.
 
 Blue particles illustrate the runtime connections. The diagram keeps Docker and CI/CD separate under deployment. The button next to the diagram pauses or resumes decorative motion, including the availability pulse. Animations also pause offscreen and in hidden tabs, and the diagram stays readable with reduced motion or JavaScript disabled.
 
@@ -25,7 +25,7 @@ About Me presents the biography, personal information, and four highlights. The 
 
 Selected Work shows those four projects with local 4:3 WebP covers from the supplied promotional artwork. The carousel shows one complete card on mobile, two from `48rem`, and three from `64rem`. It supports arrows, pagination, keyboard navigation, and native horizontal scrolling with scroll snap. The track also works without JavaScript. The cards link to their GitHub repositories, and the Library Management API card also links to its deployed Swagger documentation.
 
-The Library card's cover, title, and Explore Project action open its [case study](projects/library-management.html). The same action opens the [Eatopia case study](projects/eatopia.html) and [E-Commerce case study](projects/ecommerce.html) from their cards. The Gym Management System action stays disabled until its page is ready.
+The Library card's cover, title, and Explore Project action open its [case study](projects/library-management.html). The same action opens the [Eatopia](projects/eatopia.html), [E-Commerce](projects/ecommerce.html), and [Gym Management System](projects/gym.html) case studies from their cards.
 
 The Library and E-Commerce covers show illustrated Swagger screens. The Library cover uses an illustrative hostname, shows an “Admin” group, and labels borrowing returns `PUT`. The [deployed Swagger specification](https://library-management-api.runasp.net/swagger/v1/swagger.json) groups user administration under Users and lists `POST` for borrowing returns. The Gym cover shows sample dashboard counts.
 
@@ -58,5 +58,15 @@ The eight supplied screenshots and five original SVGs are in `assets/images/proj
 Manual Postman evidence shows the authenticated product list and basket creation returning HTTP 200. Redis Insight shows the cached product response and saved basket with their remaining TTLs. The supplied local session ran Redis in Docker, recorded a successful PING, and loaded the dashboard login. Stripe was reviewed in source, and the session completed no payments. The product query code returns page index 1 regardless of the supplied index.
 
 The maintenance commit upgraded AutoMapper to 15.1.4 and removed the legacy MVC Core package while retaining the ASP.NET Core framework reference. The supplied session recorded a successful Release build and a transitive vulnerability audit with no known findings across eight projects at that time. Nullable-reference warnings remained.
+
+## Gym Management System case study
+
+The [Gym case study](projects/gym.html) uses the shared case study layout, responsive hero, and image viewer. The [reviewed source at `dcd95e6`](https://github.com/mark26504/gym-management-system/tree/dcd95e6b8b68471dbdd5953428a115c4612ed019) contains three .NET 9 projects with direct references from Presentation to Business Logic to Data Access. It uses injected services, a generic repository and specialized repositories, a Unit of Work, and AutoMapper profiles for ViewModels.
+
+One SQL Server database contains seven gym tables, seven Identity tables, and one EF migration history table. Health information shares the Members table. Memberships and MemberSessions have composite keys. Identity uses cookie authentication with the Admin and SuperAdmin roles. The five supplied UI screenshots and three source-based diagrams are in `assets/images/projects/gym/`. The SQL Server reference captures stay private.
+
+The local maintenance session recorded database migration, MVC startup, and a Release build with zero errors and 38 warnings. The maintenance revision upgraded AutoMapper from 15.0.1 to 15.1.4 and removed the legacy scaffolding package. The supplied transitive dependency audit reported no known findings across the three projects at that time.
+
+The case study embeds the unchanged Gym demo at `assets/videos/gym/gym-demo-public.mp4`. The native player preserves the full 2:44.80 recording at 1920 × 1080, including its original audio track. The recording and the original Admins and Sessions screenshots show fictional test data. Sign-in password values are masked in the recording.
 
 The site is intended for GitHub Pages. See [AGENTS.md](AGENTS.md) for development conventions and the remaining roadmap.

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gym Management System case study covering an ASP.NET Core MVC application, gym operations, booking rules, and role-based administration.">
+    <title>Gym Management System | Mark Sameeh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <script src="../js/projects.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#project-main">Skip to case study</a>
+    <header class="site-header">
+      <div class="container header-inner case-header">
+        <a class="brand" href="../index.html#home" aria-label="Mark Sameeh, home">MS.</a>
+        <nav class="case-header-links" aria-label="Project navigation">
+          <a href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container case-main" id="project-main" tabindex="-1">
+      <article class="case-study" aria-labelledby="case-title">
+        <header class="hero case-hero">
+          <div class="case-hero-copy">
+            <p class="projects-label">PROJECT / 04</p>
+            <h1 id="case-title">Gym Management System<span>.</span></h1>
+            <p class="project-category">MVC Web Application</p>
+            <p class="case-lead">A three-tier ASP.NET Core MVC application for managing gym members, trainers, memberships, session scheduling, bookings, and staff access.</p>
+            <div class="case-actions">
+              <a class="button button-primary" href="#demo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 11 7-11 7V5Z" /></svg> Watch Demo</a>
+              <a class="button button-secondary" href="https://github.com/mark26504/gym-management-system"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> Source Code</a>
+            </div>
+          </div>
+          <figure class="case-figure case-cover">
+            <a class="case-image" href="../assets/images/projects/gym-management.webp" data-image-viewer aria-label="Enlarge Promotional project cover">
+              <img src="../assets/images/projects/gym-management.webp" width="1448" height="1086" alt="Illustrated gym management cover showing a sample dashboard and a three-tier architecture diagram." fetchpriority="high">
+              <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+            </a>
+            <figcaption>Promotional project cover</figcaption>
+          </figure>
+        </header>
+
+        <ul class="about-stats case-stats" role="list" aria-label="Project highlights">
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5" /></svg>
+            <strong class="about-stat-value">3</strong>
+            <span class="about-stat-label">Solution Projects</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6c0 1.7-3.6 3-8 3S4 7.7 4 6s3.6-3 8-3 8 1.3 8 3Zm0 0v12c0 1.7-3.6 3-8 3s-8-1.3-8-3V6m16 6c0 1.7-3.6 3-8 3s-8-1.3-8-3" /></svg>
+            <strong class="about-stat-value">15</strong>
+            <span class="about-stat-label">SQL Server Tables</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h12v9H6zM9 11V7a3 3 0 0 1 6 0v4m-3 3v3" /></svg>
+            <strong class="about-stat-value">2</strong>
+            <span class="about-stat-label">Administrative Roles</span>
+          </li>
+          <li class="about-stat">
+            <svg class="about-stat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM7 9l3 3-3 3m5 0h5" /></svg>
+            <strong class="about-stat-value">.NET 9</strong>
+            <span class="about-stat-label">Target Framework</span>
+          </li>
+        </ul>
+        <p class="case-count">The single database contains seven gym tables, seven Identity tables, and one EF migration history table.</p>
+
+        <nav class="case-toc" aria-label="In this case study">
+          <p class="case-label">In this case study</p>
+          <ul role="list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#rules">Business rules</a></li>
+            <li><a href="#authorization">Authorization</a></li>
+            <li><a href="#interface">Interface</a></li>
+            <li><a href="#patterns">Design practices</a></li>
+            <li><a href="#runtime">Runtime and maintenance</a></li>
+          </ul>
+        </nav>
+
+        <section class="case-section" id="overview" aria-labelledby="overview-title">
+          <h2 id="overview-title">Project overview</h2>
+          <div class="case-grid">
+            <div>
+              <h3>Gym operations</h3>
+              <p>Gym staff maintain member and trainer profiles, assign members to membership plans, and schedule sessions by category and trainer. The application tracks bookings, attendance, and current membership status.</p>
+            </div>
+            <div>
+              <h3>Staff administration</h3>
+              <p>Staff work in a server-rendered MVC interface with operational totals and protected management screens. SuperAdmin accounts also manage staff logins and assign administrative roles.</p>
+            </div>
+          </div>
+          <div class="case-stack">
+            <h3>Technology stack</h3>
+            <ul class="project-tags" role="list" aria-label="Technologies">
+              <li>C#</li>
+              <li>.NET 9</li>
+              <li>ASP.NET Core MVC</li>
+              <li>Razor</li>
+              <li>ASP.NET Core Identity</li>
+              <li>EF Core</li>
+              <li>SQL Server</li>
+              <li>AutoMapper</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="case-section" id="demo" aria-labelledby="demo-title">
+          <h2 id="demo-title">Project demonstration</h2>
+          <p class="case-intro">The walkthrough shows staff sign-in, member and trainer management, session scheduling, bookings, memberships, and administrative screens with fictional test data.</p>
+          <figure class="case-figure case-video">
+            <video controls playsinline preload="metadata" width="1920" height="1080" style="aspect-ratio: 1920 / 1080" poster="../assets/images/projects/gym-management.webp" aria-label="Gym Management System demonstration">
+              <source src="../assets/videos/gym/gym-demo-public.mp4" type="video/mp4">
+              <a href="../assets/videos/gym/gym-demo-public.mp4">Open the Gym Management System demo video</a>.
+            </video>
+            <figcaption>Full application walkthrough · 2:45</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" id="architecture" aria-labelledby="architecture-title">
+          <h2 id="architecture-title">System architecture</h2>
+          <p class="case-intro">Three .NET 9 projects separate HTTP handling, business rules, and storage. The solid arrows follow the direct references in the project files. The dashed arrow shows database access at runtime.</p>
+          <div class="case-architecture-media">
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/architecture.svg" data-image-viewer aria-label="Enlarge Three-tier project references">
+                <img src="../assets/images/projects/gym/architecture.svg" width="800" height="535" alt="Two direct project references connect the MVC presentation layer to the business layer and the business layer to data access. A dashed arrow connects data access to SQL Server at runtime." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Three-tier project references</figcaption>
+            </figure>
+            <figure class="case-figure case-solution">
+              <a class="case-image" href="../assets/images/projects/gym/solution-explorer.png" data-image-viewer aria-label="Enlarge Visual Studio Solution Explorer">
+                <img src="../assets/images/projects/gym/solution-explorer.png" width="501" height="780" alt="Visual Studio Solution Explorer showing the presentation, business logic, and data access projects and their folder structure." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Visual Studio Solution Explorer</figcaption>
+            </figure>
+          </div>
+          <dl class="case-definitions case-stack">
+            <div><dt>Presentation layer</dt><dd><code>GymManagementSystemPL</code> handles MVC routing, model binding, controller actions, and Razor views. Its startup configures dependency injection, Identity, and the SQL Server provider.</dd></div>
+            <div><dt>Business logic layer</dt><dd><code>GymManagementSystemBLL</code> defines ViewModels, service interfaces and implementations, business rules, and AutoMapper profiles.</dd></div>
+            <div><dt>Data access layer</dt><dd><code>GymManagementSystemDAL</code> contains entities, the EF Core context, entity mappings, repositories, migrations, and seed code.</dd></div>
+          </dl>
+          <div class="case-callout">
+            <h3>Runtime request flow</h3>
+            <p>Routing sends browser requests to MVC controllers. An injected business service can query or update data through a repository and EF Core. The controller then renders a Razor view or redirects the browser.</p>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemPL/GymManagementSystemPL.csproj">Presentation project</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemBLL/GymManagementSystemBLL.csproj">Business project</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemDAL/GymManagementSystemDAL.csproj">Data access project</a></p>
+        </section>
+
+        <section class="case-section" id="database" aria-labelledby="database-title">
+          <h2 id="database-title">Database design</h2>
+          <p class="case-intro">The gym data and ASP.NET Core Identity data share one SQL Server database and one EF Core context. The diagrams show the physical tables and foreign keys from the migrations.</p>
+          <div class="case-stack">
+            <h3>Gym operations</h3>
+            <p class="case-intro">Memberships join members to plans. MemberSessions join members to sessions and store booking dates and attendance. Both junction tables use two-column primary keys. Each session has one trainer and one category. HealthRecord shares the Members table, and addresses are stored as columns in Members and Trainers.</p>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/schema-domain.svg" data-image-viewer aria-label="Enlarge Gym operations and migration history">
+                <img src="../assets/images/projects/gym/schema-domain.svg" width="1100" height="810" alt="Seven gym tables with columns, primary keys, and six foreign keys. Members stores health and address columns. Memberships and MemberSessions have composite keys. Migration history is also shown." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Gym operations and migration history</figcaption>
+            </figure>
+          </div>
+          <div class="case-stack">
+            <h3>Identity and access</h3>
+            <p class="case-intro">ASP.NET Core Identity stores staff accounts in <code>AspNetUsers</code> and role assignments in <code>AspNetUserRoles</code>. Claims, external-login keys, and user token records have their own Identity tables. Gym members are modelled separately from staff logins.</p>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/schema-identity.svg" data-image-viewer aria-label="Enlarge ASP.NET Core Identity schema">
+                <img src="../assets/images/projects/gym/schema-identity.svg" width="1100" height="790" alt="Seven Identity tables showing account, role, claim, login, and token columns and their keys. AspNetUserRoles links administrative users to roles." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>ASP.NET Core Identity schema</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemDAL/Migrations/GymManagementSystemDbContextModelSnapshot.cs">EF Core model snapshot</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemDAL/Data/Configuration/HealthRecordConfiguration.cs">Health record mapping</a></p>
+        </section>
+
+        <section class="case-section" id="features" aria-labelledby="features-title">
+          <h2 id="features-title">Core features</h2>
+          <ul class="case-features" role="list">
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2" /></svg>
+              <h3>Member profiles</h3>
+              <p>Create and update member profiles, view health details, and check upcoming bookings before deleting a member.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v14H5zM8 6V4h8v2M9 12h6m-3-3v6" /></svg>
+              <h3>Trainer management</h3>
+              <p>Maintain trainer contact details and specialties. Trainers assigned to future sessions cannot be deleted.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM8 4v4m8-4v4M4 10h16m-11 5h6" /></svg>
+              <h3>Session scheduling</h3>
+              <p>Set a trainer, category, time window, and capacity. Future sessions can be edited while they have no bookings.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5zM8 12l3 3 5-6" /></svg>
+              <h3>Bookings and attendance</h3>
+              <p>Book eligible members into upcoming sessions, cancel future bookings, and mark attendance.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4zM4 10h16m-12 4h4" /></svg>
+              <h3>Memberships and plans</h3>
+              <p>Enroll members in time-limited plans, view subscriptions, and edit or toggle plans subject to active memberships.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-6 4 12 3-6h4" /></svg>
+              <h3>Health information</h3>
+              <p>Store height, weight, blood type, and notes alongside the member record.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M7 16v-4m5 4V7m5 9v-6" /></svg>
+              <h3>Operational dashboard</h3>
+              <p>Summarize members, trainers, active memberships, and upcoming, ongoing, and completed sessions.</p>
+            </li>
+            <li>
+              <svg class="case-feature-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h12v9H6zM9 11V7a3 3 0 0 1 6 0v4m-3 3v3" /></svg>
+              <h3>Role-based administration</h3>
+              <p>Sign in with ASP.NET Core Identity. SuperAdmin accounts can list, create, and delete administrative accounts.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="case-section" id="rules" aria-labelledby="rules-title">
+          <h2 id="rules-title">Business logic and validation</h2>
+          <dl class="case-definitions">
+            <div><dt>Membership validity</dt><dd>The service checks that the member and plan exist and rejects a new membership when the member already has an active one. Expiration is calculated from the plan duration. Active memberships also govern whether a plan can be edited or toggled.</dd></div>
+            <div><dt>Scheduling and capacity</dt><dd>A session requires an existing trainer and category, an end time after its start, and capacity between 1 and 25. Edits are limited to future sessions with no bookings. Deletion is rejected when a session is underway or has bookings.</dd></div>
+            <div><dt>Booking eligibility</dt><dd>The service requires a future session, an active membership, and a remaining place. The composite key prevents duplicate member–session rows at the database level. Cancellation is limited to future sessions.</dd></div>
+            <div><dt>Validation and deletion</dt><dd>MVC actions inspect model validation results. Services check for duplicate member and trainer email addresses and phone numbers, backed by unique indexes. Upcoming bookings block member deletion and future assigned sessions block trainer deletion.</dd></div>
+          </dl>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemBLL/Services/Classes/MembershipServices.cs">Membership service</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemBLL/Services/Classes/SessionServices.cs">Session service</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemBLL/Services/Classes/BookingServices.cs">Booking service</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemDAL/Data/Configuration/MemberSessionConfiguration.cs">Booking key mapping</a></p>
+        </section>
+
+        <section class="case-section" id="authorization" aria-labelledby="authorization-title">
+          <h2 id="authorization-title">Authentication and authorization</h2>
+          <div class="case-split case-split--centered case-stack">
+            <div class="case-copy">
+              <h3>Staff sign-in</h3>
+              <p>ASP.NET Core Identity authenticates staff with email and password and maintains a cookie-based session. The sign-in form offers a remember-me option, and staff can sign out from the application.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/login.png" data-image-viewer aria-label="Enlarge Staff sign-in">
+                <img src="../assets/images/projects/gym/login.png" width="1918" height="896" alt="Gym Management System sign-in screen with empty email and password fields." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Staff sign-in</figcaption>
+            </figure>
+          </div>
+          <div class="case-split case-split--centered case-stack">
+            <div class="case-copy">
+              <h3>Administrative permissions</h3>
+              <p>Startup seeds the Admin and SuperAdmin roles and their initial accounts. Operational controllers require an authenticated user. Account listing, creation, and deletion are restricted to SuperAdmin. SuperAdmin can assign an administrative role when creating a staff account.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/admins.png" data-image-viewer aria-label="Enlarge SuperAdmin account management">
+                <img src="../assets/images/projects/gym/admins.png" width="1919" height="1008" alt="MVC admin management view with fictional Admin and SuperAdmin accounts and controls for adding or removing administrators." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>SuperAdmin account management</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemPL/Controllers/AccountController.cs">Account controller</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemPL/Program.cs">Application startup</a></p>
+        </section>
+
+        <section class="case-section" id="interface" aria-labelledby="interface-title">
+          <h2 id="interface-title">Application interface</h2>
+          <div class="case-split case-split--centered case-stack">
+            <div class="case-copy">
+              <h3>Dashboard</h3>
+              <p>The dashboard counts members, trainers, and active memberships. It groups sessions as upcoming, ongoing, or completed based on their scheduled times. The capture shows a local example dataset.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/dashboard.png" data-image-viewer aria-label="Enlarge Gym dashboard">
+                <img src="../assets/images/projects/gym/dashboard.png" width="1919" height="899" alt="Gym management dashboard with counts for members, trainers, active memberships, and sessions grouped by status." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Gym dashboard</figcaption>
+            </figure>
+          </div>
+          <div class="case-split case-split--centered case-stack">
+            <div class="case-copy">
+              <h3>Session management</h3>
+              <p>Staff can view scheduled sessions and inspect their category, trainer, time, and capacity. The MVC views expose edit and delete actions, with the service applying scheduling and booking restrictions.</p>
+            </div>
+            <figure class="case-figure">
+              <a class="case-image" href="../assets/images/projects/gym/sessions.png" data-image-viewer aria-label="Enlarge Session management">
+                <img src="../assets/images/projects/gym/sessions.png" width="1919" height="1007" alt="Session management screen with fictional trainers, scheduled times, capacity, and management actions." loading="lazy" decoding="async">
+                <span class="case-enlarge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5M4 15v5h5" /></svg></span>
+              </a>
+              <figcaption>Session management</figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemBLL/Services/Classes/AnalyticsServices.cs">Analytics service</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemPL/Controllers/SessionController.cs">Session controller</a></p>
+        </section>
+
+        <section class="case-section" id="patterns" aria-labelledby="patterns-title">
+          <h2 id="patterns-title">Design practices and technical decisions</h2>
+          <dl class="case-definitions">
+            <div><dt>Service layer and dependency injection</dt><dd>Controller constructors receive service interfaces. The business layer handles eligibility and scheduling decisions independently of Razor rendering, and startup supplies the implementations.</dd></div>
+            <div><dt>Repository and Unit of Work</dt><dd>A generic EF Core repository handles common persistence operations. Specialized repositories handle session, booking, membership, and plan queries. The Unit of Work coordinates repositories and commits through the shared context.</dd></div>
+            <div><dt>ViewModels and AutoMapper</dt><dd>The business layer defines ViewModels for forms and views. AutoMapper profiles translate between these models and entities, keeping database details out of the views.</dd></div>
+            <div><dt>Explicit persistence mapping</dt><dd>Fluent configurations define composite keys, required relationships, and SQL constraints. The shared Members table keeps health fields with the member, while booking and membership rows carry their own dates and status information.</dd></div>
+          </dl>
+          <p class="case-evidence">Sources <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemDAL/Repositories/Classes/GenericRepository.cs">Generic repository</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemBLL/AutoMapper/MappingProfiles.cs">Mapping profiles</a> · <a href="https://github.com/mark26504/gym-management-system/blob/dcd95e6b8b68471dbdd5953428a115c4612ed019/GymManagementSystemDAL/Data/Configuration/SessionConfiguration.cs">Session configuration</a></p>
+        </section>
+
+        <section class="case-section" id="runtime" aria-labelledby="runtime-title">
+          <h2 id="runtime-title">Local verification and maintenance</h2>
+          <div class="case-grid">
+            <div>
+              <h3>Runtime evidence</h3>
+              <p>The supplied local verification recorded a SQL Server connection update, EF Core migration, successful Release build, and MVC startup. On startup, the application also seeds plans and categories from JSON when those tables are empty. The earlier screenshots and demonstration capture individual workflows. The startup check covers the application launch.</p>
+            </div>
+            <div>
+              <h3>Dependency maintenance</h3>
+              <p>The maintenance revision upgraded AutoMapper from 15.0.1 to 15.1.4 and removed <code>Microsoft.VisualStudio.Web.CodeGeneration.Design</code>. The supplied audit reported that the known transitive findings in Microsoft.Build, NuGet.Packaging, and NuGet.Protocol cleared across all three projects. The Release build recorded 0 errors and 38 warnings.</p>
+            </div>
+          </div>
+          <div class="case-callout">
+            <h3>Audit command</h3>
+            <p><code>dotnet list package --vulnerable --include-transitive</code></p>
+            <p>The result reflects the advisory sources available during that maintenance session. Compiler, nullable-reference, and MVC warnings remained.</p>
+          </div>
+        </section>
+      </article>
+
+      <footer class="case-footer">
+        <nav aria-label="Case study links">
+          <a class="button button-secondary" href="../index.html#projects"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg> Back to Projects</a>
+          <div class="case-actions">
+            <a class="button button-secondary" href="https://github.com/mark26504/gym-management-system"><img class="case-github-mark" src="../assets/icons/github-invertocat-white.svg" width="98" height="96" alt=""> View Source Code</a>
+          </div>
+        </nav>
+      </footer>
+    </main>
+
+    <dialog class="case-viewer" aria-labelledby="case-viewer-title" aria-describedby="case-viewer-instructions">
+      <header class="case-viewer-header">
+        <h2 id="case-viewer-title">Image viewer</h2>
+        <div class="case-viewer-actions" role="group" aria-label="Image viewing controls">
+          <button type="button" data-zoom-out aria-label="Zoom out"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /></svg></button>
+          <button type="button" data-zoom-reset aria-label="Reset zoom to fit">Fit</button>
+          <button type="button" data-zoom-in aria-label="Zoom in"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14" /></svg></button>
+          <button type="button" data-viewer-close aria-label="Close image viewer" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+        </div>
+      </header>
+      <p class="visually-hidden" id="case-viewer-instructions">When zoomed, use arrow keys, drag, or swipe in the image area to pan. Press Escape to close.</p>
+      <output class="case-viewer-status" aria-live="polite">Fit · 100%</output>
+      <div class="case-viewer-stage" tabindex="0" role="region" aria-label="Scrollable image area">
+        <div class="case-viewer-canvas"></div>
+      </div>
+    </dialog>
+  </body>
+</html>
